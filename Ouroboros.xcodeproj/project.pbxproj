@@ -13,6 +13,9 @@
 		7291EDEC1BC2958F0089B8A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7291EDEA1BC2958F0089B8A8 /* Main.storyboard */; };
 		7291EDEE1BC2958F0089B8A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7291EDED1BC2958F0089B8A8 /* Assets.xcassets */; };
 		7291EDF11BC2958F0089B8A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7291EDEF1BC2958F0089B8A8 /* LaunchScreen.storyboard */; };
+		7291EDFB1BC296D40089B8A8 /* UIScrollView+Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = 7291EDFA1BC296D40089B8A8 /* UIScrollView+Ouroboros.m */; settings = {ASSET_TAGS = (); }; };
+		7291EDFE1BC296ED0089B8A8 /* UIView+Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = 7291EDFD1BC296ED0089B8A8 /* UIView+Ouroboros.m */; settings = {ASSET_TAGS = (); }; };
+		72F103CE1BD9F5B30030B703 /* Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F103CD1BD9F5B30030B703 /* Ouroboros.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		7291EDED1BC2958F0089B8A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7291EDF01BC2958F0089B8A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7291EDF21BC2958F0089B8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7291EDF91BC296D40089B8A8 /* UIScrollView+Ouroboros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Ouroboros.h"; sourceTree = "<group>"; };
+		7291EDFA1BC296D40089B8A8 /* UIScrollView+Ouroboros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Ouroboros.m"; sourceTree = "<group>"; };
+		7291EDFC1BC296ED0089B8A8 /* UIView+Ouroboros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Ouroboros.h"; sourceTree = "<group>"; };
+		7291EDFD1BC296ED0089B8A8 /* UIView+Ouroboros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Ouroboros.m"; sourceTree = "<group>"; };
+		72F103CC1BD9F5B30030B703 /* Ouroboros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ouroboros.h; sourceTree = "<group>"; };
+		72F103CD1BD9F5B30030B703 /* Ouroboros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ouroboros.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +92,12 @@
 		7291EDF81BC295EE0089B8A8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7291EDF91BC296D40089B8A8 /* UIScrollView+Ouroboros.h */,
+				7291EDFA1BC296D40089B8A8 /* UIScrollView+Ouroboros.m */,
+				7291EDFC1BC296ED0089B8A8 /* UIView+Ouroboros.h */,
+				7291EDFD1BC296ED0089B8A8 /* UIView+Ouroboros.m */,
+				72F103CC1BD9F5B30030B703 /* Ouroboros.h */,
+				72F103CD1BD9F5B30030B703 /* Ouroboros.m */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
@@ -157,7 +172,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7291EDFB1BC296D40089B8A8 /* UIScrollView+Ouroboros.m in Sources */,
 				7291EDE91BC2958F0089B8A8 /* ViewController.m in Sources */,
+				72F103CE1BD9F5B30030B703 /* Ouroboros.m in Sources */,
+				7291EDFE1BC296ED0089B8A8 /* UIView+Ouroboros.m in Sources */,
 				7291EDE61BC2958F0089B8A8 /* AppDelegate.m in Sources */,
 				7291EDE31BC2958F0089B8A8 /* main.m in Sources */,
 			);
@@ -306,6 +324,7 @@
 				7291EDF71BC2958F0089B8A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

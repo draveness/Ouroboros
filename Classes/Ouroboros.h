@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 extern NSString * const kOURViewFrame;
 extern NSString * const kOURViewSize;
+extern NSString * const kOURViewBackground;
 
 @interface Ouroboros : NSObject
 

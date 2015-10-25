@@ -10,6 +10,7 @@
 
 NSString* const kOURViewFrame = @"kOURViewFrame";
 NSString* const kOURViewSize = @"kOURViewSize";
+NSString* const kOURViewBackground = @"kOURViewBackground";
 
 @implementation Ouroboros
 

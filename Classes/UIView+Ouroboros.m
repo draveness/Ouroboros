@@ -20,15 +20,18 @@
 - (void)ou_updateState:(NSNotification *)notification {
     CGPoint contentOffset = [[notification userInfo][@"contentOffset"] CGPointValue];
     CGFloat percent = (contentOffset.y - self.ouroboros.trggier) / self.ouroboros.duration;
-    NSValue *value = [self.ouroboros calculateInternalValueWithPercent:percent];
+    id value = [self.ouroboros calculateInternalValueWithPercent:percent];
     if ([self.ouroboros.property isEqualToString:kOURViewFrame]) {
         self.frame = [value CGRectValue];
     } else if ([self.ouroboros.property isEqualToString:kOURViewSize]) {
         self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [value CGSizeValue].width, [value CGSizeValue].height);
+    } else if ([self.ouroboros.property isEqualToString:kOURViewBackground]) {
+        self.backgroundColor = value;
     }
 }
 
-- (void)ou_animateWithProperty:(NSString *)property configureBlock:(OuroborosAnimationBlock)configureBlock {
+- (void)ou_animateWithProperty:(NSString *)property
+                configureBlock:(OuroborosAnimationBlock)configureBlock {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ou_updateState:) name:@"ScrollView" object:nil];
 
     self.ouroboros = [[Ouroboros alloc] initWithProperty:property];

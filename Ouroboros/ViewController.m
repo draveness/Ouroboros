@@ -26,14 +26,14 @@
     scrollView.delegate = self;
 
     UIView *yellowView = [[UIView alloc] init];
-    yellowView.backgroundColor = [UIColor yellowColor];
+    yellowView.backgroundColor = [UIColor redColor];
     yellowView.frame = CGRectMake(50, 50, 100, 100);
     [scrollView addSubview:yellowView];
 
-    [yellowView ou_animateWithProperty:kOURViewSize
+    [yellowView ou_animateWithProperty:kOURViewBackground
                         configureBlock:^(Ouroboros *ouroboros) {
-                            ouroboros.fromValue = [NSValue valueWithCGSize:CGSizeMake(100, 100)];
-                            ouroboros.toValue = [NSValue valueWithCGSize:CGSizeMake(200, 200)];
+                            ouroboros.fromValue = [UIColor redColor];
+                            ouroboros.toValue = [UIColor blueColor];
                             ouroboros.trggier = 0;
                             ouroboros.duration = 100;
                         }];

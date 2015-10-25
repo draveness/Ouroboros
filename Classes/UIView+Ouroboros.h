@@ -13,6 +13,6 @@ typedef void(^OuroborosAnimationBlock)(Ouroboros *ouroboros);
 
 @interface UIView (Ouroboros)
 
-- (void)ou_animateWithType:(OuroborosAnmationType)animationType configureBlock:(OuroborosAnimationBlock)configureBlock;
+- (void)ou_animateWithProperty:(NSString *)property configureBlock:(OuroborosAnimationBlock)configureBlock;
 
 @end

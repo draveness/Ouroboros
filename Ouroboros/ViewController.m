@@ -30,12 +30,13 @@
     yellowView.frame = CGRectMake(50, 50, 100, 100);
     [scrollView addSubview:yellowView];
 
-    [yellowView ou_animateWithType:OuroborosAnimationTypeViewFrame configureBlock:^(Ouroboros *ouroboros) {
-        ouroboros.fromValue = [NSValue valueWithCGRect: CGRectMake(50, 50, 100, 100)];
-        ouroboros.toValue = [NSValue valueWithCGRect: CGRectMake(50, 500, 100, 100)];
-        ouroboros.trggier = 100;
-        ouroboros.duration = 100;
-    }];
+    [yellowView ou_animateWithProperty:kOURViewSize
+                        configureBlock:^(Ouroboros *ouroboros) {
+                            ouroboros.fromValue = [NSValue valueWithCGSize:CGSizeMake(100, 100)];
+                            ouroboros.toValue = [NSValue valueWithCGSize:CGSizeMake(200, 200)];
+                            ouroboros.trggier = 0;
+                            ouroboros.duration = 100;
+                        }];
 }
 
 @end

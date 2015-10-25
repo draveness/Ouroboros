@@ -20,24 +20,18 @@
 - (void)ou_updateState:(NSNotification *)notification {
     CGPoint contentOffset = [[notification userInfo][@"contentOffset"] CGPointValue];
     CGFloat percent = (contentOffset.y - self.ouroboros.trggier) / self.ouroboros.duration;
-    NSLog(@"%@", @(percent));
     NSValue *value = [self.ouroboros calculateInternalValueWithPercent:percent];
-    switch (self.ouroboros.animationType) {
-        case OuroborosAnimationTypeViewFrame:
-            self.frame = [value CGRectValue];
-            NSLog(@"%@", NSStringFromCGRect(self.frame));
-            break;
-
-        default:
-            break;
+    if ([self.ouroboros.property isEqualToString:kOURViewFrame]) {
+        self.frame = [value CGRectValue];
+    } else if ([self.ouroboros.property isEqualToString:kOURViewSize]) {
+        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [value CGSizeValue].width, [value CGSizeValue].height);
     }
-//    }
 }
 
-- (void)ou_animateWithType:(OuroborosAnmationType)animationType configureBlock:(OuroborosAnimationBlock)configureBlock {
+- (void)ou_animateWithProperty:(NSString *)property configureBlock:(OuroborosAnimationBlock)configureBlock {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ou_updateState:) name:@"ScrollView" object:nil];
 
-    self.ouroboros = [[Ouroboros alloc] init];
+    self.ouroboros = [[Ouroboros alloc] initWithProperty:property];
     configureBlock(self.ouroboros);
 }
 

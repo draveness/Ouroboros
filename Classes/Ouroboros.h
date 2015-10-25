@@ -8,23 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger) {
-    OuroborosAnimationTypeViewFrame,
-} OuroborosAnmationType;
-
 NS_ASSUME_NONNULL_BEGIN
+
+extern NSString * const kOURViewFrame;
+extern NSString * const kOURViewSize;
 
 @interface Ouroboros : NSObject
 
-@property (nonatomic, assign, readonly) OuroborosAnmationType animationType;
-@property (nonatomic, strong) NSValue *fromValue;
-@property (nonatomic, strong) NSValue *toValue;
+@property (nonatomic, assign, readonly) NSString *property;
+@property (nonatomic, strong) id fromValue;
+@property (nonatomic, strong) id toValue;
 @property (nonatomic, assign) CGFloat trggier;
 @property (nonatomic, assign) CGFloat duration;
 
-- (instancetype)initWithAnimationType:(OuroborosAnmationType)animationType;
+- (instancetype)initWithProperty:(NSString *)property;
 
-- (NSValue *)calculateInternalValueWithPercent:(CGFloat)percent;
+- (id)calculateInternalValueWithPercent:(CGFloat)percent;
 
 @end
 

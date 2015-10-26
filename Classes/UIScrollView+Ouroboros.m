@@ -32,7 +32,16 @@
 - (void)ou_setContentOffset:(CGPoint)contentOffset {
     [self ou_setContentOffset:contentOffset];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ScrollView" object:nil userInfo:@{@"contentOffset": [NSValue valueWithCGPoint:contentOffset]}];
+}
 
+#pragma mark - Getter/Setter
+
+- (NSInteger)getOu_scrollDirection {
+    return [objc_getAssociatedObject(self, @selector(ou_scrollDirection)) integerValue];
+}
+
+- (void)setOu_scrollDirection:(OURScrollDirection)ou_scrollDirection {
+    objc_setAssociatedObject(self, @selector(ou_scrollDirection), @(ou_scrollDirection), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

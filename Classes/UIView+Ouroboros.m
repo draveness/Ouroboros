@@ -11,7 +11,7 @@
 
 @interface UIView ()
 
-@property (nonatomic, strong) Ouroboros *ouroboros;
+@property (nonatomic, strong) NSMutableArray *ouroboroses;
 
 @end
 
@@ -19,14 +19,16 @@
 
 - (void)ou_updateState:(NSNotification *)notification {
     CGPoint contentOffset = [[notification userInfo][@"contentOffset"] CGPointValue];
-    CGFloat percent = (contentOffset.y - self.ouroboros.trggier) / self.ouroboros.duration;
-    id value = [self.ouroboros calculateInternalValueWithPercent:percent];
-    if ([self.ouroboros.property isEqualToString:kOURViewFrame]) {
-        self.frame = [value CGRectValue];
-    } else if ([self.ouroboros.property isEqualToString:kOURViewSize]) {
-        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [value CGSizeValue].width, [value CGSizeValue].height);
-    } else if ([self.ouroboros.property isEqualToString:kOURViewBackground]) {
-        self.backgroundColor = value;
+    for (Ouroboros *ouroboros in self.ouroboroses) {
+        CGFloat percent = (contentOffset.y - ouroboros.trggier) / ouroboros.duration;
+        id value = [ouroboros calculateInternalValueWithPercent:percent];
+        if ([ouroboros.property isEqualToString:kOURViewFrame]) {
+            self.frame = [value CGRectValue];
+        } else if ([ouroboros.property isEqualToString:kOURViewSize]) {
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [value CGSizeValue].width, [value CGSizeValue].height);
+        } else if ([ouroboros.property isEqualToString:kOURViewBackground]) {
+            self.backgroundColor = value;
+        }
     }
 }
 
@@ -34,18 +36,22 @@
                 configureBlock:(OuroborosAnimationBlock)configureBlock {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ou_updateState:) name:@"ScrollView" object:nil];
 
-    self.ouroboros = [[Ouroboros alloc] initWithProperty:property];
-    configureBlock(self.ouroboros);
+    Ouroboros *ouroboros = [[Ouroboros alloc] initWithProperty:property];
+    configureBlock(ouroboros);
+    [self.ouroboroses addObject:ouroboros];
 }
 
 #pragma mark - Getter/Setter
 
-- (Ouroboros *)ouroboros {
-    return objc_getAssociatedObject(self, @selector(ouroboros));
+- (NSMutableArray *)ouroboroses {
+    if (!objc_getAssociatedObject(self, @selector(ouroboroses))) {
+        objc_setAssociatedObject(self, @selector(ouroboroses), [[NSMutableArray alloc] init], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return objc_getAssociatedObject(self, @selector(ouroboroses));
 }
 
-- (void)setOuroboros:(Ouroboros *)ouroboros {
-    objc_setAssociatedObject(self, @selector(ouroboros), ouroboros, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setOuroboros:(NSMutableArray *)ouroboroses {
+    objc_setAssociatedObject(self, @selector(ouroboroses), ouroboroses, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

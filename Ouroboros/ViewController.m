@@ -37,6 +37,13 @@
                             ouroboros.trggier = 0;
                             ouroboros.duration = 100;
                         }];
+    [yellowView ou_animateWithProperty:kOURViewFrame
+                        configureBlock:^(Ouroboros *ouroboros) {
+                            ouroboros.fromValue = [NSValue valueWithCGRect:yellowView.frame];
+                            ouroboros.toValue = [NSValue valueWithCGRect:CGRectMake(50, 500, 100, 100)];
+                            ouroboros.trggier = 0;
+                            ouroboros.duration = 100;
+                        }];
 }
 
 @end

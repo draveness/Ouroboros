@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+    OURScrollDirectionVertical,
+    OURScrollDirectionHorizontal,
+} OURScrollDirection;
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface UIScrollView (Ouroboros)
 
+@property (nonatomic, assign) OURScrollDirection ou_scrollDirection;
+
 @end
+
+NS_ASSUME_NONNULL_END

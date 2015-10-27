@@ -7,6 +7,7 @@
 //
 
 #import "UIView+Ouroboros.h"
+#import "UIScrollView+Ouroboros.h"
 #import <objc/runtime.h>
 
 @interface UIView ()
@@ -19,20 +20,78 @@
 
 - (void)ou_updateState:(NSNotification *)notification {
     CGPoint contentOffset = [[notification userInfo][@"contentOffset"] CGPointValue];
+    OURScrollDirection direction = [[notification userInfo][@"direction"] integerValue];
     for (Ouroboros *ouroboros in self.ouroboroses) {
-        CGFloat percent = (contentOffset.y - ouroboros.trggier) / ouroboros.duration;
+        CGFloat currentPosition = 0;
+        if (direction == OURScrollDirectionHorizontal) {
+            currentPosition = contentOffset.x;
+        } else {
+            currentPosition = contentOffset.y;
+        }
+        CGFloat percent = (currentPosition - ouroboros.trggier) / ouroboros.duration;
         id value = [ouroboros calculateInternalValueWithPercent:percent];
-        if ([ouroboros.property isEqualToString:kOURViewFrame]) {
-            self.frame = [value CGRectValue];
-        } else if ([ouroboros.property isEqualToString:kOURViewSize]) {
-            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [value CGSizeValue].width, [value CGSizeValue].height);
-        } else if ([ouroboros.property isEqualToString:kOURViewBackground]) {
-            self.backgroundColor = value;
+
+        OURAnimationProperty property = ouroboros.property;
+        switch (property) {
+            case OURAnimationPropertyViewBackgroundColor: {
+                self.backgroundColor = value;
+            }
+                break;
+            case OURAnimationPropertyViewBounds:
+            case OURAnimationPropertyViewFrame: {
+                self.frame = [value CGRectValue];
+            }
+                break;
+            case OURAnimationPropertyViewSize: {
+                self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [value CGSizeValue].width, [value CGSizeValue].height);
+            }
+                break;
+            case OURAnimationPropertyViewCenter: {
+                self.center = [value CGPointValue];
+            }
+                break;
+            case OURAnimationPropertyViewCenterX: {
+                self.center = CGPointMake(self.center.x, [value floatValue]);
+            }
+                break;
+            case OURAnimationPropertyViewCenterY: {
+                self.center = CGPointMake([value floatValue], self.center.y);
+            }
+                break;
+            case OURAnimationPropertyViewTintColor: {
+                self.tintColor = value;
+            }
+                break;
+            case OURAnimationPropertyViewOrigin: {
+                self.frame = CGRectMake([value CGPointValue].x, [value CGPointValue].y, self.frame.size.width, self.frame.size.height);
+            }
+                break;
+            case OURAnimationPropertyViewOriginX: {
+                self.frame = CGRectMake([value floatValue], self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+            }
+                break;
+            case OURAnimationPropertyViewOriginY: {
+                self.frame = CGRectMake(self.frame.origin.x, [value floatValue], self.frame.size.width, self.frame.size.height);
+            }
+                break;
+            case OURAnimationPropertyViewWidth: {
+                self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [value floatValue], self.frame.size.height);
+            }
+                break;
+            case OURAnimationPropertyViewHeight: {
+                self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, [value floatValue]);
+            }
+                break;
+            case OURAnimationViewAlpha: {
+                self.alpha = [value floatValue];
+            }
+            default:
+                break;
         }
     }
 }
 
-- (void)ou_animateWithProperty:(NSString *)property
+- (void)ou_animateWithProperty:(OURAnimationProperty)property
                 configureBlock:(OuroborosAnimationBlock)configureBlock {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ou_updateState:) name:@"ScrollView" object:nil];
 

@@ -8,21 +8,34 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+typedef enum : NSUInteger {
+    OURAnimationPropertyViewFrame,
+    OURAnimationPropertyViewBounds,
+    OURAnimationPropertyViewSize,
+    OURAnimationPropertyViewCenter,
+    OURAnimationPropertyViewOrigin,
+    OURAnimationPropertyViewOriginX,
+    OURAnimationPropertyViewOriginY,
+    OURAnimationPropertyViewWidth,
+    OURAnimationPropertyViewHeight,
+    OURAnimationPropertyViewCenterX,
+    OURAnimationPropertyViewCenterY,
+    OURAnimationPropertyViewBackgroundColor,
+    OURAnimationPropertyViewTintColor,
+    OURAnimationViewAlpha,
+} OURAnimationProperty;
 
-extern NSString * const kOURViewFrame;
-extern NSString * const kOURViewSize;
-extern NSString * const kOURViewBackground;
+NS_ASSUME_NONNULL_BEGIN
 
 @interface Ouroboros : NSObject
 
-@property (nonatomic, assign, readonly) NSString *property;
+@property (nonatomic, assign, readonly) OURAnimationProperty property;
 @property (nonatomic, strong) id fromValue;
 @property (nonatomic, strong) id toValue;
 @property (nonatomic, assign) CGFloat trggier;
 @property (nonatomic, assign) CGFloat duration;
 
-- (instancetype)initWithProperty:(NSString *)property;
+- (instancetype)initWithProperty:(OURAnimationProperty)property;
 
 - (id)calculateInternalValueWithPercent:(CGFloat)percent;
 

@@ -9,11 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "Ouroboros.h"
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 typedef void(^OuroborosAnimationBlock)(Ouroboros *ouroboros);
 
 @interface UIView (Ouroboros)
 
-- (void)ou_animateWithProperty:(NSString *)property
+- (void)ou_animateWithProperty:(OURAnimationProperty)property
                 configureBlock:(OuroborosAnimationBlock)configureBlock;
 
 @end
+
+NS_ASSUME_NONNULL_END

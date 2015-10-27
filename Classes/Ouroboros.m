@@ -8,13 +8,9 @@
 
 #import "Ouroboros.h"
 
-NSString* const kOURViewFrame = @"kOURViewFrame";
-NSString* const kOURViewSize = @"kOURViewSize";
-NSString* const kOURViewBackground = @"kOURViewBackground";
-
 @implementation Ouroboros
 
-- (instancetype)initWithProperty:(NSString *)property {
+- (instancetype)initWithProperty:(OURAnimationProperty)property {
     if (self = [super init]) {
         _property = property;
     }

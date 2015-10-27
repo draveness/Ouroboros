@@ -22,7 +22,8 @@ typedef enum : NSUInteger {
     OURAnimationPropertyViewCenterY,
     OURAnimationPropertyViewBackgroundColor,
     OURAnimationPropertyViewTintColor,
-    OURAnimationViewAlpha,
+    OURAnimationPropertyViewAlpha,
+    OURAnimationPropertyViewTransform,
 } OURAnimationProperty;
 
 NS_ASSUME_NONNULL_BEGIN

@@ -82,8 +82,12 @@
                 self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, [value floatValue]);
             }
                 break;
-            case OURAnimationViewAlpha: {
+            case OURAnimationPropertyViewAlpha: {
                 self.alpha = [value floatValue];
+            }
+                break;
+            case OURAnimationPropertyViewTransform: {
+                self.transform = [value CGAffineTransformValue];
             }
             default:
                 break;

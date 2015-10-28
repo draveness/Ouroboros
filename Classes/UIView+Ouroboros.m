@@ -89,6 +89,7 @@
             case OURAnimationPropertyViewTransform: {
                 self.transform = [value CGAffineTransformValue];
             }
+                break;
             default:
                 break;
         }
@@ -101,6 +102,70 @@
 
     Ouroboros *ouroboros = [[Ouroboros alloc] initWithProperty:property];
     configureBlock(ouroboros);
+    switch (ouroboros.property) {
+        case OURAnimationPropertyViewBackgroundColor: {
+            ouroboros.fromValue = self.backgroundColor;
+        }
+            break;
+        case OURAnimationPropertyViewBounds: {
+            ouroboros.fromValue = [NSValue valueWithCGRect:self.bounds];
+        }
+            break;
+        case OURAnimationPropertyViewFrame: {
+            ouroboros.fromValue = [NSValue valueWithCGRect:self.frame];
+        }
+            break;
+        case OURAnimationPropertyViewSize: {
+            ouroboros.fromValue = [NSValue valueWithCGSize:self.frame.size];
+        }
+            break;
+        case OURAnimationPropertyViewCenter: {
+            ouroboros.fromValue = [NSValue valueWithCGPoint:self.center];
+        }
+            break;
+        case OURAnimationPropertyViewCenterX: {
+            ouroboros.fromValue = @(self.center.x);
+        }
+            break;
+        case OURAnimationPropertyViewCenterY: {
+            ouroboros.fromValue = @(self.center.y);
+        }
+            break;
+        case OURAnimationPropertyViewTintColor: {
+            ouroboros.fromValue = self.tintColor;
+        }
+            break;
+        case OURAnimationPropertyViewOrigin: {
+            ouroboros.fromValue = [NSValue valueWithCGPoint:self.frame.origin];
+        }
+            break;
+        case OURAnimationPropertyViewOriginX: {
+            ouroboros.fromValue = @(self.frame.origin.x);
+        }
+            break;
+        case OURAnimationPropertyViewOriginY: {
+            ouroboros.fromValue = @(self.frame.origin.y);
+        }
+            break;
+        case OURAnimationPropertyViewWidth: {
+            ouroboros.fromValue = @(self.frame.size.width);
+        }
+            break;
+        case OURAnimationPropertyViewHeight: {
+            ouroboros.fromValue = @(self.frame.size.height);
+        }
+            break;
+        case OURAnimationPropertyViewAlpha: {
+            ouroboros.fromValue = @(self.alpha);
+        }
+            break;
+        case OURAnimationPropertyViewTransform: {
+            ouroboros.fromValue = [NSValue valueWithCGAffineTransform:self.transform];
+        }
+            break;
+        default:
+            break;
+    }
     [self.ouroboroses addObject:ouroboros];
 }
 

@@ -8,8 +8,6 @@
 
 #import "OURViewController.h"
 #import "Ouroboros.h"
-#import "UIView+Ouroboros.h"
-#import "UIScrollView+Ouroboros.h"
 
 @interface OURViewController ()
 

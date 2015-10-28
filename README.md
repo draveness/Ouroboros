@@ -12,8 +12,6 @@ The ObjectiveC library for magical scroll interactions. This library is inspired
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
 ## Installation
 
 Ouroboros is available through [CocoaPods](http://cocoapods.org). To install
@@ -23,13 +21,65 @@ it, simply add the following line to your Podfile:
 pod "Ouroboros"
 ```
 
-## Import
+## Usage
 
 ```objectivec
 #import "Ouroboros.h"
 ```
 
+### Animate
 
+Add animation to a `view` is extremely easy. Just invoke `ou_animateWithProperty:configureBlock:` method.
+
+```objectivec
+[view ou_animateWithProperty:OURAnimationPropertyViewBackgroundColor
+              configureBlock:^(Ouroboros *ouroboros) {
+                  ouroboros.toValue = [UIColor blueColor];
+                  ouroboros.trggier = 0;
+                  ouroboros.duration = 100;
+              }];
+```
+
+You should pass a type of `OURAnimationProperty` to this method, and set up the `ouroboros` instance in the block. And that's it.
+
+`trigger` is the point when the animation start and `duration` is the distance the animation occurs.
+
+### AnimationType
+
+```objectivec
+typedef enum : NSUInteger {
+    OURAnimationPropertyViewFrame,
+    OURAnimationPropertyViewBounds,
+    OURAnimationPropertyViewSize,
+    OURAnimationPropertyViewCenter,
+    OURAnimationPropertyViewPosition,
+    OURAnimationPropertyViewOrigin,
+    OURAnimationPropertyViewOriginX,
+    OURAnimationPropertyViewOriginY,
+    OURAnimationPropertyViewWidth,
+    OURAnimationPropertyViewHeight,
+    OURAnimationPropertyViewCenterX,
+    OURAnimationPropertyViewCenterY,
+    OURAnimationPropertyViewBackgroundColor,
+    OURAnimationPropertyViewTintColor,
+    OURAnimationPropertyViewAlpha,
+    OURAnimationPropertyViewTransform,
+} OURAnimationProperty;
+```
+
+
+### Direction
+
+There are two animation directions for `scrollView`, if you want to animate according to `contentOffset.x`. You should change the `scrollView` property `ou_scrollDirection` to `OURScrollDirectionHorizontal`.
+
+```objectivec
+typedef enum : NSUInteger {
+    OURScrollDirectionVertical,
+    OURScrollDirectionHorizontal,
+} OURScrollDirection;
+```
+
+`OURScrollDirectionVertical` is the default behavior for each `scrollView` which will animate when `contentOffset.y` of `scrollView` changes.
 
 
 ## Author

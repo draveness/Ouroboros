@@ -1,0 +1,6 @@
+framework module Pods_Ouroboros_Example {
+  umbrella header "Pods-Ouroboros_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

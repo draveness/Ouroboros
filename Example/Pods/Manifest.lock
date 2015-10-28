@@ -1,0 +1,14 @@
+PODS:
+  - Ouroboros (0.1.0)
+
+DEPENDENCIES:
+  - Ouroboros (from `../`)
+
+EXTERNAL SOURCES:
+  Ouroboros:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Ouroboros: dd17f0214aa9bc5fefac103a2bc30fe2555c55d7
+
+COCOAPODS: 0.38.2

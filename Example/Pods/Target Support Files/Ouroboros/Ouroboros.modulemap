@@ -1,0 +1,6 @@
+framework module Ouroboros {
+  umbrella header "Ouroboros-umbrella.h"
+
+  export *
+  module * { export * }
+}

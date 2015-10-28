@@ -1,0 +1,802 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		032F87EC17B8CC5C13806C146E7D5E43 /* UIView+Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = DA45E6C4C0AA1E169531ECB9D0AE0F75 /* UIView+Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A30773968DE239D1D83419D7299CDFC /* Pods-Ouroboros_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C45197EFC091B759F40551A7DDD850C5 /* Pods-Ouroboros_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F3BBC1A47FE6F2BF574DB777EB9A05C /* Pods-Ouroboros_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 57F27257496941BF92D2421DE3D0655F /* Pods-Ouroboros_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44A786BD4BCCA655B8BA320B81F13DC9 /* UIView+Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAD7FCD6980F830EFD50CBC833866F3 /* UIView+Ouroboros.m */; };
+		480BD278BAF70F1B863FD865C4F3C62A /* Ouroboros-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0F2BF6436782B13C5BF517B7F7806F2 /* Ouroboros-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7DC2BCFF5FE2A2443F6F1C1BBFED0516 /* Ouroboros.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 630EA398B018F738BEF358578AE7F67C /* Ouroboros.bundle */; };
+		8F83A66BDA07EE1B8035270540887D43 /* Pods-Ouroboros_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DD9CA95D428D48B5A4F88775D5B1CA /* Pods-Ouroboros_Example-dummy.m */; };
+		A47DD2CE27986EE7F50495E1DAE1415B /* Pods-Ouroboros_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C2150650F21BFD63E31773F99966 /* Pods-Ouroboros_Tests-dummy.m */; };
+		A58BE9F75DD37754A7319CDE6DBEDFBE /* UIScrollView+Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = F667BD6B8E2C7A8DF0A3AD5EAC568A9A /* UIScrollView+Ouroboros.m */; };
+		B0C5AA4B8AA5907D76F3D373B5CD5301 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848F904BEE9FFC5AD2EC4FFF2C846566 /* Foundation.framework */; };
+		B10D6BB7FF26E0B5C1CA36B07C6C3717 /* Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B55F4141725A963E9AAA5D817CCA1F6 /* Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6D314333033EF26CBD52E284A45B7A2 /* Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = 861128AE47A2BC24EB32955382C0F6A1 /* Ouroboros.m */; };
+		D8796EE4E90DAD8B1163C3638CE10741 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848F904BEE9FFC5AD2EC4FFF2C846566 /* Foundation.framework */; };
+		E6EAF8C409916D174D6C13AE1B7D0D35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848F904BEE9FFC5AD2EC4FFF2C846566 /* Foundation.framework */; };
+		F915521D175674A66924DC3A72CDF653 /* Ouroboros-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C1DA48F33CF62CA80864B5F18E15276D /* Ouroboros-dummy.m */; };
+		FA710419369DA93B497ECDAD67DB8D2A /* UIScrollView+Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = 15B095365EBB8A7FDAD042DD9E3D2A1D /* UIScrollView+Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50E03266026A05DCF952FF7A5074223D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AB94410A3DF3F912A0E197E7AD2DA10;
+			remoteInfo = Ouroboros;
+		};
+		6FDB067A38B71C4C0D76E0602672F2C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AB94410A3DF3F912A0E197E7AD2DA10;
+			remoteInfo = Ouroboros;
+		};
+		731FAE271733423AF542E028637BCBF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDB6B468D39A1391B1E2FF74DF2D4940;
+			remoteInfo = "Ouroboros-Ouroboros";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		082EA4F8AA0369449C40B7C2575F8DC3 /* Ouroboros-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Ouroboros-Private.xcconfig"; sourceTree = "<group>"; };
+		0F794BAF93D61EAB50222AF7A5188DB2 /* Pods-Ouroboros_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ouroboros_Example-frameworks.sh"; sourceTree = "<group>"; };
+		13429EF76B642CA4E03B8BB51E14E991 /* Pods-Ouroboros_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ouroboros_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		15B095365EBB8A7FDAD042DD9E3D2A1D /* UIScrollView+Ouroboros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Ouroboros.h"; sourceTree = "<group>"; };
+		191387995D47CF375755786954BBCCE3 /* Pods-Ouroboros_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ouroboros_Example.release.xcconfig"; sourceTree = "<group>"; };
+		1FCC3F9A970919F7007F7D769CE6C8E3 /* Pods-Ouroboros_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ouroboros_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		2C8BC8AE17E028D25F04DF10BD5CC3A8 /* Ouroboros.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ouroboros.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35E7943CEA3481C992FD04C7804CD153 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E1D170E356352001D27074565387E69 /* Pods_Ouroboros_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ouroboros_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495D27035C62FB8080D49824EBA1C167 /* Pods-Ouroboros_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Ouroboros_Tests.modulemap"; sourceTree = "<group>"; };
+		57F27257496941BF92D2421DE3D0655F /* Pods-Ouroboros_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Ouroboros_Example-umbrella.h"; sourceTree = "<group>"; };
+		5FC6E70276631DAE152184A471D1242C /* Pods-Ouroboros_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ouroboros_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		62BD73618FFB5808EDF74965CC8FA5A9 /* Pods-Ouroboros_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ouroboros_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		630EA398B018F738BEF358578AE7F67C /* Ouroboros.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ouroboros.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A2021855984CB6DABF1A5186FCAE59A /* Ouroboros.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Ouroboros.xcconfig; sourceTree = "<group>"; };
+		6F0E223D17BA4F3D8BDFD77AB282A9FA /* Ouroboros.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Ouroboros.modulemap; sourceTree = "<group>"; };
+		6FECCD6A45060ABC13E1C92AE9E2599B /* Pods_Ouroboros_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ouroboros_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73EB5DAF7D2E2F56461543CE16DFB66B /* Pods-Ouroboros_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Ouroboros_Example.modulemap"; sourceTree = "<group>"; };
+		818AEE35D49949BE6AE4222F1D12BD71 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848F904BEE9FFC5AD2EC4FFF2C846566 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		861128AE47A2BC24EB32955382C0F6A1 /* Ouroboros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Ouroboros.m; sourceTree = "<group>"; };
+		8B55F4141725A963E9AAA5D817CCA1F6 /* Ouroboros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Ouroboros.h; sourceTree = "<group>"; };
+		8D31C2150650F21BFD63E31773F99966 /* Pods-Ouroboros_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Ouroboros_Tests-dummy.m"; sourceTree = "<group>"; };
+		94DD9CA95D428D48B5A4F88775D5B1CA /* Pods-Ouroboros_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Ouroboros_Example-dummy.m"; sourceTree = "<group>"; };
+		9E65682219EA32C78068DAE72A72A14E /* Pods-Ouroboros_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ouroboros_Example-resources.sh"; sourceTree = "<group>"; };
+		A6BEEE4660B57E44665693EEE3FAA5BE /* Pods-Ouroboros_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ouroboros_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B7C19B28101F8E25524BA4C9B018B96B /* Pods-Ouroboros_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ouroboros_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B7C72129CE9BB7D841F51D0B58DAB8A4 /* Pods-Ouroboros_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Ouroboros_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B8F2C6FBBC2F98B8749F92D9845A4BF5 /* Ouroboros-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ouroboros-prefix.pch"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C155AB272E653E4A9E6BA831EE4DDA45 /* Pods-Ouroboros_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Ouroboros_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C1DA48F33CF62CA80864B5F18E15276D /* Ouroboros-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Ouroboros-dummy.m"; sourceTree = "<group>"; };
+		C45197EFC091B759F40551A7DDD850C5 /* Pods-Ouroboros_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Ouroboros_Tests-umbrella.h"; sourceTree = "<group>"; };
+		CCAD7FCD6980F830EFD50CBC833866F3 /* UIView+Ouroboros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Ouroboros.m"; sourceTree = "<group>"; };
+		DA45E6C4C0AA1E169531ECB9D0AE0F75 /* UIView+Ouroboros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Ouroboros.h"; sourceTree = "<group>"; };
+		E0F2BF6436782B13C5BF517B7F7806F2 /* Ouroboros-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ouroboros-umbrella.h"; sourceTree = "<group>"; };
+		E44E37B15EAA629EB6305434C301E615 /* Pods-Ouroboros_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ouroboros_Tests-resources.sh"; sourceTree = "<group>"; };
+		EABE0357DE31D79591494CEF1BF899D5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F667BD6B8E2C7A8DF0A3AD5EAC568A9A /* UIScrollView+Ouroboros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Ouroboros.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3E35140F084C23F2048F0570DBE63164 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6EAF8C409916D174D6C13AE1B7D0D35 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43A3F23E1EA2D69EC10399AD380804F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C377C61AB2F2174A9D26D6D73ED7739 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0C5AA4B8AA5907D76F3D373B5CD5301 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D204AF88DAC5CD7C99F190D66D570CAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8796EE4E90DAD8B1163C3638CE10741 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		053C0EA40D8F9393A08183AAAF950063 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09E95C355C68496B7A3EBDCD5632326B /* Ouroboros */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		09E95C355C68496B7A3EBDCD5632326B /* Ouroboros */ = {
+			isa = PBXGroup;
+			children = (
+				348C10EF5D38EBF8C3AA64D09F805968 /* Pod */,
+				D90A75009F9D86CF261EA0B7F8E9A9BB /* Support Files */,
+			);
+			name = Ouroboros;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		20C83B43311ADB65E2F41086C8A8D9BB /* Pods-Ouroboros_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EABE0357DE31D79591494CEF1BF899D5 /* Info.plist */,
+				495D27035C62FB8080D49824EBA1C167 /* Pods-Ouroboros_Tests.modulemap */,
+				B7C72129CE9BB7D841F51D0B58DAB8A4 /* Pods-Ouroboros_Tests-acknowledgements.markdown */,
+				5FC6E70276631DAE152184A471D1242C /* Pods-Ouroboros_Tests-acknowledgements.plist */,
+				8D31C2150650F21BFD63E31773F99966 /* Pods-Ouroboros_Tests-dummy.m */,
+				13429EF76B642CA4E03B8BB51E14E991 /* Pods-Ouroboros_Tests-frameworks.sh */,
+				E44E37B15EAA629EB6305434C301E615 /* Pods-Ouroboros_Tests-resources.sh */,
+				C45197EFC091B759F40551A7DDD850C5 /* Pods-Ouroboros_Tests-umbrella.h */,
+				B7C19B28101F8E25524BA4C9B018B96B /* Pods-Ouroboros_Tests.debug.xcconfig */,
+				A6BEEE4660B57E44665693EEE3FAA5BE /* Pods-Ouroboros_Tests.release.xcconfig */,
+			);
+			name = "Pods-Ouroboros_Tests";
+			path = "Target Support Files/Pods-Ouroboros_Tests";
+			sourceTree = "<group>";
+		};
+		348C10EF5D38EBF8C3AA64D09F805968 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				BFC2AC5241F205416C99C5BFF893E6BC /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				848F904BEE9FFC5AD2EC4FFF2C846566 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7BC2B748108825239CC335C2EFC66CEE /* Pods-Ouroboros_Example */ = {
+			isa = PBXGroup;
+			children = (
+				35E7943CEA3481C992FD04C7804CD153 /* Info.plist */,
+				73EB5DAF7D2E2F56461543CE16DFB66B /* Pods-Ouroboros_Example.modulemap */,
+				C155AB272E653E4A9E6BA831EE4DDA45 /* Pods-Ouroboros_Example-acknowledgements.markdown */,
+				1FCC3F9A970919F7007F7D769CE6C8E3 /* Pods-Ouroboros_Example-acknowledgements.plist */,
+				94DD9CA95D428D48B5A4F88775D5B1CA /* Pods-Ouroboros_Example-dummy.m */,
+				0F794BAF93D61EAB50222AF7A5188DB2 /* Pods-Ouroboros_Example-frameworks.sh */,
+				9E65682219EA32C78068DAE72A72A14E /* Pods-Ouroboros_Example-resources.sh */,
+				57F27257496941BF92D2421DE3D0655F /* Pods-Ouroboros_Example-umbrella.h */,
+				62BD73618FFB5808EDF74965CC8FA5A9 /* Pods-Ouroboros_Example.debug.xcconfig */,
+				191387995D47CF375755786954BBCCE3 /* Pods-Ouroboros_Example.release.xcconfig */,
+			);
+			name = "Pods-Ouroboros_Example";
+			path = "Target Support Files/Pods-Ouroboros_Example";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				053C0EA40D8F9393A08183AAAF950063 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				FF26199FCE62FF2BE49A1B04722ABB60 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFC2AC5241F205416C99C5BFF893E6BC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8B55F4141725A963E9AAA5D817CCA1F6 /* Ouroboros.h */,
+				861128AE47A2BC24EB32955382C0F6A1 /* Ouroboros.m */,
+				15B095365EBB8A7FDAD042DD9E3D2A1D /* UIScrollView+Ouroboros.h */,
+				F667BD6B8E2C7A8DF0A3AD5EAC568A9A /* UIScrollView+Ouroboros.m */,
+				DA45E6C4C0AA1E169531ECB9D0AE0F75 /* UIView+Ouroboros.h */,
+				CCAD7FCD6980F830EFD50CBC833866F3 /* UIView+Ouroboros.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				630EA398B018F738BEF358578AE7F67C /* Ouroboros.bundle */,
+				2C8BC8AE17E028D25F04DF10BD5CC3A8 /* Ouroboros.framework */,
+				6FECCD6A45060ABC13E1C92AE9E2599B /* Pods_Ouroboros_Example.framework */,
+				3E1D170E356352001D27074565387E69 /* Pods_Ouroboros_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D90A75009F9D86CF261EA0B7F8E9A9BB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				818AEE35D49949BE6AE4222F1D12BD71 /* Info.plist */,
+				6F0E223D17BA4F3D8BDFD77AB282A9FA /* Ouroboros.modulemap */,
+				6A2021855984CB6DABF1A5186FCAE59A /* Ouroboros.xcconfig */,
+				082EA4F8AA0369449C40B7C2575F8DC3 /* Ouroboros-Private.xcconfig */,
+				C1DA48F33CF62CA80864B5F18E15276D /* Ouroboros-dummy.m */,
+				B8F2C6FBBC2F98B8749F92D9845A4BF5 /* Ouroboros-prefix.pch */,
+				E0F2BF6436782B13C5BF517B7F7806F2 /* Ouroboros-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Ouroboros";
+			sourceTree = "<group>";
+		};
+		FF26199FCE62FF2BE49A1B04722ABB60 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7BC2B748108825239CC335C2EFC66CEE /* Pods-Ouroboros_Example */,
+				20C83B43311ADB65E2F41086C8A8D9BB /* Pods-Ouroboros_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5612EE527C0BA7386D66396E5FFAA90B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F3BBC1A47FE6F2BF574DB777EB9A05C /* Pods-Ouroboros_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF04BB8529692B5BF5A6A3C6C4F196B9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				480BD278BAF70F1B863FD865C4F3C62A /* Ouroboros-umbrella.h in Headers */,
+				B10D6BB7FF26E0B5C1CA36B07C6C3717 /* Ouroboros.h in Headers */,
+				FA710419369DA93B497ECDAD67DB8D2A /* UIScrollView+Ouroboros.h in Headers */,
+				032F87EC17B8CC5C13806C146E7D5E43 /* UIView+Ouroboros.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D60154A674093FEB333D5DD2A0CA5032 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A30773968DE239D1D83419D7299CDFC /* Pods-Ouroboros_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2016BF1509DAC573DEFD48F97D4F6523 /* Pods-Ouroboros_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06F3B0CB1985FB01E15874EC6A5BF400 /* Build configuration list for PBXNativeTarget "Pods-Ouroboros_Example" */;
+			buildPhases = (
+				520420BCE5862C1B90AFC28B2140788C /* Sources */,
+				3E35140F084C23F2048F0570DBE63164 /* Frameworks */,
+				5612EE527C0BA7386D66396E5FFAA90B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4965249254A10693A6AFFD006DB648F8 /* PBXTargetDependency */,
+			);
+			name = "Pods-Ouroboros_Example";
+			productName = "Pods-Ouroboros_Example";
+			productReference = 6FECCD6A45060ABC13E1C92AE9E2599B /* Pods_Ouroboros_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4AB94410A3DF3F912A0E197E7AD2DA10 /* Ouroboros */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8057C4B5804C5E7C45719910CBA1305A /* Build configuration list for PBXNativeTarget "Ouroboros" */;
+			buildPhases = (
+				55162B94F26EF9F9D48F1DDC8E74A8AE /* Sources */,
+				D204AF88DAC5CD7C99F190D66D570CAE /* Frameworks */,
+				87FD6C985C3A73F81EA75CC3A1DDA359 /* Resources */,
+				CF04BB8529692B5BF5A6A3C6C4F196B9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFF488B110FF852EECC26C82C81E2153 /* PBXTargetDependency */,
+			);
+			name = Ouroboros;
+			productName = Ouroboros;
+			productReference = 2C8BC8AE17E028D25F04DF10BD5CC3A8 /* Ouroboros.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		66709F3F6098572B6E15D9617E440343 /* Pods-Ouroboros_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F0C4AF1554CBC203DAAABDECB43D7EF /* Build configuration list for PBXNativeTarget "Pods-Ouroboros_Tests" */;
+			buildPhases = (
+				AC91A5692442C09F995BDBE20B01C888 /* Sources */,
+				4C377C61AB2F2174A9D26D6D73ED7739 /* Frameworks */,
+				D60154A674093FEB333D5DD2A0CA5032 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D2C40E88CC3C91DFC65670B995EB070 /* PBXTargetDependency */,
+			);
+			name = "Pods-Ouroboros_Tests";
+			productName = "Pods-Ouroboros_Tests";
+			productReference = 3E1D170E356352001D27074565387E69 /* Pods_Ouroboros_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CDB6B468D39A1391B1E2FF74DF2D4940 /* Ouroboros-Ouroboros */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 873BEF000F206CF1B20DBF642953B005 /* Build configuration list for PBXNativeTarget "Ouroboros-Ouroboros" */;
+			buildPhases = (
+				631CAC6FF339F76652E7F4ABFB30B32F /* Sources */,
+				43A3F23E1EA2D69EC10399AD380804F2 /* Frameworks */,
+				C0EA5BADA0B4F2F97D0A33912587E718 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ouroboros-Ouroboros";
+			productName = "Ouroboros-Ouroboros";
+			productReference = 630EA398B018F738BEF358578AE7F67C /* Ouroboros.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0710;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AB94410A3DF3F912A0E197E7AD2DA10 /* Ouroboros */,
+				CDB6B468D39A1391B1E2FF74DF2D4940 /* Ouroboros-Ouroboros */,
+				2016BF1509DAC573DEFD48F97D4F6523 /* Pods-Ouroboros_Example */,
+				66709F3F6098572B6E15D9617E440343 /* Pods-Ouroboros_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87FD6C985C3A73F81EA75CC3A1DDA359 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DC2BCFF5FE2A2443F6F1C1BBFED0516 /* Ouroboros.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0EA5BADA0B4F2F97D0A33912587E718 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		520420BCE5862C1B90AFC28B2140788C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F83A66BDA07EE1B8035270540887D43 /* Pods-Ouroboros_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55162B94F26EF9F9D48F1DDC8E74A8AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F915521D175674A66924DC3A72CDF653 /* Ouroboros-dummy.m in Sources */,
+				B6D314333033EF26CBD52E284A45B7A2 /* Ouroboros.m in Sources */,
+				A58BE9F75DD37754A7319CDE6DBEDFBE /* UIScrollView+Ouroboros.m in Sources */,
+				44A786BD4BCCA655B8BA320B81F13DC9 /* UIView+Ouroboros.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631CAC6FF339F76652E7F4ABFB30B32F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC91A5692442C09F995BDBE20B01C888 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A47DD2CE27986EE7F50495E1DAE1415B /* Pods-Ouroboros_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2D2C40E88CC3C91DFC65670B995EB070 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Ouroboros;
+			target = 4AB94410A3DF3F912A0E197E7AD2DA10 /* Ouroboros */;
+			targetProxy = 6FDB067A38B71C4C0D76E0602672F2C4 /* PBXContainerItemProxy */;
+		};
+		4965249254A10693A6AFFD006DB648F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Ouroboros;
+			target = 4AB94410A3DF3F912A0E197E7AD2DA10 /* Ouroboros */;
+			targetProxy = 50E03266026A05DCF952FF7A5074223D /* PBXContainerItemProxy */;
+		};
+		FFF488B110FF852EECC26C82C81E2153 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Ouroboros-Ouroboros";
+			target = CDB6B468D39A1391B1E2FF74DF2D4940 /* Ouroboros-Ouroboros */;
+			targetProxy = 731FAE271733423AF542E028637BCBF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		03CA91998D6773EC5D02B3DB87B8353E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		090E3710EDBB448AA230EF4963AF10EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 082EA4F8AA0369449C40B7C2575F8DC3 /* Ouroboros-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Ouroboros/Ouroboros-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Ouroboros/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Ouroboros/Ouroboros.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Ouroboros;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		23E40B07E022692754C9921BA168E62D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6BEEE4660B57E44665693EEE3FAA5BE /* Pods-Ouroboros_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Ouroboros_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Ouroboros_Tests/Pods-Ouroboros_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Ouroboros_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		265227AB13DDFFFC471543AD3FD1301D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 082EA4F8AA0369449C40B7C2575F8DC3 /* Ouroboros-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Ouroboros;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		9E494128F6D7D9618893C42C24588ECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 191387995D47CF375755786954BBCCE3 /* Pods-Ouroboros_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Ouroboros_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Ouroboros_Example/Pods-Ouroboros_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Ouroboros_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E8E80A6C384DF93D701046461082AF33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62BD73618FFB5808EDF74965CC8FA5A9 /* Pods-Ouroboros_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Ouroboros_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Ouroboros_Example/Pods-Ouroboros_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Ouroboros_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F15180984034D1F28420BA5BF518EC14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 082EA4F8AA0369449C40B7C2575F8DC3 /* Ouroboros-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Ouroboros/Ouroboros-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Ouroboros/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Ouroboros/Ouroboros.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Ouroboros;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F966DA77FB5B89C2E592C6149B28B41E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 082EA4F8AA0369449C40B7C2575F8DC3 /* Ouroboros-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Ouroboros;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		FC67A0142771389245C277775DF19333 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7C19B28101F8E25524BA4C9B018B96B /* Pods-Ouroboros_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Ouroboros_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Ouroboros_Tests/Pods-Ouroboros_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Ouroboros_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06F3B0CB1985FB01E15874EC6A5BF400 /* Build configuration list for PBXNativeTarget "Pods-Ouroboros_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8E80A6C384DF93D701046461082AF33 /* Debug */,
+				9E494128F6D7D9618893C42C24588ECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */,
+				03CA91998D6773EC5D02B3DB87B8353E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F0C4AF1554CBC203DAAABDECB43D7EF /* Build configuration list for PBXNativeTarget "Pods-Ouroboros_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC67A0142771389245C277775DF19333 /* Debug */,
+				23E40B07E022692754C9921BA168E62D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8057C4B5804C5E7C45719910CBA1305A /* Build configuration list for PBXNativeTarget "Ouroboros" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F15180984034D1F28420BA5BF518EC14 /* Debug */,
+				090E3710EDBB448AA230EF4963AF10EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		873BEF000F206CF1B20DBF642953B005 /* Build configuration list for PBXNativeTarget "Ouroboros-Ouroboros" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				265227AB13DDFFFC471543AD3FD1301D /* Debug */,
+				F966DA77FB5B89C2E592C6149B28B41E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6003F589195388D20070C39A"
-               BuildableName = "Ouroboros_Example.app"
-               BlueprintName = "Ouroboros_Example"
-               ReferencedContainer = "container:Ouroboros.xcodeproj">
+               BlueprintIdentifier = "4AB94410A3DF3F912A0E197E7AD2DA10"
+               BuildableName = "Ouroboros.framework"
+               BlueprintName = "Ouroboros"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6003F5AD195388D20070C39A"
-               BuildableName = "Ouroboros_Tests.xctest"
-               BlueprintName = "Ouroboros_Tests"
-               ReferencedContainer = "container:Ouroboros.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "Ouroboros_Example.app"
-            BlueprintName = "Ouroboros_Example"
-            ReferencedContainer = "container:Ouroboros.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -61,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "Ouroboros_Example.app"
-            BlueprintName = "Ouroboros_Example"
-            ReferencedContainer = "container:Ouroboros.xcodeproj">
+            BlueprintIdentifier = "4AB94410A3DF3F912A0E197E7AD2DA10"
+            BuildableName = "Ouroboros.framework"
+            BlueprintName = "Ouroboros"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6003F589195388D20070C39A"
-            BuildableName = "Ouroboros_Example.app"
-            BlueprintName = "Ouroboros_Example"
-            ReferencedContainer = "container:Ouroboros.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

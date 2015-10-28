@@ -46,6 +46,7 @@
                 self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [value CGSizeValue].width, [value CGSizeValue].height);
             }
                 break;
+            case OURAnimationPropertyViewPosition:
             case OURAnimationPropertyViewCenter: {
                 self.center = [value CGPointValue];
             }

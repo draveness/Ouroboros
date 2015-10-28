@@ -13,6 +13,7 @@ typedef enum : NSUInteger {
     OURAnimationPropertyViewBounds,
     OURAnimationPropertyViewSize,
     OURAnimationPropertyViewCenter,
+    OURAnimationPropertyViewPosition,
     OURAnimationPropertyViewOrigin,
     OURAnimationPropertyViewOriginX,
     OURAnimationPropertyViewOriginY,

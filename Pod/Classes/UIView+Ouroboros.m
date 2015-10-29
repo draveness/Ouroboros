@@ -19,7 +19,7 @@
 
 @implementation UIView (Ouroboros)
 
-- (void)ou_updateState:(NSNotification *)notification {
+- (void)updateState:(NSNotification *)notification {
     CGPoint contentOffset = [[notification userInfo][@"contentOffset"] CGPointValue];
     OURScrollDirection direction = [[notification userInfo][@"direction"] integerValue];
     for (Ouroboros *ouroboros in self.ouroboroses) {
@@ -98,76 +98,27 @@
     }
 }
 
+//- (void)pin:(NSNotification *)notification {
+//    CGPoint contentOffset = [[notification userInfo][@"contentOffset"] CGPointValue];
+//    OURScrollDirection direction = [[notification userInfo][@"direction"] integerValue];
+//    [self ]
+//}
+
+- (void)ou_pinWithConfigureBlock:(OuroborosAnimationBlock)configureBlock {
+    [self ou_animateWithProperty:OURAnimationPropertyViewCenterY
+                  configureBlock:^(Ouroboros * _Nonnull ouroboros) {
+                      configureBlock(ouroboros);
+                      ouroboros.toValue = @([ouroboros.fromValue floatValue] + ouroboros.duration);
+                  }];
+}
+
 - (void)ou_animateWithProperty:(OURAnimationProperty)property
                 configureBlock:(OuroborosAnimationBlock)configureBlock {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ou_updateState:) name:@"ScrollView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateState:) name:@"ScrollView" object:nil];
 
     Ouroboros *ouroboros = [[Ouroboros alloc] initWithProperty:property];
+    [ouroboros setupFromValueWithView:self];
     configureBlock(ouroboros);
-    switch (ouroboros.property) {
-        case OURAnimationPropertyViewBackgroundColor: {
-            ouroboros.fromValue = self.backgroundColor;
-        }
-            break;
-        case OURAnimationPropertyViewBounds: {
-            ouroboros.fromValue = [NSValue valueWithCGRect:self.bounds];
-        }
-            break;
-        case OURAnimationPropertyViewFrame: {
-            ouroboros.fromValue = [NSValue valueWithCGRect:self.frame];
-        }
-            break;
-        case OURAnimationPropertyViewSize: {
-            ouroboros.fromValue = [NSValue valueWithCGSize:self.frame.size];
-        }
-            break;
-        case OURAnimationPropertyViewCenter: {
-            ouroboros.fromValue = [NSValue valueWithCGPoint:self.center];
-        }
-            break;
-        case OURAnimationPropertyViewCenterX: {
-            ouroboros.fromValue = @(self.center.x);
-        }
-            break;
-        case OURAnimationPropertyViewCenterY: {
-            ouroboros.fromValue = @(self.center.y);
-        }
-            break;
-        case OURAnimationPropertyViewTintColor: {
-            ouroboros.fromValue = self.tintColor;
-        }
-            break;
-        case OURAnimationPropertyViewOrigin: {
-            ouroboros.fromValue = [NSValue valueWithCGPoint:self.frame.origin];
-        }
-            break;
-        case OURAnimationPropertyViewOriginX: {
-            ouroboros.fromValue = @(self.frame.origin.x);
-        }
-            break;
-        case OURAnimationPropertyViewOriginY: {
-            ouroboros.fromValue = @(self.frame.origin.y);
-        }
-            break;
-        case OURAnimationPropertyViewWidth: {
-            ouroboros.fromValue = @(self.frame.size.width);
-        }
-            break;
-        case OURAnimationPropertyViewHeight: {
-            ouroboros.fromValue = @(self.frame.size.height);
-        }
-            break;
-        case OURAnimationPropertyViewAlpha: {
-            ouroboros.fromValue = @(self.alpha);
-        }
-            break;
-        case OURAnimationPropertyViewTransform: {
-            ouroboros.fromValue = [NSValue valueWithCGAffineTransform:self.transform];
-        }
-            break;
-        default:
-            break;
-    }
     [self.ouroboroses addObject:ouroboros];
 }
 

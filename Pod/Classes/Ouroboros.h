@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (id)calculateInternalValueWithPercent:(CGFloat)percent;
 
+- (void)setupFromValueWithView:(UIView *)view;
+
 @end
 
 NS_ASSUME_NONNULL_END

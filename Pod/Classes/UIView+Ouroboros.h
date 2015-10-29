@@ -38,6 +38,8 @@ typedef void(^OuroborosAnimationBlock)(Ouroboros *ouroboros);
 - (void)ou_animateWithProperty:(OURAnimationProperty)property
                 configureBlock:(OuroborosAnimationBlock)configureBlock;
 
+- (void)ou_pinWithConfigureBlock:(OuroborosAnimationBlock)configureBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

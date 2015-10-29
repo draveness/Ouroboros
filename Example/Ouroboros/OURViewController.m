@@ -15,8 +15,7 @@
 
 @implementation OURViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     [self.view addSubview:scrollView];
@@ -30,18 +29,22 @@
     yellowView.frame = CGRectMake(50, 50, 100, 100);
     [scrollView addSubview:yellowView];
 
-    [yellowView ou_animateWithProperty:OURAnimationPropertyViewBackgroundColor
-                        configureBlock:^(Ouroboros *ouroboros) {
-                            ouroboros.toValue = [UIColor blueColor];
-                            ouroboros.trggier = 0;
-                            ouroboros.duration = 100;
-                        }];
-    [yellowView ou_animateWithProperty:OURAnimationPropertyViewFrame
-                        configureBlock:^(Ouroboros *ouroboros) {
-                            ouroboros.toValue = [NSValue valueWithCGRect:CGRectMake(50, 500, 100, 100)];
-                            ouroboros.trggier = 0;
-                            ouroboros.duration = 100;
-                        }];
+//    [yellowView ou_animateWithProperty:OURAnimationPropertyViewBackgroundColor
+//                        configureBlock:^(Ouroboros *ouroboros) {
+//                            ouroboros.toValue = [UIColor blueColor];
+//                            ouroboros.trggier = 0;
+//                            ouroboros.duration = 100;
+//                        }];
+//    [yellowView ou_animateWithProperty:OURAnimationPropertyViewFrame
+//                        configureBlock:^(Ouroboros *ouroboros) {
+//                            ouroboros.toValue = [NSValue valueWithCGRect:CGRectMake(50, 500, 100, 100)];
+//                            ouroboros.trggier = 0;
+//                            ouroboros.duration = 100;
+//                        }];
+    [yellowView ou_pinWithConfigureBlock:^(Ouroboros * _Nonnull ouroboros) {
+        ouroboros.trggier = 10;
+        ouroboros.duration = 200;
+    }];
 }
 
 @end

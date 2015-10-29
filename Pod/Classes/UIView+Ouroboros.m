@@ -19,6 +19,11 @@
 
 @implementation UIView (Ouroboros)
 
+- (Ouroboros *)ouroboros {
+    Ouroboros *ouroboros = [[Ouroboros alloc] initWithView:self];
+    return ouroboros;
+}
+
 - (void)updateState:(NSNotification *)notification {
     CGPoint contentOffset = [[notification userInfo][@"contentOffset"] CGPointValue];
     OURScrollDirection direction = [[notification userInfo][@"direction"] integerValue];

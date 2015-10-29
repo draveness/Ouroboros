@@ -17,6 +17,13 @@
     return self;
 }
 
+- (instancetype)initWithView:(UIView *)view {
+    if (self = [super init]) {
+        _view = view;
+    }
+    return self;
+}
+
 - (id)calculateInternalValueWithPercent:(CGFloat)percent {
     percent= [self justifyPercent:percent];
 

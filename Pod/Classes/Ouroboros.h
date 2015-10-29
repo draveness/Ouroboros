@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Ouroboros : NSObject
 
+@property (nonatomic, weak, readonly) UIView *view;
 @property (nonatomic, assign, readonly) OURAnimationProperty property;
 @property (nonatomic, strong) id fromValue;
 @property (nonatomic, strong) id toValue;
@@ -21,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat duration;
 
 - (instancetype)initWithProperty:(OURAnimationProperty)property;
+- (instancetype)initWithView:(UIView *)view;
 
 - (id)calculateInternalValueWithPercent:(CGFloat)percent;
 

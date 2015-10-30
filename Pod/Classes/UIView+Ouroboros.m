@@ -13,7 +13,7 @@
 
 @interface UIView ()
 
-@property (nonatomic, strong) NSMutableArray *ouroboroses;
+//@property (nonatomic, strong) NSMutableArray *ouroboroses;
 
 @end
 
@@ -58,11 +58,11 @@
             }
                 break;
             case OURAnimationPropertyViewCenterX: {
-                self.center = CGPointMake(self.center.x, [value floatValue]);
+                self.center = CGPointMake([value floatValue], self.center.y);
             }
                 break;
             case OURAnimationPropertyViewCenterY: {
-                self.center = CGPointMake([value floatValue], self.center.y);
+                self.center = CGPointMake(self.center.x, [value floatValue]);
             }
                 break;
             case OURAnimationPropertyViewTintColor: {
@@ -103,30 +103,6 @@
     }
 }
 
-//- (void)pin:(NSNotification *)notification {
-//    CGPoint contentOffset = [[notification userInfo][@"contentOffset"] CGPointValue];
-//    OURScrollDirection direction = [[notification userInfo][@"direction"] integerValue];
-//    [self ]
-//}
-
-- (void)ou_pinWithConfigureBlock:(OuroborosAnimationBlock)configureBlock {
-    [self ou_animateWithProperty:OURAnimationPropertyViewCenterY
-                  configureBlock:^(Ouroboros * _Nonnull ouroboros) {
-                      configureBlock(ouroboros);
-                      ouroboros.toValue = @([ouroboros.fromValue floatValue] + ouroboros.duration);
-                  }];
-}
-
-- (void)ou_animateWithProperty:(OURAnimationProperty)property
-                configureBlock:(OuroborosAnimationBlock)configureBlock {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateState:) name:@"ScrollView" object:nil];
-
-    Ouroboros *ouroboros = [[Ouroboros alloc] initWithProperty:property];
-    [ouroboros setupFromValueWithView:self];
-    configureBlock(ouroboros);
-    [self.ouroboroses addObject:ouroboros];
-}
-
 #pragma mark - Getter/Setter
 
 - (NSMutableArray *)ouroboroses {
@@ -136,7 +112,7 @@
     return objc_getAssociatedObject(self, @selector(ouroboroses));
 }
 
-- (void)setOuroboros:(NSMutableArray *)ouroboroses {
+- (void)setOuroboroses:(NSMutableArray *)ouroboroses {
     objc_setAssociatedObject(self, @selector(ouroboroses), ouroboroses, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 

@@ -8,20 +8,38 @@
 
 #import "Ouroboros.h"
 
-@implementation Ouroboros
+@interface Ouroboros ()
 
-- (instancetype)initWithProperty:(OURAnimationProperty)property {
-    if (self = [super init]) {
-        _property = property;
-    }
-    return self;
-}
+@property (nonatomic, assign, readwrite) OURAnimationProperty property;
+
+@end
+
+@implementation Ouroboros
 
 - (instancetype)initWithView:(UIView *)view {
     if (self = [super init]) {
         _view = view;
     }
     return self;
+}
+
+- (void)animateWithProperty:(OURAnimationProperty)property configureBlock:(OuroborosAnimationBlock)configureBlock {
+    [[NSNotificationCenter defaultCenter] addObserver:self.view selector:@selector(updateState:) name:@"ScrollView" object:nil];
+
+    self.property = property;
+    configureBlock(self);
+    [self.view.ouroboroses addObject:self];
+}
+
+- (void)pinWithConfigureBlock:(OuroborosAnimationBlock)configureBlock {
+    __weak typeof(self) weakSelf = self;
+    [self animateWithProperty:OURAnimationPropertyViewCenterX configureBlock:^(Ouroboros * _Nonnull ouroboros) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (strongSelf) {
+            configureBlock(ouroboros);
+            ouroboros.toValue = @([strongSelf.fromValue floatValue] + strongSelf.duration);
+        }
+    }];
 }
 
 - (id)calculateInternalValueWithPercent:(CGFloat)percent {
@@ -127,73 +145,6 @@
     return result;
 }
 
-- (void)setupFromValueWithView:(UIView *)view {
-    switch (self.property) {
-        case OURAnimationPropertyViewBackgroundColor: {
-            self.fromValue = view.backgroundColor;
-        }
-            break;
-        case OURAnimationPropertyViewBounds: {
-            self.fromValue = [NSValue valueWithCGRect:view.bounds];
-        }
-            break;
-        case OURAnimationPropertyViewFrame: {
-            self.fromValue = [NSValue valueWithCGRect:view.frame];
-        }
-            break;
-        case OURAnimationPropertyViewSize: {
-            self.fromValue = [NSValue valueWithCGSize:view.frame.size];
-        }
-            break;
-        case OURAnimationPropertyViewCenter: {
-            self.fromValue = [NSValue valueWithCGPoint:view.center];
-        }
-            break;
-        case OURAnimationPropertyViewCenterX: {
-            self.fromValue = @(view.center.x);
-        }
-            break;
-        case OURAnimationPropertyViewCenterY: {
-            self.fromValue = @(view.center.y);
-        }
-            break;
-        case OURAnimationPropertyViewTintColor: {
-            self.fromValue = view.tintColor;
-        }
-            break;
-        case OURAnimationPropertyViewOrigin: {
-            self.fromValue = [NSValue valueWithCGPoint:view.frame.origin];
-        }
-            break;
-        case OURAnimationPropertyViewOriginX: {
-            self.fromValue = @(view.frame.origin.x);
-        }
-            break;
-        case OURAnimationPropertyViewOriginY: {
-            self.fromValue = @(view.frame.origin.y);
-        }
-            break;
-        case OURAnimationPropertyViewWidth: {
-            self.fromValue = @(view.frame.size.width);
-        }
-            break;
-        case OURAnimationPropertyViewHeight: {
-            self.fromValue = @(view.frame.size.height);
-        }
-            break;
-        case OURAnimationPropertyViewAlpha: {
-            self.fromValue = @(view.alpha);
-        }
-            break;
-        case OURAnimationPropertyViewTransform: {
-            self.fromValue = [NSValue valueWithCGAffineTransform:view.transform];
-        }
-            break;
-        default:
-            break;
-    }
-}
-
 - (CGFloat)justifyPercent:(CGFloat)percent {
     if (percent < 0) {
         return 0;
@@ -202,6 +153,79 @@
     } else {
         return percent;
     }
+}
+
+#pragma mark - Getter/Setter
+
+
+- (id)fromValue {
+    if (!_fromValue) {
+        switch (self.property) {
+            case OURAnimationPropertyViewBackgroundColor: {
+                _fromValue = self.view.backgroundColor;
+            }
+                break;
+            case OURAnimationPropertyViewBounds: {
+                _fromValue = [NSValue valueWithCGRect:self.view.bounds];
+            }
+                break;
+            case OURAnimationPropertyViewFrame: {
+                _fromValue = [NSValue valueWithCGRect:self.view.frame];
+            }
+                break;
+            case OURAnimationPropertyViewSize: {
+                _fromValue = [NSValue valueWithCGSize:self.view.frame.size];
+            }
+                break;
+            case OURAnimationPropertyViewCenter: {
+                _fromValue = [NSValue valueWithCGPoint:self.view.center];
+            }
+                break;
+            case OURAnimationPropertyViewCenterX: {
+                _fromValue = @(self.view.center.x);
+            }
+                break;
+            case OURAnimationPropertyViewCenterY: {
+                _fromValue = @(self.view.center.y);
+            }
+                break;
+            case OURAnimationPropertyViewTintColor: {
+                _fromValue = self.view.tintColor;
+            }
+                break;
+            case OURAnimationPropertyViewOrigin: {
+                _fromValue = [NSValue valueWithCGPoint:self.view.frame.origin];
+            }
+                break;
+            case OURAnimationPropertyViewOriginX: {
+                _fromValue = @(self.view.frame.origin.x);
+            }
+                break;
+            case OURAnimationPropertyViewOriginY: {
+                _fromValue = @(self.view.frame.origin.y);
+            }
+                break;
+            case OURAnimationPropertyViewWidth: {
+                _fromValue = @(self.view.frame.size.width);
+            }
+                break;
+            case OURAnimationPropertyViewHeight: {
+                _fromValue = @(self.view.frame.size.height);
+            }
+                break;
+            case OURAnimationPropertyViewAlpha: {
+                _fromValue = @(self.view.alpha);
+            }
+                break;
+            case OURAnimationPropertyViewTransform: {
+                _fromValue = [NSValue valueWithCGAffineTransform:self.view.transform];
+            }
+                break;
+            default:
+                break;
+        }
+    }
+    return _fromValue;
 }
 
 @end

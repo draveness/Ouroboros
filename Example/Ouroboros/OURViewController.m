@@ -41,7 +41,7 @@
 //                            ouroboros.trggier = 0;
 //                            ouroboros.duration = 100;
 //                        }];
-    [yellowView ou_pinWithConfigureBlock:^(Ouroboros * _Nonnull ouroboros) {
+    [yellowView.ouroboros pinWithConfigureBlock:^(Ouroboros * _Nonnull ouroboros) {
         ouroboros.trggier = 10;
         ouroboros.duration = 200;
     }];

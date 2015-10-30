@@ -1,4 +1,4 @@
-//
+
 //  Ouroboros.h
 //  Ouroboros
 //
@@ -21,12 +21,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat trggier;
 @property (nonatomic, assign) CGFloat duration;
 
-- (instancetype)initWithProperty:(OURAnimationProperty)property;
 - (instancetype)initWithView:(UIView *)view;
 
-- (id)calculateInternalValueWithPercent:(CGFloat)percent;
+typedef void(^OuroborosAnimationBlock)(Ouroboros *ouroboros);
 
-- (void)setupFromValueWithView:(UIView *)view;
+- (void)animateWithProperty:(OURAnimationProperty)property
+             configureBlock:(OuroborosAnimationBlock)configureBlock;
+- (void)pinWithConfigureBlock:(OuroborosAnimationBlock)configureBlock;
+
+- (id)calculateInternalValueWithPercent:(CGFloat)percent;
 
 @end
 

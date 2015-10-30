@@ -35,12 +35,15 @@ typedef void(^OuroborosAnimationBlock)(Ouroboros *ouroboros);
 
 @interface UIView (Ouroboros)
 
-- (void)ou_animateWithProperty:(OURAnimationProperty)property
-                configureBlock:(OuroborosAnimationBlock)configureBlock;
+//- (void)ou_animateWithProperty:(OURAnimationProperty)property
+//                configureBlock:(OuroborosAnimationBlock)configureBlock;
+//
+//- (void)ou_pinWithConfigureBlock:(OuroborosAnimationBlock)configureBlock;
 
-- (void)ou_pinWithConfigureBlock:(OuroborosAnimationBlock)configureBlock;
+@property (nonatomic, strong, readonly) Ouroboros *ouroboros;
+@property (nonatomic, strong) NSMutableArray *ouroboroses;
 
-- (Ouroboros *)ouroboros;
+- (void)updateState:(NSNotification *)notification;
 
 @end
 

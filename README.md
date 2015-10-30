@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/Ouroboros.svg?style=flat)](http://cocoapods.org/pods/Ouroboros)
 
 
-The ObjectiveC library for magical scroll interactions. This library is inspired by javascript lib scroll magic. You can create magical scroll interactions with `Ouroboros`.
+The Objective-C library for magical scroll interactions. This library is inspired by javascript lib scroll magic. You can create magical scroll interactions with `Ouroboros`.
 
 ## Usage
 

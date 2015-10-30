@@ -29,20 +29,20 @@ pod "Ouroboros"
 
 ### Animate
 
-Add animation to a `view` is extremely easy. Just invoke `ou_animateWithProperty:configureBlock:` method.
+Add animation to a `view` is extremely easy. Call `ouroboros` first, and then invoke `animateWithProperty:configureBlock:` method.
 
 ```objectivec
-[view ou_animateWithProperty:OURAnimationPropertyViewBackgroundColor
-              configureBlock:^(Ouroboros *ouroboros) {
-                  ouroboros.toValue = [UIColor blueColor];
-                  ouroboros.trggier = 0;
-                  ouroboros.duration = 100;
-              }];
+[view.ouroboros animateWithProperty:OURAnimationPropertyViewBackgroundColor
+                     configureBlock:^(Ouroboros *ouroboros) {
+                         ouroboros.toValue = [UIColor blueColor];
+                         ouroboros.trggier = 0;
+                         ouroboros.duration = 100;
+                     }];
 ```
 
 You should pass a type of `OURAnimationProperty` to this method, and set up the `ouroboros` instance in the block. And that's it.
 
-`trigger` is the point when the animation start and `duration` is the distance the animation occurs.
+`trigger` is the point when the animation start and `offset` is the distance the animation occurs.
 
 ### AnimationType
 

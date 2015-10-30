@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) id fromValue;
 @property (nonatomic, strong) id toValue;
 @property (nonatomic, assign) CGFloat trggier;
-@property (nonatomic, assign) CGFloat duration;
+@property (nonatomic, assign) CGFloat offset;
 
 - (instancetype)initWithView:(UIView *)view;
 
@@ -28,6 +28,7 @@ typedef void(^OuroborosAnimationBlock)(Ouroboros *ouroboros);
 - (void)animateWithProperty:(OURAnimationProperty)property
              configureBlock:(OuroborosAnimationBlock)configureBlock;
 - (void)pinWithConfigureBlock:(OuroborosAnimationBlock)configureBlock;
+
 
 - (id)calculateInternalValueWithPercent:(CGFloat)percent;
 

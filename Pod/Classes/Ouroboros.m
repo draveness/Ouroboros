@@ -33,11 +33,12 @@
 
 - (void)pinWithConfigureBlock:(OuroborosAnimationBlock)configureBlock {
     __weak typeof(self) weakSelf = self;
-    [self animateWithProperty:OURAnimationPropertyViewCenterX configureBlock:^(Ouroboros * _Nonnull ouroboros) {
+    OURAnimationProperty property = [[self closestScrollView] ou_scrollDirection] ? OURAnimationPropertyViewCenterX : OURAnimationPropertyViewCenterY;
+    [self animateWithProperty:property configureBlock:^(Ouroboros * _Nonnull ouroboros) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (strongSelf) {
             configureBlock(ouroboros);
-            ouroboros.toValue = @([strongSelf.fromValue floatValue] + strongSelf.duration);
+            ouroboros.toValue = @([strongSelf.fromValue floatValue] + strongSelf.offset);
         }
     }];
 }
@@ -153,6 +154,18 @@
     } else {
         return percent;
     }
+}
+
+- (UIScrollView *)closestScrollView {
+    UIView *superview = self.view.superview;
+    while (superview) {
+        if ([superview isKindOfClass:[UIScrollView class]]) {
+            return (UIScrollView *)superview;
+        }
+        superview = superview.superview;
+    }
+    NSAssert(NO, @"Cannot find a UIScrollView on current view inheritance hierarchy");
+    return nil;
 }
 
 #pragma mark - Getter/Setter

@@ -34,7 +34,7 @@
         } else {
             currentPosition = contentOffset.y;
         }
-        CGFloat percent = (currentPosition - ouroboros.trggier) / ouroboros.duration;
+        CGFloat percent = (currentPosition - ouroboros.trggier) / ouroboros.offset;
         id value = [ouroboros calculateInternalValueWithPercent:percent];
 
         OURAnimationProperty property = ouroboros.property;

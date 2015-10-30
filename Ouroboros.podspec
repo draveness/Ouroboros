@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = "Ouroboros"
-  s.version          = "0.1.0"
-  s.summary          = "The ObjectiveC lib for magical scroll interactions."
+  s.version          = "0.2.0"
+  s.summary          = "The ObjectiveC library for magical scroll interactions."
 
   s.description      = <<-DESC
                        Ouroboros is inspired by ScrollMagic which helps you to easily react to the user's current

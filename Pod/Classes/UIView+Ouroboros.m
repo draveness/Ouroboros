@@ -36,7 +36,6 @@
         }
         CGFloat percent = (currentPosition - ouroboros.trggier) / ouroboros.offset;
         id value = [ouroboros calculateInternalValueWithPercent:percent];
-
         OURAnimationProperty property = ouroboros.property;
         switch (property) {
             case OURAnimationPropertyViewBackgroundColor: {

@@ -35,10 +35,12 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     return self;
 }
 
-- (void)animateWithProperty:(OURAnimationProperty)property configureBlock:(OuroborosAnimationBlock)configureBlock {
+- (void)animateWithProperty:(OURAnimationProperty)property
+             configureBlock:(OuroborosAnimationBlock)configureBlock {
     [[NSNotificationCenter defaultCenter] addObserver:self.view selector:@selector(updateState:) name:@"ScrollView" object:nil];
 
     self.property = property;
+    self.trggier = 0;
     configureBlock(self);
     [self.view.ouroboroses addObject:self];
 }
@@ -49,8 +51,11 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     [self animateWithProperty:property configureBlock:^(Ouroboros * _Nonnull ouroboros) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (strongSelf) {
+            ouroboros.trggier = 0;
             ouroboros.offset = INT_MAX;
-            configureBlock(ouroboros);
+            if (configureBlock) {
+                configureBlock(ouroboros);
+            }
             ouroboros.toValue = @([strongSelf.fromValue floatValue] + strongSelf.offset);
 
         }

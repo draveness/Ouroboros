@@ -33,7 +33,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height);
 - (void)animateWithProperty:(OURAnimationProperty)property
              configureBlock:(OuroborosAnimationBlock)configureBlock;
 
-- (void)pinWithConfigureBlock:(OuroborosAnimationBlock)configureBlock;
+- (void)pinWithConfigureBlock:(nullable OuroborosAnimationBlock)configureBlock;
 
 - (id)calculateInternalValueWithPercent:(CGFloat)percent;
 

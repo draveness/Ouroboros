@@ -32,7 +32,7 @@
     [yellowView.ouroboros animateWithProperty:OURAnimationPropertyViewBackgroundColor
                         configureBlock:^(Ouroboros *ouroboros) {
                             ouroboros.toValue = [UIColor blueColor];
-                            ouroboros.offset = self.view.frame.size.width;
+                            ouroboros.offset = self.view.our_width;
                         }];
     [yellowView.ouroboros animateWithProperty:OURAnimationPropertyViewFrame
                         configureBlock:^(Ouroboros *ouroboros) {

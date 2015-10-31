@@ -49,8 +49,10 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     [self animateWithProperty:property configureBlock:^(Ouroboros * _Nonnull ouroboros) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (strongSelf) {
+            ouroboros.offset = INT_MAX;
             configureBlock(ouroboros);
             ouroboros.toValue = @([strongSelf.fromValue floatValue] + strongSelf.offset);
+
         }
     }];
 }

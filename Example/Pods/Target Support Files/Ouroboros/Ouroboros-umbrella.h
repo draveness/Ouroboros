@@ -2,6 +2,7 @@
 
 #import "Ouroboros.h"
 #import "UIScrollView+Ouroboros.h"
+#import "UIView+Measure.h"
 #import "UIView+Ouroboros.h"
 
 FOUNDATION_EXPORT double OuroborosVersionNumber;

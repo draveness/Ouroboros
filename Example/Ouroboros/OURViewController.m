@@ -37,7 +37,7 @@
     [yellowView.ouroboros animateWithProperty:OURAnimationPropertyViewFrame
                                configureBlock:^(Ouroboros *ouroboros) {
                                    ouroboros.toValue = NSValueFromCGRectParameters(50, 250, 100, 100);
-                                   ouroboros.offset = self.view.frame.size.width;
+                                   ouroboros.offset = self.view.our_width;
                                }];
     [yellowView.ouroboros pinWithConfigureBlock:^(Ouroboros * _Nonnull ouroboros) {
         ouroboros.offset = INT_MAX;

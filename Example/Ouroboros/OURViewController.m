@@ -36,7 +36,7 @@
                         }];
     [yellowView.ouroboros animateWithProperty:OURAnimationPropertyViewFrame
                         configureBlock:^(Ouroboros *ouroboros) {
-                            ouroboros.toValue = [NSValue valueWithCGRect:CGRectMake(50, 500, 100, 100)];
+                            ouroboros.toValue = NSValueFromCGRectParameters(50, 250, 100, 100);
                             ouroboros.offset = self.view.frame.size.width;
                         }];
     [yellowView.ouroboros pinWithConfigureBlock:^(Ouroboros * _Nonnull ouroboros) {

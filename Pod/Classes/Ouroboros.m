@@ -16,6 +16,18 @@
 
 @implementation Ouroboros
 
+NSValue *NSValueFromCGRectParameters(CGFloat x, CGFloat y, CGFloat width, CGFloat height) {
+    return [NSValue valueWithCGRect:CGRectMake(x, y, width, height)];
+}
+
+NSValue *NSValueFromCGPointParameters(CGFloat x, CGFloat y) {
+    return [NSValue valueWithCGPoint:CGPointMake(x, y)];
+}
+
+NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
+    return [NSValue valueWithCGSize:CGSizeMake(width, height)];
+}
+
 - (instancetype)initWithView:(UIView *)view {
     if (self = [super init]) {
         _view = view;

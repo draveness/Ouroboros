@@ -12,6 +12,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NSValue *NSValueFromCGRectParameters(CGFloat x, CGFloat y, CGFloat width, CGFloat height);
+NSValue *NSValueFromCGPointParameters(CGFloat x, CGFloat y);
+NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height);
+
 @interface Ouroboros : NSObject
 
 @property (nonatomic, weak, readonly) UIView *view;

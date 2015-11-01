@@ -75,89 +75,95 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
 
 #pragma mark - Getter/Setter
 
-- (NSMutableArray<Scale *> *)scales {
-    if (!_scales) {
-        _scales = [[NSMutableArray alloc] init];
+- (void)insertObject:(Scale *)currentScale inScalesAtIndex:(NSUInteger)index {
+    Scale *previousScale = nil;
+    Scale *afterScale = nil;
+    for (Scale *scale in self.scales) {
+        if ([scale isSeparateWithScale:currentScale]) {
+            if (scale.trggier > currentScale.stop) {
+                afterScale = scale;
+            } else if (scale.stop < currentScale.trggier) {
+                previousScale = scale;
+            }
+        } else {
+            NSAssert(NO, @"Can not added an overlapping scales to the same ouroboros.");
+        }
     }
-    return _scales;
+
+    if (previousScale) {
+        currentScale.fromValue = previousScale.toValue;
+    } else {
+        currentScale.fromValue = [self getViewStartValue];
+    }
+    if (afterScale) {
+        afterScale.fromValue = currentScale.toValue;
+    }
+    [self.scales insertObject:currentScale atIndex:index];
 }
 
-//- (id)fromValue {
-//    if (!_fromValue) {
-//        switch (self.property) {
-//            case OURAnimationPropertyViewBackgroundColor: {
-//                _fromValue = self.view.backgroundColor;
-//            }
-//                break;
-//            case OURAnimationPropertyViewBounds: {
-//                _fromValue = [NSValue valueWithCGRect:self.view.bounds];
-//            }
-//                break;
-//            case OURAnimationPropertyViewFrame: {
-//                _fromValue = [NSValue valueWithCGRect:self.view.frame];
-//            }
-//                break;
-//            case OURAnimationPropertyViewSize: {
-//                _fromValue = [NSValue valueWithCGSize:self.view.frame.size];
-//            }
-//                break;
-//            case OURAnimationPropertyViewCenter: {
-//                _fromValue = [NSValue valueWithCGPoint:self.view.center];
-//            }
-//                break;
-//            case OURAnimationPropertyViewCenterX: {
-//                _fromValue = @(self.view.center.x);
-//            }
-//                break;
-//            case OURAnimationPropertyViewCenterY: {
-//                _fromValue = @(self.view.center.y);
-//            }
-//                break;
-//            case OURAnimationPropertyViewTintColor: {
-//                _fromValue = self.view.tintColor;
-//            }
-//                break;
-//            case OURAnimationPropertyViewOrigin: {
-//                _fromValue = [NSValue valueWithCGPoint:self.view.frame.origin];
-//            }
-//                break;
-//            case OURAnimationPropertyViewOriginX: {
-//                _fromValue = @(self.view.frame.origin.x);
-//            }
-//                break;
-//            case OURAnimationPropertyViewOriginY: {
-//                _fromValue = @(self.view.frame.origin.y);
-//            }
-//                break;
-//            case OURAnimationPropertyViewWidth: {
-//                _fromValue = @(self.view.frame.size.width);
-//            }
-//                break;
-//            case OURAnimationPropertyViewHeight: {
-//                _fromValue = @(self.view.frame.size.height);
-//            }
-//                break;
-//            case OURAnimationPropertyViewAlpha: {
-//                _fromValue = @(self.view.alpha);
-//            }
-//                break;
-//            case OURAnimationPropertyViewTransform: {
-//                _fromValue = [NSValue valueWithCGAffineTransform:self.view.transform];
-//            }
-//                break;
-//            default:
-//                break;
-//        }
-//    }
-//    return _fromValue;
-//}
+- (void)removeObjectFromScalesAtIndex:(NSUInteger)index {
+    [self.scales removeObjectAtIndex:index];
+}
+
+- (id)getViewStartValue {
+    switch (self.property) {
+        case OURAnimationPropertyViewBackgroundColor: {
+            return self.view.backgroundColor;
+        }
+        case OURAnimationPropertyViewBounds: {
+            return [NSValue valueWithCGRect:self.view.bounds];
+        }
+        case OURAnimationPropertyViewFrame: {
+            return [NSValue valueWithCGRect:self.view.frame];
+        }
+        case OURAnimationPropertyViewSize: {
+            return [NSValue valueWithCGSize:self.view.frame.size];
+        }
+        case OURAnimationPropertyViewCenter: {
+            return [NSValue valueWithCGPoint:self.view.center];
+        }
+        case OURAnimationPropertyViewCenterX: {
+            return @(self.view.center.x);
+        }
+        case OURAnimationPropertyViewCenterY: {
+            return @(self.view.center.y);
+        }
+        case OURAnimationPropertyViewTintColor: {
+            return self.view.tintColor;
+        }
+        case OURAnimationPropertyViewOrigin: {
+            return [NSValue valueWithCGPoint:self.view.frame.origin];
+        }
+        case OURAnimationPropertyViewOriginX: {
+            return @(self.view.frame.origin.x);
+        }
+        case OURAnimationPropertyViewOriginY: {
+            return @(self.view.frame.origin.y);
+        }
+        case OURAnimationPropertyViewWidth: {
+            return @(self.view.frame.size.width);
+        }
+        case OURAnimationPropertyViewHeight: {
+            return @(self.view.frame.size.height);
+        }
+        case OURAnimationPropertyViewAlpha: {
+            return @(self.view.alpha);
+        }
+        case OURAnimationPropertyViewTransform: {
+            return [NSValue valueWithCGAffineTransform:self.view.transform];
+        }
+        default:
+            NSAssert(NO, @"Invalid OURAnimationProperty type.");
+            return [[NSValue alloc] init];
+    }
+}
 //
 //- (void)setFromValue:(id)fromValue {
 //    if (!self.fromValues) {
 //        self.fromValues = [[NSMutableArray alloc] init];
 //    }
 //    [self.fromValues addObject:fromValue];
-//    _fromValue = fromValue;
+//    return fromValue;
 //}
 //
 //- (void)setToValue:(id)toValue {

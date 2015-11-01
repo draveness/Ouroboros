@@ -32,25 +32,16 @@
 
     [yellowView our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
                          configureBlock:^(Scale *scale) {
-                             scale.fromValue = [UIColor redColor];
                              scale.toValue = [UIColor blueColor];
                              scale.offset = self.view.our_width;
                          }];
     [yellowView our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
                          configureBlock:^(Scale *scale) {
-                             scale.trggier = self.view.our_width;
-                             scale.fromValue = [UIColor blueColor];
+                             scale.trggier = self.view.our_width * 1.5;
                              scale.toValue = [UIColor purpleColor];
-                             scale.offset = self.view.our_width;
+                             scale.offset = self.view.our_width * 0.5;
                          }];
-//    [yellowView our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
-//                         configureBlock:^(Scale *scale) {
-//                             scale.fromValue = [UIColor redColor];
-//                             scale.toValue = [UIColor blueColor];
-//                             scale.offset = self.view.our_width;
-//                         }];
     [yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
-        scale.fromValue = @(100);
     }];
 //    [yellowView our_animateWithProperty:OURAnimationPropertyViewFrame
 //                         configureBlock:^(Scale *scale) {

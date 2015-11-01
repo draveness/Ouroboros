@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "UIView+Ouroboros.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface Scale : NSObject
 
 @property (nonatomic, strong) id fromValue;
@@ -20,5 +22,8 @@
 - (id)calculateInternalValueWithPercent:(CGFloat)percent;
 
 - (BOOL)isCurrentPositionOnScale:(CGFloat)currentPostion;
+- (BOOL)isSeparateWithScale:(Scale *)scale;
 
 @end
+
+NS_ASSUME_NONNULL_END

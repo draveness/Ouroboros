@@ -131,4 +131,8 @@
     return currentPostion >= self.trggier && currentPostion <= self.stop;
 }
 
+- (BOOL)isSeparateWithScale:(Scale *)scale {
+    return scale.stop <= self.trggier || scale.trggier >= self.stop;
+}
+
 @end

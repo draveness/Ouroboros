@@ -25,7 +25,8 @@
     Ouroboros *ouroboros = [self ouroborosWithProperty:property];
     Scale *scale = [[Scale alloc] init];
     configureBlock(scale);
-    [ouroboros.scales addObject:scale];
+    NSMutableArray<Scale *> *scales = [ouroboros mutableArrayValueForKey:@"scales"];
+    [scales addObject:scale];
 }
 
 - (void)our_pinWithConfigureBlock:(ScaleAnimationBlock)configureBlock {
@@ -40,7 +41,8 @@
         configureBlock(scale);
     }
     scale.toValue = @([scale.fromValue floatValue] + scale.offset);
-    [ouroboros.scales addObject:scale];
+    NSMutableArray<Scale *> *scales = [ouroboros mutableArrayValueForKey:@"scales"];
+    [scales addObject:scale];
 }
 
 - (Ouroboros *)ouroborosWithProperty:(OURAnimationProperty)property {
@@ -76,7 +78,7 @@
         } else {
             currentPosition = contentOffset.y;
         }
-//        CGFloat percent = (currentPosition - ouroboros.trggier) / ouroboros.offset;
+
         id value = [ouroboros getCurrentValueWithPosition:currentPosition];
         OURAnimationProperty property = ouroboros.property;
         switch (property) {

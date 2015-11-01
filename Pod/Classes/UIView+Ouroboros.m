@@ -13,15 +13,57 @@
 
 @interface UIView ()
 
-//@property (nonatomic, strong) NSMutableArray *ouroboroses;
+@property (nonatomic, strong) NSMutableArray *ouroboroses;
 
 @end
 
 @implementation UIView (Ouroboros)
 
-- (Ouroboros *)ouroboros {
-    Ouroboros *ouroboros = [[Ouroboros alloc] initWithView:self];
+- (void)our_animateWithProperty:(OURAnimationProperty)property
+                 configureBlock:(ScaleAnimationBlock)configureBlock {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateState:) name:@"ScrollView" object:nil];
+    Ouroboros *ouroboros = [self ouroborosWithProperty:property];
+    Scale *scale = [[Scale alloc] init];
+    configureBlock(scale);
+    [ouroboros.scales addObject:scale];
+}
+
+- (void)our_pinWithConfigureBlock:(ScaleAnimationBlock)configureBlock {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateState:) name:@"ScrollView" object:nil];
+
+    OURAnimationProperty property = [[self closestScrollView] ou_scrollDirection] ? OURAnimationPropertyViewCenterX : OURAnimationPropertyViewCenterY;
+    Ouroboros *ouroboros = [self ouroborosWithProperty:property];
+    Scale *scale = [[Scale alloc] init];
+    scale.trggier = 0;
+    scale.offset = INT_MAX;
+    if (configureBlock) {
+        configureBlock(scale);
+    }
+    scale.toValue = @([scale.fromValue floatValue] + scale.offset);
+    [ouroboros.scales addObject:scale];
+}
+
+- (Ouroboros *)ouroborosWithProperty:(OURAnimationProperty)property {
+    for (Ouroboros *ouroboros in self.ouroboroses) {
+        if (ouroboros.property == property) {
+            return ouroboros;
+        }
+    }
+    Ouroboros *ouroboros = [[Ouroboros alloc] initWithView:self property:property];
+    [self.ouroboroses addObject:ouroboros];
     return ouroboros;
+}
+
+- (UIScrollView *)closestScrollView {
+    UIView *superview = self.superview;
+    while (superview) {
+        if ([superview isKindOfClass:[UIScrollView class]]) {
+            return (UIScrollView *)superview;
+        }
+        superview = superview.superview;
+    }
+    NSAssert(NO, @"Cannot find a UIScrollView on current view inheritance hierarchy");
+    return nil;
 }
 
 - (void)updateState:(NSNotification *)notification {
@@ -34,8 +76,8 @@
         } else {
             currentPosition = contentOffset.y;
         }
-        CGFloat percent = (currentPosition - ouroboros.trggier) / ouroboros.offset;
-        id value = [ouroboros calculateInternalValueWithPercent:percent];
+//        CGFloat percent = (currentPosition - ouroboros.trggier) / ouroboros.offset;
+        id value = [ouroboros getCurrentValueWithPosition:currentPosition];
         OURAnimationProperty property = ouroboros.property;
         switch (property) {
             case OURAnimationPropertyViewBackgroundColor: {

@@ -30,19 +30,34 @@
     yellowView.frame = CGRectMake(50, 50, 100, 100);
     [scrollView addSubview:yellowView];
 
-    [yellowView.ouroboros animateWithProperty:OURAnimationPropertyViewBackgroundColor
-                               configureBlock:^(Ouroboros *ouroboros) {
-                                   ouroboros.toValue = [UIColor blueColor];
-                                   ouroboros.offset = self.view.our_width;
-                               }];
-    [yellowView.ouroboros animateWithProperty:OURAnimationPropertyViewFrame
-                               configureBlock:^(Ouroboros *ouroboros) {
-                                   ouroboros.toValue = NSValueFromCGRectParameters(50, 250, 100, 100);
-                                   ouroboros.offset = self.view.our_width;
-                               }];
-    [yellowView.ouroboros pinWithConfigureBlock:^(Ouroboros * _Nonnull ouroboros) {
-        ouroboros.offset = INT_MAX;
+    [yellowView our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
+                         configureBlock:^(Scale *scale) {
+                             scale.fromValue = [UIColor redColor];
+                             scale.toValue = [UIColor blueColor];
+                             scale.offset = self.view.our_width;
+                         }];
+    [yellowView our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
+                         configureBlock:^(Scale *scale) {
+                             scale.trggier = self.view.our_width;
+                             scale.fromValue = [UIColor blueColor];
+                             scale.toValue = [UIColor purpleColor];
+                             scale.offset = self.view.our_width;
+                         }];
+//    [yellowView our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
+//                         configureBlock:^(Scale *scale) {
+//                             scale.fromValue = [UIColor redColor];
+//                             scale.toValue = [UIColor blueColor];
+//                             scale.offset = self.view.our_width;
+//                         }];
+    [yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
+        scale.fromValue = @(100);
     }];
+//    [yellowView our_animateWithProperty:OURAnimationPropertyViewFrame
+//                         configureBlock:^(Scale *scale) {
+//                             scale.fromValue = NSValueFromCGRectParameters(50, 50, 100, 100);
+//                             scale.toValue = NSValueFromCGRectParameters(50, 250, 100, 100);
+//                             scale.offset = self.view.our_width;
+//                         }];
 }
 
 @end

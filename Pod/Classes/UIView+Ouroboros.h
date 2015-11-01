@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @class Ouroboros;
+@class Scale;
+
+
 
 typedef enum : NSUInteger {
     OURAnimationPropertyViewFrame,
@@ -31,16 +34,17 @@ typedef enum : NSUInteger {
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^OuroborosAnimationBlock)(Ouroboros *ouroboros);
+typedef void(^ScaleAnimationBlock)(Scale *scale);
+
+//typedef void(^OuroborosAnimationBlock)(Ouroboros *ouroboros);
 
 @interface UIView (Ouroboros)
 
-//- (void)ou_animateWithProperty:(OURAnimationProperty)property
-//                configureBlock:(OuroborosAnimationBlock)configureBlock;
-//
-//- (void)ou_pinWithConfigureBlock:(OuroborosAnimationBlock)configureBlock;
+- (void)our_animateWithProperty:(OURAnimationProperty)property
+                 configureBlock:(ScaleAnimationBlock)configureBlock;
 
-@property (nonatomic, strong, readonly) Ouroboros *ouroboros;
+- (void)our_pinWithConfigureBlock:(ScaleAnimationBlock)configureBlock;
+
 @property (nonatomic, strong) NSMutableArray *ouroboroses;
 
 - (void)updateState:(NSNotification *)notification;

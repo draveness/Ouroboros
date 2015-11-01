@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Scale.h"
 #import "UIView+Measure.h"
-#import "UIView+Ouroboros.h"
 #import "UIScrollView+Ouroboros.h"
+#import "UIView+Ouroboros.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-typedef void(^OuroborosAnimationBlock)(Ouroboros *ouroboros);
 
 NSValue *NSValueFromCGRectParameters(CGFloat x, CGFloat y, CGFloat width, CGFloat height);
 NSValue *NSValueFromCGPointParameters(CGFloat x, CGFloat y);
@@ -23,19 +22,16 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height);
 
 @property (nonatomic, weak, readonly) UIView *view;
 @property (nonatomic, assign, readonly) OURAnimationProperty property;
-@property (nonatomic, strong) id fromValue;
-@property (nonatomic, strong) id toValue;
-@property (nonatomic, assign) CGFloat trggier;
-@property (nonatomic, assign) CGFloat offset;
+@property (nonatomic, strong, readonly) NSMutableArray<Scale *> *scales;
 
-- (instancetype)initWithView:(UIView *)view;
+- (instancetype)initWithView:(UIView *)view property:(OURAnimationProperty)property;
 
-- (void)animateWithProperty:(OURAnimationProperty)property
-             configureBlock:(OuroborosAnimationBlock)configureBlock;
+//- (void)animateWithProperty:(OURAnimationProperty)property
+//             configureBlock:(ScaleAnimationBlock)configureBlock;
+//
+//- (void)pinWithConfigureBlock:(nullable ScaleAnimationBlock)configureBlock;
 
-- (void)pinWithConfigureBlock:(nullable OuroborosAnimationBlock)configureBlock;
-
-- (id)calculateInternalValueWithPercent:(CGFloat)percent;
+- (id)getCurrentValueWithPosition:(CGFloat)position;
 
 @end
 

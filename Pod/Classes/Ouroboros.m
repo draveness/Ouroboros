@@ -11,6 +11,8 @@
 @interface Ouroboros ()
 
 @property (nonatomic, assign, readwrite) OURAnimationProperty property;
+@property (nonatomic, strong) NSMutableArray *fromValues;
+@property (nonatomic, strong) NSMutableArray *toValues;
 
 @end
 

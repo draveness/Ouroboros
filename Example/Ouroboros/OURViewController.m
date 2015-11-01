@@ -21,7 +21,8 @@
     [self.view addSubview:scrollView];
     scrollView.frame = self.view.bounds;
     scrollView.backgroundColor = [UIColor whiteColor];
-    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * 2, self.view.bounds.size.height);
+    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * 3, self.view.bounds.size.height);
+    scrollView.pagingEnabled = YES;
     scrollView.ou_scrollDirection = OURScrollDirectionHorizontal;
 
     UIView *yellowView = [[UIView alloc] init];

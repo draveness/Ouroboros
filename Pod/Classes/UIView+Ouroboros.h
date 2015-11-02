@@ -34,16 +34,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^ScaleAnimationBlock)(Scale *scale);
 
-//typedef void(^OuroborosAnimationBlock)(Ouroboros *ouroboros);
-
 @interface UIView (Ouroboros)
 
 - (void)our_animateWithProperty:(OURAnimationProperty)property
                  configureBlock:(ScaleAnimationBlock)configureBlock;
 
 - (void)our_pinWithConfigureBlock:(ScaleAnimationBlock)configureBlock;
-
-@property (nonatomic, strong) NSMutableArray *ouroboroses;
 
 - (void)updateState:(NSNotification *)notification;
 

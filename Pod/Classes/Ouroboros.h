@@ -26,11 +26,6 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height);
 
 - (instancetype)initWithView:(UIView *)view property:(OURAnimationProperty)property;
 
-//- (void)animateWithProperty:(OURAnimationProperty)property
-//             configureBlock:(ScaleAnimationBlock)configureBlock;
-//
-//- (void)pinWithConfigureBlock:(nullable ScaleAnimationBlock)configureBlock;
-
 - (id)getCurrentValueWithPosition:(CGFloat)position;
 
 @end

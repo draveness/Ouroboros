@@ -12,8 +12,6 @@
 
 @property (nonatomic, assign, readwrite) OURAnimationProperty property;
 @property (nonatomic, strong, readwrite) NSMutableArray<Scale *> *scales;
-//@property (nonatomic, strong) NSMutableArray *fromValues;
-//@property (nonatomic, strong) NSMutableArray *toValues;
 
 @end
 
@@ -157,21 +155,5 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
             return [[NSValue alloc] init];
     }
 }
-//
-//- (void)setFromValue:(id)fromValue {
-//    if (!self.fromValues) {
-//        self.fromValues = [[NSMutableArray alloc] init];
-//    }
-//    [self.fromValues addObject:fromValue];
-//    return fromValue;
-//}
-//
-//- (void)setToValue:(id)toValue {
-//    if (!self.toValues) {
-//        self.toValues = [[NSMutableArray alloc] init];
-//    }
-//    [self.toValues addObject:toValue];
-//    _toValue = toValue;
-//}
 
 @end

@@ -181,16 +181,9 @@
 		50FE96C7198B2C89BC5B9F0E0624A45C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				66A1A178F683244F6B542EA58E751974 /* UIView+Ouroboros.h */,
-				7BC8BCB05BD8F618EAA45B6A654BEA38 /* UIView+Ouroboros.m */,
-				07512B99452EDE1B221D50894EE45E8B /* Ouroboros.h */,
-				22332CAF9BBDF5EBFF8F3C2F7B4648F3 /* Ouroboros.m */,
-				04006CDC8D4F1D5A95D3EC60628AB669 /* Scale.h */,
-				93DC865778B22D6A68303075B011832B /* Scale.m */,
-				6C92E122D14C504D148C817F7D7AC670 /* UIScrollView+Ouroboros.h */,
-				C82502617E8FF2DC68855C59D046906A /* UIScrollView+Ouroboros.m */,
-				6AC66E353728ED663018F87208B0D9F3 /* UIView+Measure.h */,
-				61A3B7A2D456EB6FE465B88D40F54320 /* UIView+Measure.m */,
+				7261D92A1BE66C3900C1EF36 /* Core */,
+				7261D9291BE66C2B00C1EF36 /* Category */,
+				7261D9281BE66C2000C1EF36 /* Helper */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -201,6 +194,37 @@
 				F048E6B56BC9F0FF9C8A05043E5EA8B6 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		7261D9281BE66C2000C1EF36 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6AC66E353728ED663018F87208B0D9F3 /* UIView+Measure.h */,
+				61A3B7A2D456EB6FE465B88D40F54320 /* UIView+Measure.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		7261D9291BE66C2B00C1EF36 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				66A1A178F683244F6B542EA58E751974 /* UIView+Ouroboros.h */,
+				7BC8BCB05BD8F618EAA45B6A654BEA38 /* UIView+Ouroboros.m */,
+				6C92E122D14C504D148C817F7D7AC670 /* UIScrollView+Ouroboros.h */,
+				C82502617E8FF2DC68855C59D046906A /* UIScrollView+Ouroboros.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		7261D92A1BE66C3900C1EF36 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				07512B99452EDE1B221D50894EE45E8B /* Ouroboros.h */,
+				22332CAF9BBDF5EBFF8F3C2F7B4648F3 /* Ouroboros.m */,
+				04006CDC8D4F1D5A95D3EC60628AB669 /* Scale.h */,
+				93DC865778B22D6A68303075B011832B /* Scale.m */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 		7BC2B748108825239CC335C2EFC66CEE /* Pods-Ouroboros_Example */ = {

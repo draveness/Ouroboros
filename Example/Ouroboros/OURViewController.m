@@ -41,8 +41,8 @@
                              scale.toValue = [UIColor purpleColor];
                              scale.offset = self.view.our_width * 0.5;
                          }];
-    [yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
-    }];
+//    [yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
+//    }];
 //    [yellowView our_animateWithProperty:OURAnimationPropertyViewFrame
 //                         configureBlock:^(Scale *scale) {
 //                             scale.fromValue = NSValueFromCGRectParameters(50, 50, 100, 100);

@@ -12,6 +12,7 @@
 
 @property (nonatomic, assign, readwrite) OURAnimationProperty property;
 @property (nonatomic, strong, readwrite) NSMutableArray<Scale *> *scales;
+@property (nonatomic, strong) id startValue;
 
 @end
 
@@ -34,6 +35,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
         _view = view;
         _property = property;
         _scales =  [[NSMutableArray alloc] init];
+        _startValue = [self startValue];
     }
     return self;
 }
@@ -45,9 +47,9 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
         if ([scale isCurrentPositionOnScale:position]) {
             CGFloat percent = (position - scale.trggier) / scale.offset;
             return [scale calculateInternalValueWithPercent:percent];
-        } else if (scale.trggier > position) {
+        } else if (scale.trggier > position && (!afterScale || afterScale.trggier > scale.trggier)) {
             afterScale = scale;
-        } else if (scale.stop < position) {
+        } else if (scale.stop < position && (!previousScale || previousScale.stop < scale.stop)) {
             previousScale = scale;
         }
     }
@@ -78,9 +80,9 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     Scale *afterScale = nil;
     for (Scale *scale in self.scales) {
         if ([scale isSeparateWithScale:currentScale]) {
-            if (scale.trggier > currentScale.stop) {
+            if (scale.trggier >= currentScale.stop && (!afterScale || afterScale.trggier >= scale.stop)) {
                 afterScale = scale;
-            } else if (scale.stop < currentScale.trggier) {
+            } else if (scale.stop <= currentScale.trggier && (!previousScale || previousScale.stop <= scale.trggier)) {
                 previousScale = scale;
             }
         } else {
@@ -91,7 +93,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     if (previousScale) {
         currentScale.fromValue = previousScale.toValue;
     } else {
-        currentScale.fromValue = [self getViewStartValue];
+        currentScale.fromValue = self.startValue;
     }
     if (afterScale) {
         afterScale.fromValue = currentScale.toValue;
@@ -103,57 +105,77 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     [self.scales removeObjectAtIndex:index];
 }
 
-- (id)getViewStartValue {
-    switch (self.property) {
-        case OURAnimationPropertyViewBackgroundColor: {
-            return self.view.backgroundColor;
+- (id)startValue {
+    if (!_startValue) {
+        switch (self.property) {
+            case OURAnimationPropertyViewBackgroundColor: {
+                _startValue = self.view.backgroundColor;
+            }
+                break;
+            case OURAnimationPropertyViewBounds: {
+                _startValue = [NSValue valueWithCGRect:self.view.bounds];
+            }
+                break;
+            case OURAnimationPropertyViewFrame: {
+                _startValue = [NSValue valueWithCGRect:self.view.frame];
+            }
+                break;
+            case OURAnimationPropertyViewSize: {
+                _startValue = [NSValue valueWithCGSize:self.view.frame.size];
+            }
+                break;
+            case OURAnimationPropertyViewCenter: {
+                _startValue = [NSValue valueWithCGPoint:self.view.center];
+            }
+                break;
+            case OURAnimationPropertyViewCenterX: {
+                _startValue = @(self.view.center.x);
+            }
+                break;
+            case OURAnimationPropertyViewCenterY: {
+                _startValue = @(self.view.center.y);
+            }
+                break;
+            case OURAnimationPropertyViewTintColor: {
+                _startValue = self.view.tintColor;
+            }
+                break;
+            case OURAnimationPropertyViewOrigin: {
+                _startValue = [NSValue valueWithCGPoint:self.view.frame.origin];
+            }
+                break;
+            case OURAnimationPropertyViewOriginX: {
+                _startValue = @(self.view.frame.origin.x);
+            }
+                break;
+            case OURAnimationPropertyViewOriginY: {
+                _startValue = @(self.view.frame.origin.y);
+            }
+                break;
+            case OURAnimationPropertyViewWidth: {
+                _startValue = @(self.view.frame.size.width);
+            }
+                break;
+            case OURAnimationPropertyViewHeight: {
+                _startValue = @(self.view.frame.size.height);
+            }
+                break;
+            case OURAnimationPropertyViewAlpha: {
+                _startValue = @(self.view.alpha);
+            }
+                break;
+            case OURAnimationPropertyViewTransform: {
+                _startValue = [NSValue valueWithCGAffineTransform:self.view.transform];
+            }
+                break;
+            default: {
+                NSAssert(NO, @"Invalid OURAnimationProperty type.");
+                _startValue = [[NSObject alloc] init];
+            }
+                break;
         }
-        case OURAnimationPropertyViewBounds: {
-            return [NSValue valueWithCGRect:self.view.bounds];
-        }
-        case OURAnimationPropertyViewFrame: {
-            return [NSValue valueWithCGRect:self.view.frame];
-        }
-        case OURAnimationPropertyViewSize: {
-            return [NSValue valueWithCGSize:self.view.frame.size];
-        }
-        case OURAnimationPropertyViewCenter: {
-            return [NSValue valueWithCGPoint:self.view.center];
-        }
-        case OURAnimationPropertyViewCenterX: {
-            return @(self.view.center.x);
-        }
-        case OURAnimationPropertyViewCenterY: {
-            return @(self.view.center.y);
-        }
-        case OURAnimationPropertyViewTintColor: {
-            return self.view.tintColor;
-        }
-        case OURAnimationPropertyViewOrigin: {
-            return [NSValue valueWithCGPoint:self.view.frame.origin];
-        }
-        case OURAnimationPropertyViewOriginX: {
-            return @(self.view.frame.origin.x);
-        }
-        case OURAnimationPropertyViewOriginY: {
-            return @(self.view.frame.origin.y);
-        }
-        case OURAnimationPropertyViewWidth: {
-            return @(self.view.frame.size.width);
-        }
-        case OURAnimationPropertyViewHeight: {
-            return @(self.view.frame.size.height);
-        }
-        case OURAnimationPropertyViewAlpha: {
-            return @(self.view.alpha);
-        }
-        case OURAnimationPropertyViewTransform: {
-            return [NSValue valueWithCGAffineTransform:self.view.transform];
-        }
-        default:
-            NSAssert(NO, @"Invalid OURAnimationProperty type.");
-            return [[NSValue alloc] init];
     }
+    return _startValue;
 }
 
 @end

@@ -67,7 +67,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
         }
         superview = superview.superview;
     }
-    NSAssert(NO, @"Cannot find a UIScrollView on current view inheritance hierarchy");
+    NSAssert(NO, @"Can not find a UIScrollView on current view inheritance hierarchy");
     return nil;
 }
 

@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSUInteger, OURScrollDirection) {
     OURScrollDirectionVertical,
     OURScrollDirectionHorizontal,
-} OURScrollDirection;
+};
 
 NS_ASSUME_NONNULL_BEGIN
 

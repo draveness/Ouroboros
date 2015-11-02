@@ -11,9 +11,7 @@
 @class Ouroboros;
 @class Scale;
 
-
-
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSUInteger, OURAnimationProperty) {
     OURAnimationPropertyViewFrame,
     OURAnimationPropertyViewBounds,
     OURAnimationPropertyViewSize,
@@ -30,7 +28,7 @@ typedef enum : NSUInteger {
     OURAnimationPropertyViewTintColor,
     OURAnimationPropertyViewAlpha,
     OURAnimationPropertyViewTransform,
-} OURAnimationProperty;
+};
 
 NS_ASSUME_NONNULL_BEGIN
 

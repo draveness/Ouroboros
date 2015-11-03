@@ -43,8 +43,6 @@
                              scale.offset = self.view.our_width * 0.5;
                          }];
     [yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
-        scale.offset = self.view.our_width;
-        scale.function = OURAnimationFunctionLinear;
     }];
 //    [yellowView our_animateWithProperty:OURAnimationPropertyViewFrame
 //                         configureBlock:^(Scale *scale) {

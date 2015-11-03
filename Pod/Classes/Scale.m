@@ -34,7 +34,6 @@ typedef double(^NSBKeyframeAnimationFunctionBlock)(double t, double b, double c,
     
     CGFloat value = self.functionBlock(self.offset * percent * 1000, 0, 1, self.offset * 1000);
 
-
     id result = [[NSValue alloc] init];
     if ([self.fromValue isKindOfClass:[NSNumber class]]) {
         CGFloat fromValue = [self.fromValue floatValue];

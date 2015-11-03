@@ -44,7 +44,7 @@
                          }];
     [yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
         scale.offset = self.view.our_width;
-        scale.function = OURAnimationFunctionEaseIn;
+        scale.function = OURAnimationFunctionLinear;
     }];
 //    [yellowView our_animateWithProperty:OURAnimationPropertyViewFrame
 //                         configureBlock:^(Scale *scale) {

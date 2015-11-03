@@ -82,6 +82,9 @@
 
         id value = [ouroboros getCurrentValueWithPosition:currentPosition];
         OURAnimationProperty property = ouroboros.property;
+
+        CGPoint originCenter = self.center;
+
         switch (property) {
             case OURAnimationPropertyViewBackgroundColor: {
                 self.backgroundColor = value;
@@ -94,6 +97,7 @@
                 break;
             case OURAnimationPropertyViewSize: {
                 self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [value CGSizeValue].width, [value CGSizeValue].height);
+                self.center = originCenter;
             }
                 break;
             case OURAnimationPropertyViewPosition:
@@ -127,10 +131,12 @@
                 break;
             case OURAnimationPropertyViewWidth: {
                 self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [value floatValue], self.frame.size.height);
+                self.center = originCenter;
             }
                 break;
             case OURAnimationPropertyViewHeight: {
                 self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, [value floatValue]);
+                self.center = originCenter;
             }
                 break;
             case OURAnimationPropertyViewAlpha: {

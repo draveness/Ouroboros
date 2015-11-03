@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Ouroboros"
-  s.version          = "0.3.0"
+  s.version          = "0.4.0"
   s.summary          = "The ObjectiveC library for magical scroll interactions."
 
   s.description      = <<-DESC

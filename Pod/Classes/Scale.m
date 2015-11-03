@@ -23,7 +23,7 @@ typedef double(^NSBKeyframeAnimationFunctionBlock)(double t, double b, double c,
     if (self = [super init]) {
         _function = OURAnimationFunctionLinear;
         _functionBlock =  ^double(double t, double b, double c, double d) {
-            return NSBKeyframeAnimationFunctionEaseInCubic(t, b, c, d);
+            return NSBKeyframeAnimationFunctionLinear(t, b, c, d);
         };
     }
     return self;

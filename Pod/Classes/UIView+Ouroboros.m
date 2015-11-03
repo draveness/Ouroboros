@@ -30,20 +30,14 @@
 }
 
 - (void)our_pinWithConfigureBlock:(ScaleAnimationBlock)configureBlock {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateState:) name:@"ScrollView" object:nil];
-
     OURAnimationProperty property = [[self closestScrollView] ou_scrollDirection] ? OURAnimationPropertyViewCenterX : OURAnimationPropertyViewCenterY;
-    Ouroboros *ouroboros = [self ouroborosWithProperty:property];
-    Scale *scale = [[Scale alloc] init];
-    scale.trggier = 0;
-    scale.offset = INT_MAX;
-    scale.fromValue = (property == OURAnimationPropertyViewCenterX) ? @(self.center.x) : @(self.center.y);
-    if (configureBlock) {
-        configureBlock(scale);
-    }
-    scale.toValue = @([scale.fromValue floatValue] + scale.offset);
-    NSMutableArray<Scale *> *scales = [ouroboros mutableArrayValueForKey:@"scales"];
-    [scales addObject:scale];
+    [self our_animateWithProperty:property configureBlock:^(Scale * _Nonnull scale) {
+        scale.trggier = 0;
+        scale.offset = INT_MAX;
+        scale.fromValue = (property == OURAnimationPropertyViewCenterX) ? @(self.center.x) : @(self.center.y);
+        if (configureBlock) configureBlock(scale);
+        scale.toValue = @([scale.fromValue floatValue] + scale.offset);
+    }];
 }
 
 - (Ouroboros *)ouroborosWithProperty:(OURAnimationProperty)property {

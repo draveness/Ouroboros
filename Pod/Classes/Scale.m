@@ -8,7 +8,22 @@
 
 #import "Scale.h"
 
+typedef double(^ScaleFunctionBlock)(double, double, double, double);
+
+@interface Scale ()
+
+@property (nonatomic, copy) ScaleFunctionBlock functionBlock;
+
+@end
+
 @implementation Scale
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _function = OURAnimationFunctionLinear;
+    }
+    return self;
+}
 
 - (id)calculateInternalValueWithPercent:(CGFloat)percent {
     percent= [self justifyPercent:percent];

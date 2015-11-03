@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "UIView+Ouroboros.h"
 
+typedef NS_ENUM(NSUInteger, OURAnimationFunction) {
+    OURAnimationFunctionLinear,
+    OURAnimationFunctionEaseIn,
+    OURAnimationFunctionEaseOut,
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Scale : NSObject
@@ -18,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat trggier;
 @property (nonatomic, assign) CGFloat offset;
 @property (nonatomic, assign, readonly) CGFloat stop;
+@property (nonatomic, assign) OURAnimationFunction function;
 
 - (id)calculateInternalValueWithPercent:(CGFloat)percent;
 

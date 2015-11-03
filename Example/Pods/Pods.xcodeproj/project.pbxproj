@@ -7,100 +7,100 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0206D506A18D1CAA3A4DF9311F3DCDF1 /* Ouroboros.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 821D87831798940CE0CFD98D6BCD43D1 /* Ouroboros.bundle */; };
+		0AB8CA8508DC271C16097D4FCBAA1E94 /* UIScrollView+Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB872B8DA76A05EB2C378E4E19AC742 /* UIScrollView+Ouroboros.m */; };
+		181B273EDF0B66EAEE7EEFBB04FBA455 /* Ouroboros-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E597A72F62E20EB8984D66726EDAEA1A /* Ouroboros-dummy.m */; };
 		1A30773968DE239D1D83419D7299CDFC /* Pods-Ouroboros_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C45197EFC091B759F40551A7DDD850C5 /* Pods-Ouroboros_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E8EAA47856003C4FCDC0262ABCEF97D /* UIView+Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = 834250B0EDEBC513B984BEC17516B274 /* UIView+Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F3BBC1A47FE6F2BF574DB777EB9A05C /* Pods-Ouroboros_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 57F27257496941BF92D2421DE3D0655F /* Pods-Ouroboros_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		334D289995AF7AC2EF129F5F55389347 /* Ouroboros-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 83377F9052C13F17B6C19075CAF404EC /* Ouroboros-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AA800B31CB1DCE7902E81009ECFC87D /* UIScrollView+Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = C82502617E8FF2DC68855C59D046906A /* UIScrollView+Ouroboros.m */; };
-		4CCBD5D26BE1C8ADD25C02FB5109A5C0 /* Scale.h in Headers */ = {isa = PBXBuildFile; fileRef = 04006CDC8D4F1D5A95D3EC60628AB669 /* Scale.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5DDE72387131212987206AA9E33D2BE0 /* Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = 07512B99452EDE1B221D50894EE45E8B /* Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E6EE16B60FA3720A3760F0C3000CF48 /* UIScrollView+Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C92E122D14C504D148C817F7D7AC670 /* UIScrollView+Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72C1F6B41BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 72C1F6B21BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.c */; };
-		72C1F6B51BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 72C1F6B31BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.h */; };
-		77D110BC3970EA7DAFE618476D5A7779 /* Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DC865778B22D6A68303075B011832B /* Scale.m */; };
-		89CA864A52DCFFAB23C1DB510321F289 /* UIView+Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A1A178F683244F6B542EA58E751974 /* UIView+Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		232CDD519C4FB1570F7FEB697548E860 /* UIView+Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8917EF93FE7CBE300B024C8389356 /* UIView+Ouroboros.m */; };
+		358F34F0289C1E6A344E7C9904AF4F62 /* UIView+Measure.h in Headers */ = {isa = PBXBuildFile; fileRef = BBE6E1EE54278184D4F7966A51F02709 /* UIView+Measure.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49C801B160F8A0511039FEB753315B34 /* Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = 2694C3D9F25967DF5B57051454B4B0F1 /* Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4CBC4AD1984203A7EDDFA3A92E7A6666 /* UIScrollView+Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = EAFE3E3528DD2F2F534AB7B9487C4869 /* UIScrollView+Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53DA093649BBB0FD45C18A26869E923E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CDB25ED39C54D430843374A51C6B2D8 /* Foundation.framework */; };
 		8F83A66BDA07EE1B8035270540887D43 /* Pods-Ouroboros_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DD9CA95D428D48B5A4F88775D5B1CA /* Pods-Ouroboros_Example-dummy.m */; };
-		9D23DD4A70DA6620336D164E49DF124D /* Ouroboros-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3969902BB0DA090727791B82F11751CE /* Ouroboros-dummy.m */; };
+		8FC0321A53A85B6592FD0B04C499E73B /* NSBKeyframeAnimationFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = DF9134432424A4AEAD4BBC6E77C6F24E /* NSBKeyframeAnimationFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2D55E8A6E061AA126635F4338D6024B /* Ouroboros.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C2507701B517F5365E66AF8A2D297D7A /* Ouroboros.bundle */; };
 		A47DD2CE27986EE7F50495E1DAE1415B /* Pods-Ouroboros_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D31C2150650F21BFD63E31773F99966 /* Pods-Ouroboros_Tests-dummy.m */; };
-		B0C5AA4B8AA5907D76F3D373B5CD5301 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F048E6B56BC9F0FF9C8A05043E5EA8B6 /* Foundation.framework */; };
-		CB08F734BBD8D3B3ADB0AB53EA1CCE0A /* UIView+Measure.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A3B7A2D456EB6FE465B88D40F54320 /* UIView+Measure.m */; };
-		CE0FD1A83C3BCB200C5903F84FFF5AF5 /* UIView+Measure.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AC66E353728ED663018F87208B0D9F3 /* UIView+Measure.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D4408D398CE70D9E06637C8ED2618C95 /* Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = 22332CAF9BBDF5EBFF8F3C2F7B4648F3 /* Ouroboros.m */; };
-		E34DB58BDC8D2D71DBEADAD0038ED246 /* UIView+Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC8BCB05BD8F618EAA45B6A654BEA38 /* UIView+Ouroboros.m */; };
-		E6EAF8C409916D174D6C13AE1B7D0D35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F048E6B56BC9F0FF9C8A05043E5EA8B6 /* Foundation.framework */; };
-		EC21869EF6E0C4D14A3D612653EF3DB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F048E6B56BC9F0FF9C8A05043E5EA8B6 /* Foundation.framework */; };
+		B0C5AA4B8AA5907D76F3D373B5CD5301 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CDB25ED39C54D430843374A51C6B2D8 /* Foundation.framework */; };
+		C334806C868AC625002D43F0C57E389E /* Ouroboros-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF44B8712C5EBF36A71C43ACA74E0AE5 /* Ouroboros-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3418DB27342E7A6C3A34C2126AB91FA /* Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9F455D0AB9972F303EED3DF4B6534B /* Scale.m */; };
+		CEDBF815A4F4FA04C943E3EED3B89CE0 /* Scale.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D3FAAD5BB1360969409E3F358CCF2F3 /* Scale.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E24D6CBCED68C9BA469C3510D63D34D1 /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 59820E281043AC95D677AE6ED61A003E /* NSBKeyframeAnimationFunctions.c */; };
+		E6EAF8C409916D174D6C13AE1B7D0D35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CDB25ED39C54D430843374A51C6B2D8 /* Foundation.framework */; };
+		EE2E38794A3289298563B34C626ABA60 /* UIView+Measure.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C50D0A89571427381752A394E23F513 /* UIView+Measure.m */; };
+		F4C1EBEE168060A328141DF9A96F9B2D /* Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = 7894186A7E9AF48074B6559F6CE1C832 /* Ouroboros.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5357F10781EDDDC0558C91EB4EE47ED6 /* PBXContainerItemProxy */ = {
+		224FED1874F2CAE91DA0A444B813FF96 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E9CCD2506ACF70ED88B6357A146FDB9B;
+			remoteGlobalIDString = C04F142666B6A2818425416BEF90856D;
 			remoteInfo = Ouroboros;
 		};
-		7BD4BCC8EA945A02C51EE146E7DF4461 /* PBXContainerItemProxy */ = {
+		4A2D74F0610B9628BE1D9F8E9D7FF5B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E9CCD2506ACF70ED88B6357A146FDB9B;
-			remoteInfo = Ouroboros;
-		};
-		E4211B959F70403419CCB09AB6321DC4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 038068891B8861688A007B0A7EA2DFC5;
+			remoteGlobalIDString = EA3E48A0DC2E25E93A34F8950DAC6D83;
 			remoteInfo = "Ouroboros-Ouroboros";
+		};
+		914DEF3816ED90E1DCFB69BA6988B261 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C04F142666B6A2818425416BEF90856D;
+			remoteInfo = Ouroboros;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04006CDC8D4F1D5A95D3EC60628AB669 /* Scale.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Scale.h; sourceTree = "<group>"; };
-		07512B99452EDE1B221D50894EE45E8B /* Ouroboros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Ouroboros.h; sourceTree = "<group>"; };
 		0F794BAF93D61EAB50222AF7A5188DB2 /* Pods-Ouroboros_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ouroboros_Example-frameworks.sh"; sourceTree = "<group>"; };
 		13429EF76B642CA4E03B8BB51E14E991 /* Pods-Ouroboros_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ouroboros_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		1709489801D2F2FC5731E51228EAEB7D /* Ouroboros.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ouroboros.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19A942FE23294EE3861ED6876B0DD8B7 /* Ouroboros.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ouroboros.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FCC3F9A970919F7007F7D769CE6C8E3 /* Pods-Ouroboros_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ouroboros_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		22332CAF9BBDF5EBFF8F3C2F7B4648F3 /* Ouroboros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Ouroboros.m; sourceTree = "<group>"; };
 		2313F54746EEC0981510D1544398AEDB /* Pods-Ouroboros_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ouroboros_Example.release.xcconfig"; sourceTree = "<group>"; };
+		231A4C39B0D26ABA9CD3793F2D354942 /* Ouroboros-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Ouroboros-Private.xcconfig"; sourceTree = "<group>"; };
+		2694C3D9F25967DF5B57051454B4B0F1 /* Ouroboros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Ouroboros.h; sourceTree = "<group>"; };
 		2C7C6ECC27681EF68616784047267606 /* Pods-Ouroboros_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ouroboros_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		321BAFD2E85C7F3E29210564EC17645D /* Pods-Ouroboros_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ouroboros_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		35E7943CEA3481C992FD04C7804CD153 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3969902BB0DA090727791B82F11751CE /* Ouroboros-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Ouroboros-dummy.m"; sourceTree = "<group>"; };
 		3E1D170E356352001D27074565387E69 /* Pods_Ouroboros_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ouroboros_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		495D27035C62FB8080D49824EBA1C167 /* Pods-Ouroboros_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Ouroboros_Tests.modulemap"; sourceTree = "<group>"; };
+		4A9F455D0AB9972F303EED3DF4B6534B /* Scale.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Scale.m; sourceTree = "<group>"; };
 		57F27257496941BF92D2421DE3D0655F /* Pods-Ouroboros_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Ouroboros_Example-umbrella.h"; sourceTree = "<group>"; };
+		59820E281043AC95D677AE6ED61A003E /* NSBKeyframeAnimationFunctions.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = NSBKeyframeAnimationFunctions.c; sourceTree = "<group>"; };
 		5FC6E70276631DAE152184A471D1242C /* Pods-Ouroboros_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Ouroboros_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		61A3B7A2D456EB6FE465B88D40F54320 /* UIView+Measure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Measure.m"; sourceTree = "<group>"; };
 		6383B2448AB4B05E17582CE87462A0C3 /* Pods-Ouroboros_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Ouroboros_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		66A1A178F683244F6B542EA58E751974 /* UIView+Ouroboros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Ouroboros.h"; sourceTree = "<group>"; };
 		6A2021855984CB6DABF1A5186FCAE59A /* Ouroboros.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Ouroboros.xcconfig; sourceTree = "<group>"; };
-		6AC66E353728ED663018F87208B0D9F3 /* UIView+Measure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Measure.h"; sourceTree = "<group>"; };
-		6C92E122D14C504D148C817F7D7AC670 /* UIScrollView+Ouroboros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Ouroboros.h"; sourceTree = "<group>"; };
 		6F0E223D17BA4F3D8BDFD77AB282A9FA /* Ouroboros.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Ouroboros.modulemap; sourceTree = "<group>"; };
 		6FECCD6A45060ABC13E1C92AE9E2599B /* Pods_Ouroboros_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ouroboros_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72C1F6B21BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NSBKeyframeAnimationFunctions.c; sourceTree = "<group>"; };
-		72C1F6B31BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
 		73EB5DAF7D2E2F56461543CE16DFB66B /* Pods-Ouroboros_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Ouroboros_Example.modulemap"; sourceTree = "<group>"; };
-		7BC8BCB05BD8F618EAA45B6A654BEA38 /* UIView+Ouroboros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Ouroboros.m"; sourceTree = "<group>"; };
+		7894186A7E9AF48074B6559F6CE1C832 /* Ouroboros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Ouroboros.m; sourceTree = "<group>"; };
+		7CB872B8DA76A05EB2C378E4E19AC742 /* UIScrollView+Ouroboros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Ouroboros.m"; sourceTree = "<group>"; };
 		818AEE35D49949BE6AE4222F1D12BD71 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		821D87831798940CE0CFD98D6BCD43D1 /* Ouroboros.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ouroboros.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		83377F9052C13F17B6C19075CAF404EC /* Ouroboros-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ouroboros-umbrella.h"; sourceTree = "<group>"; };
+		834250B0EDEBC513B984BEC17516B274 /* UIView+Ouroboros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Ouroboros.h"; sourceTree = "<group>"; };
+		84B8917EF93FE7CBE300B024C8389356 /* UIView+Ouroboros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Ouroboros.m"; sourceTree = "<group>"; };
+		8C50D0A89571427381752A394E23F513 /* UIView+Measure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Measure.m"; sourceTree = "<group>"; };
 		8D31C2150650F21BFD63E31773F99966 /* Pods-Ouroboros_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Ouroboros_Tests-dummy.m"; sourceTree = "<group>"; };
-		93DC865778B22D6A68303075B011832B /* Scale.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Scale.m; sourceTree = "<group>"; };
+		8D3FAAD5BB1360969409E3F358CCF2F3 /* Scale.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Scale.h; sourceTree = "<group>"; };
 		94DD9CA95D428D48B5A4F88775D5B1CA /* Pods-Ouroboros_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Ouroboros_Example-dummy.m"; sourceTree = "<group>"; };
+		9CDB25ED39C54D430843374A51C6B2D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9E65682219EA32C78068DAE72A72A14E /* Pods-Ouroboros_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ouroboros_Example-resources.sh"; sourceTree = "<group>"; };
-		A5BF5E4991A9E80F836E11E2B372AAB7 /* Ouroboros-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Ouroboros-Private.xcconfig"; sourceTree = "<group>"; };
 		B7C72129CE9BB7D841F51D0B58DAB8A4 /* Pods-Ouroboros_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Ouroboros_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B8F2C6FBBC2F98B8749F92D9845A4BF5 /* Ouroboros-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ouroboros-prefix.pch"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BBE6E1EE54278184D4F7966A51F02709 /* UIView+Measure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Measure.h"; sourceTree = "<group>"; };
 		C155AB272E653E4A9E6BA831EE4DDA45 /* Pods-Ouroboros_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Ouroboros_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C2507701B517F5365E66AF8A2D297D7A /* Ouroboros.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ouroboros.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45197EFC091B759F40551A7DDD850C5 /* Pods-Ouroboros_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Ouroboros_Tests-umbrella.h"; sourceTree = "<group>"; };
-		C82502617E8FF2DC68855C59D046906A /* UIScrollView+Ouroboros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Ouroboros.m"; sourceTree = "<group>"; };
+		DF44B8712C5EBF36A71C43ACA74E0AE5 /* Ouroboros-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ouroboros-umbrella.h"; sourceTree = "<group>"; };
+		DF9134432424A4AEAD4BBC6E77C6F24E /* NSBKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NSBKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
 		E44E37B15EAA629EB6305434C301E615 /* Pods-Ouroboros_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Ouroboros_Tests-resources.sh"; sourceTree = "<group>"; };
+		E597A72F62E20EB8984D66726EDAEA1A /* Ouroboros-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Ouroboros-dummy.m"; sourceTree = "<group>"; };
 		EABE0357DE31D79591494CEF1BF899D5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F048E6B56BC9F0FF9C8A05043E5EA8B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EAFE3E3528DD2F2F534AB7B9487C4869 /* UIScrollView+Ouroboros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Ouroboros.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,18 +120,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB40E4689ED6BEBD5BF09C3030549638 /* Frameworks */ = {
+		B2A9EE6EFF589CDE4A5E8410E865AC66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53DA093649BBB0FD45C18A26869E923E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB7D8C7917153641BC9DA3F6B2225BD1 /* Frameworks */ = {
+		D47CD7F7C789D662DE82226B0A8FFC20 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC21869EF6E0C4D14A3D612653EF3DB4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,19 +149,11 @@
 		09E95C355C68496B7A3EBDCD5632326B /* Ouroboros */ = {
 			isa = PBXGroup;
 			children = (
-				17FE6357A538733BFCFED612956F0560 /* Pod */,
+				39CCDB7648159779FAD8218894634072 /* Pod */,
 				D90A75009F9D86CF261EA0B7F8E9A9BB /* Support Files */,
 			);
 			name = Ouroboros;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		17FE6357A538733BFCFED612956F0560 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				50FE96C7198B2C89BC5B9F0E0624A45C /* Classes */,
-			);
-			path = Pod;
 			sourceTree = "<group>";
 		};
 		20C83B43311ADB65E2F41086C8A8D9BB /* Pods-Ouroboros_Tests */ = {
@@ -182,63 +174,39 @@
 			path = "Target Support Files/Pods-Ouroboros_Tests";
 			sourceTree = "<group>";
 		};
-		50FE96C7198B2C89BC5B9F0E0624A45C /* Classes */ = {
+		39CCDB7648159779FAD8218894634072 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				7261D92A1BE66C3900C1EF36 /* Core */,
-				7261D9291BE66C2B00C1EF36 /* Category */,
-				72C1F6B61BE9076800575EB7 /* NSBKeyframeAnimationFunctions */,
-				7261D9281BE66C2000C1EF36 /* Helper */,
+				5E3172180FA48799F90777BDBC1F03F5 /* Classes */,
 			);
-			path = Classes;
+			path = Pod;
 			sourceTree = "<group>";
 		};
 		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F048E6B56BC9F0FF9C8A05043E5EA8B6 /* Foundation.framework */,
+				9CDB25ED39C54D430843374A51C6B2D8 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7261D9281BE66C2000C1EF36 /* Helper */ = {
+		5E3172180FA48799F90777BDBC1F03F5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6AC66E353728ED663018F87208B0D9F3 /* UIView+Measure.h */,
-				61A3B7A2D456EB6FE465B88D40F54320 /* UIView+Measure.m */,
+				59820E281043AC95D677AE6ED61A003E /* NSBKeyframeAnimationFunctions.c */,
+				DF9134432424A4AEAD4BBC6E77C6F24E /* NSBKeyframeAnimationFunctions.h */,
+				2694C3D9F25967DF5B57051454B4B0F1 /* Ouroboros.h */,
+				7894186A7E9AF48074B6559F6CE1C832 /* Ouroboros.m */,
+				8D3FAAD5BB1360969409E3F358CCF2F3 /* Scale.h */,
+				4A9F455D0AB9972F303EED3DF4B6534B /* Scale.m */,
+				EAFE3E3528DD2F2F534AB7B9487C4869 /* UIScrollView+Ouroboros.h */,
+				7CB872B8DA76A05EB2C378E4E19AC742 /* UIScrollView+Ouroboros.m */,
+				BBE6E1EE54278184D4F7966A51F02709 /* UIView+Measure.h */,
+				8C50D0A89571427381752A394E23F513 /* UIView+Measure.m */,
+				834250B0EDEBC513B984BEC17516B274 /* UIView+Ouroboros.h */,
+				84B8917EF93FE7CBE300B024C8389356 /* UIView+Ouroboros.m */,
 			);
-			name = Helper;
-			sourceTree = "<group>";
-		};
-		7261D9291BE66C2B00C1EF36 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				6C92E122D14C504D148C817F7D7AC670 /* UIScrollView+Ouroboros.h */,
-				C82502617E8FF2DC68855C59D046906A /* UIScrollView+Ouroboros.m */,
-			);
-			name = Category;
-			sourceTree = "<group>";
-		};
-		7261D92A1BE66C3900C1EF36 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				66A1A178F683244F6B542EA58E751974 /* UIView+Ouroboros.h */,
-				7BC8BCB05BD8F618EAA45B6A654BEA38 /* UIView+Ouroboros.m */,
-				07512B99452EDE1B221D50894EE45E8B /* Ouroboros.h */,
-				22332CAF9BBDF5EBFF8F3C2F7B4648F3 /* Ouroboros.m */,
-				04006CDC8D4F1D5A95D3EC60628AB669 /* Scale.h */,
-				93DC865778B22D6A68303075B011832B /* Scale.m */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		72C1F6B61BE9076800575EB7 /* NSBKeyframeAnimationFunctions */ = {
-			isa = PBXGroup;
-			children = (
-				72C1F6B31BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.h */,
-				72C1F6B21BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.c */,
-			);
-			name = NSBKeyframeAnimationFunctions;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		7BC2B748108825239CC335C2EFC66CEE /* Pods-Ouroboros_Example */ = {
@@ -281,8 +249,8 @@
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				821D87831798940CE0CFD98D6BCD43D1 /* Ouroboros.bundle */,
-				1709489801D2F2FC5731E51228EAEB7D /* Ouroboros.framework */,
+				C2507701B517F5365E66AF8A2D297D7A /* Ouroboros.bundle */,
+				19A942FE23294EE3861ED6876B0DD8B7 /* Ouroboros.framework */,
 				6FECCD6A45060ABC13E1C92AE9E2599B /* Pods_Ouroboros_Example.framework */,
 				3E1D170E356352001D27074565387E69 /* Pods_Ouroboros_Tests.framework */,
 			);
@@ -295,10 +263,10 @@
 				818AEE35D49949BE6AE4222F1D12BD71 /* Info.plist */,
 				6F0E223D17BA4F3D8BDFD77AB282A9FA /* Ouroboros.modulemap */,
 				6A2021855984CB6DABF1A5186FCAE59A /* Ouroboros.xcconfig */,
-				A5BF5E4991A9E80F836E11E2B372AAB7 /* Ouroboros-Private.xcconfig */,
-				3969902BB0DA090727791B82F11751CE /* Ouroboros-dummy.m */,
+				231A4C39B0D26ABA9CD3793F2D354942 /* Ouroboros-Private.xcconfig */,
+				E597A72F62E20EB8984D66726EDAEA1A /* Ouroboros-dummy.m */,
 				B8F2C6FBBC2F98B8749F92D9845A4BF5 /* Ouroboros-prefix.pch */,
-				83377F9052C13F17B6C19075CAF404EC /* Ouroboros-umbrella.h */,
+				DF44B8712C5EBF36A71C43ACA74E0AE5 /* Ouroboros-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/Ouroboros";
@@ -316,6 +284,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		3D029F76A6358806138A1FA6A0606389 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FC0321A53A85B6592FD0B04C499E73B /* NSBKeyframeAnimationFunctions.h in Headers */,
+				C334806C868AC625002D43F0C57E389E /* Ouroboros-umbrella.h in Headers */,
+				49C801B160F8A0511039FEB753315B34 /* Ouroboros.h in Headers */,
+				CEDBF815A4F4FA04C943E3EED3B89CE0 /* Scale.h in Headers */,
+				4CBC4AD1984203A7EDDFA3A92E7A6666 /* UIScrollView+Ouroboros.h in Headers */,
+				358F34F0289C1E6A344E7C9904AF4F62 /* UIView+Measure.h in Headers */,
+				1E8EAA47856003C4FCDC0262ABCEF97D /* UIView+Ouroboros.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5612EE527C0BA7386D66396E5FFAA90B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,40 +314,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E2CB81E3AA727B94C823B3FCC9A0E0DC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				334D289995AF7AC2EF129F5F55389347 /* Ouroboros-umbrella.h in Headers */,
-				5DDE72387131212987206AA9E33D2BE0 /* Ouroboros.h in Headers */,
-				72C1F6B51BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.h in Headers */,
-				4CCBD5D26BE1C8ADD25C02FB5109A5C0 /* Scale.h in Headers */,
-				6E6EE16B60FA3720A3760F0C3000CF48 /* UIScrollView+Ouroboros.h in Headers */,
-				CE0FD1A83C3BCB200C5903F84FFF5AF5 /* UIView+Measure.h in Headers */,
-				89CA864A52DCFFAB23C1DB510321F289 /* UIView+Ouroboros.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		038068891B8861688A007B0A7EA2DFC5 /* Ouroboros-Ouroboros */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9BBB1546B96A9CDC3458DDF5172CD5B3 /* Build configuration list for PBXNativeTarget "Ouroboros-Ouroboros" */;
-			buildPhases = (
-				5C327B1DF65D3696B0491FE65ADA569E /* Sources */,
-				AB40E4689ED6BEBD5BF09C3030549638 /* Frameworks */,
-				5AE3B73483D24F7651B1C82E4A57B1CC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Ouroboros-Ouroboros";
-			productName = "Ouroboros-Ouroboros";
-			productReference = 821D87831798940CE0CFD98D6BCD43D1 /* Ouroboros.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
 		2016BF1509DAC573DEFD48F97D4F6523 /* Pods-Ouroboros_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06F3B0CB1985FB01E15874EC6A5BF400 /* Build configuration list for PBXNativeTarget "Pods-Ouroboros_Example" */;
@@ -377,7 +328,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				535AAAF05F52EDD0486D633491EE3CFA /* PBXTargetDependency */,
+				7A3CE88F5FAC240010C6C2E3A81D7421 /* PBXTargetDependency */,
 			);
 			name = "Pods-Ouroboros_Example";
 			productName = "Pods-Ouroboros_Example";
@@ -395,31 +346,48 @@
 			buildRules = (
 			);
 			dependencies = (
-				E440DF5C51B4142BB5DABFC495963480 /* PBXTargetDependency */,
+				BDA262ABC50342326378A4034F8E14B7 /* PBXTargetDependency */,
 			);
 			name = "Pods-Ouroboros_Tests";
 			productName = "Pods-Ouroboros_Tests";
 			productReference = 3E1D170E356352001D27074565387E69 /* Pods_Ouroboros_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E9CCD2506ACF70ED88B6357A146FDB9B /* Ouroboros */ = {
+		C04F142666B6A2818425416BEF90856D /* Ouroboros */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7A28710D11771C3B85EE56870FB8404A /* Build configuration list for PBXNativeTarget "Ouroboros" */;
+			buildConfigurationList = 0ADE9967DB1D5E73573B0656A3804CB3 /* Build configuration list for PBXNativeTarget "Ouroboros" */;
 			buildPhases = (
-				7DBACE627594A0FCFE33F56EFDC5E440 /* Sources */,
-				DB7D8C7917153641BC9DA3F6B2225BD1 /* Frameworks */,
-				E12277540E67B7AD234B81A61006A8B6 /* Resources */,
-				E2CB81E3AA727B94C823B3FCC9A0E0DC /* Headers */,
+				AFDF381E7F645A23FBCAEA1FD50413FE /* Sources */,
+				B2A9EE6EFF589CDE4A5E8410E865AC66 /* Frameworks */,
+				B5C0254D4A35EA4E64831BD0D9268E99 /* Resources */,
+				3D029F76A6358806138A1FA6A0606389 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				87E35D408BD36F17D5B138EE00EB6783 /* PBXTargetDependency */,
+				611AD24655123D011C3C3A0FBFB007D4 /* PBXTargetDependency */,
 			);
 			name = Ouroboros;
 			productName = Ouroboros;
-			productReference = 1709489801D2F2FC5731E51228EAEB7D /* Ouroboros.framework */;
+			productReference = 19A942FE23294EE3861ED6876B0DD8B7 /* Ouroboros.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		EA3E48A0DC2E25E93A34F8950DAC6D83 /* Ouroboros-Ouroboros */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FF88B11740295C505AD6001909DDA24 /* Build configuration list for PBXNativeTarget "Ouroboros-Ouroboros" */;
+			buildPhases = (
+				33197A03041E931CECE6C10848715B2C /* Sources */,
+				D47CD7F7C789D662DE82226B0A8FFC20 /* Frameworks */,
+				B8130F47C463E6A665866EFAE7692BFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ouroboros-Ouroboros";
+			productName = "Ouroboros-Ouroboros";
+			productReference = C2507701B517F5365E66AF8A2D297D7A /* Ouroboros.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -442,8 +410,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E9CCD2506ACF70ED88B6357A146FDB9B /* Ouroboros */,
-				038068891B8861688A007B0A7EA2DFC5 /* Ouroboros-Ouroboros */,
+				C04F142666B6A2818425416BEF90856D /* Ouroboros */,
+				EA3E48A0DC2E25E93A34F8950DAC6D83 /* Ouroboros-Ouroboros */,
 				2016BF1509DAC573DEFD48F97D4F6523 /* Pods-Ouroboros_Example */,
 				66709F3F6098572B6E15D9617E440343 /* Pods-Ouroboros_Tests */,
 			);
@@ -451,50 +419,36 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5AE3B73483D24F7651B1C82E4A57B1CC /* Resources */ = {
+		B5C0254D4A35EA4E64831BD0D9268E99 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2D55E8A6E061AA126635F4338D6024B /* Ouroboros.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E12277540E67B7AD234B81A61006A8B6 /* Resources */ = {
+		B8130F47C463E6A665866EFAE7692BFF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0206D506A18D1CAA3A4DF9311F3DCDF1 /* Ouroboros.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		33197A03041E931CECE6C10848715B2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		520420BCE5862C1B90AFC28B2140788C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8F83A66BDA07EE1B8035270540887D43 /* Pods-Ouroboros_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5C327B1DF65D3696B0491FE65ADA569E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7DBACE627594A0FCFE33F56EFDC5E440 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9D23DD4A70DA6620336D164E49DF124D /* Ouroboros-dummy.m in Sources */,
-				72C1F6B41BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.c in Sources */,
-				D4408D398CE70D9E06637C8ED2618C95 /* Ouroboros.m in Sources */,
-				77D110BC3970EA7DAFE618476D5A7779 /* Scale.m in Sources */,
-				3AA800B31CB1DCE7902E81009ECFC87D /* UIScrollView+Ouroboros.m in Sources */,
-				CB08F734BBD8D3B3ADB0AB53EA1CCE0A /* UIView+Measure.m in Sources */,
-				E34DB58BDC8D2D71DBEADAD0038ED246 /* UIView+Ouroboros.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,84 +460,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AFDF381E7F645A23FBCAEA1FD50413FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E24D6CBCED68C9BA469C3510D63D34D1 /* NSBKeyframeAnimationFunctions.c in Sources */,
+				181B273EDF0B66EAEE7EEFBB04FBA455 /* Ouroboros-dummy.m in Sources */,
+				F4C1EBEE168060A328141DF9A96F9B2D /* Ouroboros.m in Sources */,
+				C3418DB27342E7A6C3A34C2126AB91FA /* Scale.m in Sources */,
+				0AB8CA8508DC271C16097D4FCBAA1E94 /* UIScrollView+Ouroboros.m in Sources */,
+				EE2E38794A3289298563B34C626ABA60 /* UIView+Measure.m in Sources */,
+				232CDD519C4FB1570F7FEB697548E860 /* UIView+Ouroboros.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		535AAAF05F52EDD0486D633491EE3CFA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Ouroboros;
-			target = E9CCD2506ACF70ED88B6357A146FDB9B /* Ouroboros */;
-			targetProxy = 5357F10781EDDDC0558C91EB4EE47ED6 /* PBXContainerItemProxy */;
-		};
-		87E35D408BD36F17D5B138EE00EB6783 /* PBXTargetDependency */ = {
+		611AD24655123D011C3C3A0FBFB007D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Ouroboros-Ouroboros";
-			target = 038068891B8861688A007B0A7EA2DFC5 /* Ouroboros-Ouroboros */;
-			targetProxy = E4211B959F70403419CCB09AB6321DC4 /* PBXContainerItemProxy */;
+			target = EA3E48A0DC2E25E93A34F8950DAC6D83 /* Ouroboros-Ouroboros */;
+			targetProxy = 4A2D74F0610B9628BE1D9F8E9D7FF5B4 /* PBXContainerItemProxy */;
 		};
-		E440DF5C51B4142BB5DABFC495963480 /* PBXTargetDependency */ = {
+		7A3CE88F5FAC240010C6C2E3A81D7421 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Ouroboros;
-			target = E9CCD2506ACF70ED88B6357A146FDB9B /* Ouroboros */;
-			targetProxy = 7BD4BCC8EA945A02C51EE146E7DF4461 /* PBXContainerItemProxy */;
+			target = C04F142666B6A2818425416BEF90856D /* Ouroboros */;
+			targetProxy = 914DEF3816ED90E1DCFB69BA6988B261 /* PBXContainerItemProxy */;
+		};
+		BDA262ABC50342326378A4034F8E14B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Ouroboros;
+			target = C04F142666B6A2818425416BEF90856D /* Ouroboros */;
+			targetProxy = 224FED1874F2CAE91DA0A444B813FF96 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0CDE41A610AA14F11BD3063B0B0C195F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5BF5E4991A9E80F836E11E2B372AAB7 /* Ouroboros-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.2.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.2.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Ouroboros/Ouroboros-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Ouroboros/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Ouroboros/Ouroboros.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Ouroboros;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		13A595E6DE1E6FC8E54B574A79FD85EC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5BF5E4991A9E80F836E11E2B372AAB7 /* Ouroboros-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.2.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.2.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Ouroboros/Ouroboros-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Ouroboros/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Ouroboros/Ouroboros.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Ouroboros;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		32586F72E096C75560C2BD79D9E5BE1D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6383B2448AB4B05E17582CE87462A0C3 /* Pods-Ouroboros_Tests.release.xcconfig */;
@@ -642,9 +556,9 @@
 			};
 			name = Debug;
 		};
-		5AC35DBC184E1EDFE0AB677002F1E274 /* Debug */ = {
+		53259D6875C946E1144F848E2B4FAE2D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5BF5E4991A9E80F836E11E2B372AAB7 /* Ouroboros-Private.xcconfig */;
+			baseConfigurationReference = 231A4C39B0D26ABA9CD3793F2D354942 /* Ouroboros-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = Ouroboros;
@@ -652,7 +566,7 @@
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
 		710A2B354C7747209FF3F2FE47913A93 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -675,6 +589,33 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = Pods_Ouroboros_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		71ED78300DF7B44CA58AADD47785F990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 231A4C39B0D26ABA9CD3793F2D354942 /* Ouroboros-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.2.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.2.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Ouroboros/Ouroboros-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Ouroboros/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Ouroboros/Ouroboros.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Ouroboros;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -751,9 +692,36 @@
 			};
 			name = Debug;
 		};
-		CCD399D0BC778D60D94A38A10BEACC3A /* Release */ = {
+		C148D0C60CFDD7865E98AEA62A04F489 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5BF5E4991A9E80F836E11E2B372AAB7 /* Ouroboros-Private.xcconfig */;
+			baseConfigurationReference = 231A4C39B0D26ABA9CD3793F2D354942 /* Ouroboros-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.2.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.2.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Ouroboros/Ouroboros-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Ouroboros/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Ouroboros/Ouroboros.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Ouroboros;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E3C9401F315A2F85536DA98E67019AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 231A4C39B0D26ABA9CD3793F2D354942 /* Ouroboros-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = Ouroboros;
@@ -761,7 +729,7 @@
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
 		};
 		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -809,6 +777,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		0ADE9967DB1D5E73573B0656A3804CB3 /* Build configuration list for PBXNativeTarget "Ouroboros" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C148D0C60CFDD7865E98AEA62A04F489 /* Debug */,
+				71ED78300DF7B44CA58AADD47785F990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FF88B11740295C505AD6001909DDA24 /* Build configuration list for PBXNativeTarget "Ouroboros-Ouroboros" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3C9401F315A2F85536DA98E67019AAC /* Debug */,
+				53259D6875C946E1144F848E2B4FAE2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -823,24 +809,6 @@
 			buildConfigurations = (
 				3A49FEF7DA39FDC33EA9EA7B327F2B21 /* Debug */,
 				32586F72E096C75560C2BD79D9E5BE1D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7A28710D11771C3B85EE56870FB8404A /* Build configuration list for PBXNativeTarget "Ouroboros" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0CDE41A610AA14F11BD3063B0B0C195F /* Debug */,
-				13A595E6DE1E6FC8E54B574A79FD85EC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9BBB1546B96A9CDC3458DDF5172CD5B3 /* Build configuration list for PBXNativeTarget "Ouroboros-Ouroboros" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5AC35DBC184E1EDFE0AB677002F1E274 /* Debug */,
-				CCD399D0BC778D60D94A38A10BEACC3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

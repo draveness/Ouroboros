@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F9379411DA1127D20063B6F"
+               BlueprintIdentifier = "2F2FD230F84AD5E5F354C5C1"
                BuildableName = "Ouroboros.framework"
                BlueprintName = "Ouroboros"
                ReferencedContainer = "container:Pods.xcodeproj">

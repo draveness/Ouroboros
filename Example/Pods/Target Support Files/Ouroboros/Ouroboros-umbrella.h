@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 
+#import "NSBKeyframeAnimationFunctions.h"
 #import "Ouroboros.h"
 #import "Scale.h"
 #import "UIScrollView+Ouroboros.h"

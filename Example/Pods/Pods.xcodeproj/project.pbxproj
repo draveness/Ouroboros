@@ -15,6 +15,8 @@
 		4CCBD5D26BE1C8ADD25C02FB5109A5C0 /* Scale.h in Headers */ = {isa = PBXBuildFile; fileRef = 04006CDC8D4F1D5A95D3EC60628AB669 /* Scale.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DDE72387131212987206AA9E33D2BE0 /* Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = 07512B99452EDE1B221D50894EE45E8B /* Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E6EE16B60FA3720A3760F0C3000CF48 /* UIScrollView+Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C92E122D14C504D148C817F7D7AC670 /* UIScrollView+Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72C1F6B41BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 72C1F6B21BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.c */; };
+		72C1F6B51BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 72C1F6B31BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.h */; };
 		77D110BC3970EA7DAFE618476D5A7779 /* Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DC865778B22D6A68303075B011832B /* Scale.m */; };
 		89CA864A52DCFFAB23C1DB510321F289 /* UIView+Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A1A178F683244F6B542EA58E751974 /* UIView+Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F83A66BDA07EE1B8035270540887D43 /* Pods-Ouroboros_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DD9CA95D428D48B5A4F88775D5B1CA /* Pods-Ouroboros_Example-dummy.m */; };
@@ -78,6 +80,8 @@
 		6C92E122D14C504D148C817F7D7AC670 /* UIScrollView+Ouroboros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Ouroboros.h"; sourceTree = "<group>"; };
 		6F0E223D17BA4F3D8BDFD77AB282A9FA /* Ouroboros.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Ouroboros.modulemap; sourceTree = "<group>"; };
 		6FECCD6A45060ABC13E1C92AE9E2599B /* Pods_Ouroboros_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ouroboros_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72C1F6B21BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NSBKeyframeAnimationFunctions.c; sourceTree = "<group>"; };
+		72C1F6B31BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
 		73EB5DAF7D2E2F56461543CE16DFB66B /* Pods-Ouroboros_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Ouroboros_Example.modulemap"; sourceTree = "<group>"; };
 		7BC8BCB05BD8F618EAA45B6A654BEA38 /* UIView+Ouroboros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Ouroboros.m"; sourceTree = "<group>"; };
 		818AEE35D49949BE6AE4222F1D12BD71 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 			children = (
 				7261D92A1BE66C3900C1EF36 /* Core */,
 				7261D9291BE66C2B00C1EF36 /* Category */,
+				72C1F6B61BE9076800575EB7 /* NSBKeyframeAnimationFunctions */,
 				7261D9281BE66C2000C1EF36 /* Helper */,
 			);
 			path = Classes;
@@ -208,8 +213,6 @@
 		7261D9291BE66C2B00C1EF36 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				66A1A178F683244F6B542EA58E751974 /* UIView+Ouroboros.h */,
-				7BC8BCB05BD8F618EAA45B6A654BEA38 /* UIView+Ouroboros.m */,
 				6C92E122D14C504D148C817F7D7AC670 /* UIScrollView+Ouroboros.h */,
 				C82502617E8FF2DC68855C59D046906A /* UIScrollView+Ouroboros.m */,
 			);
@@ -219,12 +222,23 @@
 		7261D92A1BE66C3900C1EF36 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				66A1A178F683244F6B542EA58E751974 /* UIView+Ouroboros.h */,
+				7BC8BCB05BD8F618EAA45B6A654BEA38 /* UIView+Ouroboros.m */,
 				07512B99452EDE1B221D50894EE45E8B /* Ouroboros.h */,
 				22332CAF9BBDF5EBFF8F3C2F7B4648F3 /* Ouroboros.m */,
 				04006CDC8D4F1D5A95D3EC60628AB669 /* Scale.h */,
 				93DC865778B22D6A68303075B011832B /* Scale.m */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		72C1F6B61BE9076800575EB7 /* NSBKeyframeAnimationFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				72C1F6B31BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.h */,
+				72C1F6B21BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.c */,
+			);
+			name = NSBKeyframeAnimationFunctions;
 			sourceTree = "<group>";
 		};
 		7BC2B748108825239CC335C2EFC66CEE /* Pods-Ouroboros_Example */ = {
@@ -324,6 +338,7 @@
 			files = (
 				334D289995AF7AC2EF129F5F55389347 /* Ouroboros-umbrella.h in Headers */,
 				5DDE72387131212987206AA9E33D2BE0 /* Ouroboros.h in Headers */,
+				72C1F6B51BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.h in Headers */,
 				4CCBD5D26BE1C8ADD25C02FB5109A5C0 /* Scale.h in Headers */,
 				6E6EE16B60FA3720A3760F0C3000CF48 /* UIScrollView+Ouroboros.h in Headers */,
 				CE0FD1A83C3BCB200C5903F84FFF5AF5 /* UIView+Measure.h in Headers */,
@@ -474,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D23DD4A70DA6620336D164E49DF124D /* Ouroboros-dummy.m in Sources */,
+				72C1F6B41BE9058E00575EB7 /* NSBKeyframeAnimationFunctions.c in Sources */,
 				D4408D398CE70D9E06637C8ED2618C95 /* Ouroboros.m in Sources */,
 				77D110BC3970EA7DAFE618476D5A7779 /* Scale.m in Sources */,
 				3AA800B31CB1DCE7902E81009ECFC87D /* UIScrollView+Ouroboros.m in Sources */,

@@ -7,12 +7,13 @@
 //
 
 #import "Scale.h"
+#import "NSBKeyframeAnimationFunctions.h"
 
-typedef double(^ScaleFunctionBlock)(double, double, double, double);
+typedef double(^NSBKeyframeAnimationFunctionBlock)(double t, double b, double c, double d);
 
 @interface Scale ()
 
-@property (nonatomic, copy) ScaleFunctionBlock functionBlock;
+@property (nonatomic, copy) NSBKeyframeAnimationFunctionBlock functionBlock;
 
 @end
 
@@ -21,12 +22,17 @@ typedef double(^ScaleFunctionBlock)(double, double, double, double);
 - (instancetype)init {
     if (self = [super init]) {
         _function = OURAnimationFunctionLinear;
+        _functionBlock =  ^double(double t, double b, double c, double d) {
+            return NSBKeyframeAnimationFunctionEaseInCubic(t, b, c, d);
+        };
     }
     return self;
 }
 
 - (id)calculateInternalValueWithPercent:(CGFloat)percent {
-    percent= [self justifyPercent:percent];
+    percent = [self justifyPercent:percent];
+    percent = self.functionBlock(self.offset * percent * 1000, 0, 1, self.offset * 1000);
+    NSLog(@"%@", @(percent));
 
     id result = [[NSValue alloc] init];
     if ([self.fromValue isKindOfClass:[NSNumber class]]) {

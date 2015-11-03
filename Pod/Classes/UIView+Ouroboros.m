@@ -37,6 +37,7 @@
     Scale *scale = [[Scale alloc] init];
     scale.trggier = 0;
     scale.offset = INT_MAX;
+    scale.fromValue = (property == OURAnimationPropertyViewCenterX) ? @(self.center.x) : @(self.center.y);
     if (configureBlock) {
         configureBlock(scale);
     }

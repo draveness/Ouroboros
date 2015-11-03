@@ -27,7 +27,8 @@
 
     UIView *yellowView = [[UIView alloc] init];
     yellowView.backgroundColor = [UIColor redColor];
-    yellowView.frame = CGRectMake(50, 50, 100, 100);
+    yellowView.frame = CGRectMake(0, 0, 100, 100);
+    yellowView.center = self.view.center;
     [scrollView addSubview:yellowView];
 
     [yellowView our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
@@ -41,8 +42,9 @@
                              scale.toValue = [UIColor purpleColor];
                              scale.offset = self.view.our_width * 0.5;
                          }];
-//    [yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
-//    }];
+    [yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
+        scale.offset = self.view.our_width;
+    }];
 //    [yellowView our_animateWithProperty:OURAnimationPropertyViewFrame
 //                         configureBlock:^(Scale *scale) {
 //                             scale.fromValue = NSValueFromCGRectParameters(50, 50, 100, 100);

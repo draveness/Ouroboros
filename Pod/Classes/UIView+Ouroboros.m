@@ -13,7 +13,7 @@
 
 @interface UIView ()
 
-@property (nonatomic, strong) NSMutableArray *ouroboroses;
+@property (nonatomic, strong) NSMutableArray<Ouroboros *> *ouroboroses;
 
 @end
 

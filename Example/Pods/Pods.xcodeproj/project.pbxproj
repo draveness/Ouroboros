@@ -14,6 +14,8 @@
 		4E634DC52ABA5F4B0CFA697FA9577AF6 /* Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = F522BCF990A58DABEF53F2A5AA8B71AC /* Scale.m */; };
 		4F64AEAABF15102ABD190401A96A1628 /* Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = FD987AA52C442A111EF00A9D4089CFCC /* Ouroboros.m */; };
 		63D08196ECC91712F55E3A82FC25F235 /* Ouroboros.h in Headers */ = {isa = PBXBuildFile; fileRef = A6FFDEFAE93DCE8B0B1FDB2BAC97A0CE /* Ouroboros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7293E8B71BEA6384002B8C0A /* MagicalScale.h in Headers */ = {isa = PBXBuildFile; fileRef = 7293E8B51BEA6384002B8C0A /* MagicalScale.h */; };
+		7293E8B81BEA6384002B8C0A /* MagicalScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 7293E8B61BEA6384002B8C0A /* MagicalScale.m */; };
 		858553139B7C34BF24FD3C9C41852DEE /* UIView+Ouroboros.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F53C1C374A1ED851E505C6F21FE3C /* UIView+Ouroboros.m */; };
 		8F83A66BDA07EE1B8035270540887D43 /* Pods-Ouroboros_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DD9CA95D428D48B5A4F88775D5B1CA /* Pods-Ouroboros_Example-dummy.m */; };
 		9135505C11EB617A4738AAE589021E50 /* Scale.h in Headers */ = {isa = PBXBuildFile; fileRef = 869A4C5C10FA69BAA2F10CCDB9D796DD /* Scale.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -77,6 +79,8 @@
 		6B2733905A1D9B820EA1A1CA87E9CE89 /* Ouroboros.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ouroboros.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0E223D17BA4F3D8BDFD77AB282A9FA /* Ouroboros.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Ouroboros.modulemap; sourceTree = "<group>"; };
 		6FECCD6A45060ABC13E1C92AE9E2599B /* Pods_Ouroboros_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ouroboros_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7293E8B51BEA6384002B8C0A /* MagicalScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalScale.h; sourceTree = "<group>"; };
+		7293E8B61BEA6384002B8C0A /* MagicalScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalScale.m; sourceTree = "<group>"; };
 		73EB5DAF7D2E2F56461543CE16DFB66B /* Pods-Ouroboros_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Ouroboros_Example.modulemap"; sourceTree = "<group>"; };
 		74E366E25C07A8B72EEC34FCBA44AB68 /* Ouroboros-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Ouroboros-umbrella.h"; sourceTree = "<group>"; };
 		7A57FF0495D9F1FD51CFEEC00CF21D0B /* UIScrollView+Ouroboros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Ouroboros.m"; sourceTree = "<group>"; };
@@ -199,6 +203,8 @@
 				FD987AA52C442A111EF00A9D4089CFCC /* Ouroboros.m */,
 				869A4C5C10FA69BAA2F10CCDB9D796DD /* Scale.h */,
 				F522BCF990A58DABEF53F2A5AA8B71AC /* Scale.m */,
+				7293E8B51BEA6384002B8C0A /* MagicalScale.h */,
+				7293E8B61BEA6384002B8C0A /* MagicalScale.m */,
 				996B4C1DB8226786523CAE8B2C00CAA4 /* UIScrollView+Ouroboros.h */,
 				7A57FF0495D9F1FD51CFEEC00CF21D0B /* UIScrollView+Ouroboros.m */,
 				A362350B8CF5D9DE81FAF5EE560298ED /* UIView+Measure.h */,
@@ -298,6 +304,7 @@
 			files = (
 				1C005E224A6500F6EFA048AAC55D9DFA /* NSBKeyframeAnimationFunctions.h in Headers */,
 				9EA4CEBF6A42357113F20F62760FAD6A /* Ouroboros-umbrella.h in Headers */,
+				7293E8B71BEA6384002B8C0A /* MagicalScale.h in Headers */,
 				63D08196ECC91712F55E3A82FC25F235 /* Ouroboros.h in Headers */,
 				9135505C11EB617A4738AAE589021E50 /* Scale.h in Headers */,
 				9E0B02BCDF67CFD2B4F854E0A1990111 /* UIScrollView+Ouroboros.h in Headers */,
@@ -456,6 +463,7 @@
 				48262D4596D4258539F37093A018DD79 /* UIScrollView+Ouroboros.m in Sources */,
 				919A87E6F2A66B3A16B56966685AE32D /* UIView+Measure.m in Sources */,
 				858553139B7C34BF24FD3C9C41852DEE /* UIView+Ouroboros.m in Sources */,
+				7293E8B81BEA6384002B8C0A /* MagicalScale.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

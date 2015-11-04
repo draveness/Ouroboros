@@ -145,15 +145,19 @@ typedef double(^NSBKeyframeAnimationFunctionBlock)(double t, double b, double c,
 }
 
 - (CGFloat)stop {
-    return self.trggier + self.offset;
+    return self.trigger + self.offset;
 }
 
 - (BOOL)isCurrentPositionOnScale:(CGFloat)currentPostion {
-    return currentPostion >= self.trggier && currentPostion <= self.stop;
+    return currentPostion >= self.trigger && currentPostion <= self.stop;
 }
 
 - (BOOL)isSeparateWithScale:(Scale *)scale {
-    return scale.stop <= self.trggier || scale.trggier >= self.stop;
+    return scale.stop <= self.trigger || scale.trigger >= self.stop;
+}
+
+- (BOOL)isContainInScale:(Scale *)scale {
+    return scale.stop >= self.stop && scale.trigger <= self.trigger;
 }
 
 #pragma mark - Getter/Setter

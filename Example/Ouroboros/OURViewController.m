@@ -31,17 +31,17 @@
     yellowView.center = self.view.center;
     [scrollView addSubview:yellowView];
 
-    [yellowView our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
-                         configureBlock:^(Scale *scale) {
-                             scale.toValue = [UIColor blueColor];
-                             scale.offset = self.view.our_width;
-                         }];
-    [yellowView our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
-                         configureBlock:^(Scale *scale) {
-                             scale.trggier = self.view.our_width * 1.5;
-                             scale.toValue = [UIColor purpleColor];
-                             scale.offset = self.view.our_width * 0.5;
-                         }];
+//    [yellowView our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
+//                         configureBlock:^(Scale *scale) {
+//                             scale.toValue = [UIColor blueColor];
+//                             scale.offset = self.view.our_width;
+//                         }];
+//    [yellowView our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
+//                         configureBlock:^(Scale *scale) {
+//                             scale.trigger = self.view.our_width * 1.5;
+//                             scale.toValue = [UIColor purpleColor];
+//                             scale.offset = self.view.our_width * 0.5;
+//                         }];
     [yellowView our_animateWithProperty:OURAnimationPropertyViewHeight configureBlock:^(Scale * _Nonnull scale) {
         scale.toValue = @(200);
         scale.offset = self.view.our_width * 2;

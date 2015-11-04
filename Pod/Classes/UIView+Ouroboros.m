@@ -32,7 +32,7 @@
 - (void)our_pinWithConfigureBlock:(ScaleAnimationBlock)configureBlock {
     OURAnimationProperty property = [[self closestScrollView] ou_scrollDirection] ? OURAnimationPropertyViewCenterX : OURAnimationPropertyViewCenterY;
     [self our_animateWithProperty:property configureBlock:^(Scale * _Nonnull scale) {
-        scale.trggier = 0;
+        scale.trigger = 0;
         scale.offset = INT_MAX;
         scale.fromValue = (property == OURAnimationPropertyViewCenterX) ? @(self.center.x) : @(self.center.y);
         if (configureBlock) configureBlock(scale);
@@ -74,7 +74,7 @@
             currentPosition = contentOffset.y;
         }
 
-        id value = [ouroboros getCurrentValueWithPosition:currentPosition];
+        id value = [ouroboros currentValueWithPosition:currentPosition];
         OURAnimationProperty property = ouroboros.property;
 
         CGPoint originCenter = self.center;

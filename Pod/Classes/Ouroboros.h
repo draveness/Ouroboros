@@ -26,7 +26,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height);
 
 - (instancetype)initWithView:(UIView *)view property:(OURAnimationProperty)property;
 
-- (id)getCurrentValueWithPosition:(CGFloat)position;
+- (id)currentValueWithPosition:(CGFloat)position;
 
 @end
 

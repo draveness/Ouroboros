@@ -108,52 +108,22 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
 - (id)startValue {
     if (!_startValue) {
         switch (self.property) {
-            case OURAnimationPropertyViewBackgroundColor: {
-                _startValue = self.view.backgroundColor;
-            }
-                break;
-            case OURAnimationPropertyViewBounds: {
-                _startValue = [NSValue valueWithCGRect:self.view.bounds];
-            }
-                break;
-            case OURAnimationPropertyViewFrame: {
+            case OURAnimationPropertyViewFrame:
+            case OURAnimationPropertyViewBounds:
+            case OURAnimationPropertyViewSize:
+            case OURAnimationPropertyViewCenter: 
+            case OURAnimationPropertyViewCenterX: 
+            case OURAnimationPropertyViewCenterY: 
+            case OURAnimationPropertyViewOrigin: 
+            case OURAnimationPropertyViewOriginX: 
+            case OURAnimationPropertyViewOriginY: 
+            case OURAnimationPropertyViewWidth: 
+            case OURAnimationPropertyViewHeight: {
                 _startValue = [NSValue valueWithCGRect:self.view.frame];
             }
                 break;
-            case OURAnimationPropertyViewSize: {
-                _startValue = [NSValue valueWithCGSize:self.view.frame.size];
-            }
-                break;
-            case OURAnimationPropertyViewCenter: {
-                _startValue = [NSValue valueWithCGPoint:self.view.center];
-            }
-                break;
-            case OURAnimationPropertyViewCenterX: {
-                _startValue = @(self.view.center.x);
-            }
-                break;
-            case OURAnimationPropertyViewCenterY: {
-                _startValue = @(self.view.center.y);
-            }
-                break;
-            case OURAnimationPropertyViewOrigin: {
-                _startValue = [NSValue valueWithCGPoint:self.view.frame.origin];
-            }
-                break;
-            case OURAnimationPropertyViewOriginX: {
-                _startValue = @(self.view.frame.origin.x);
-            }
-                break;
-            case OURAnimationPropertyViewOriginY: {
-                _startValue = @(self.view.frame.origin.y);
-            }
-                break;
-            case OURAnimationPropertyViewWidth: {
-                _startValue = @(self.view.frame.size.width);
-            }
-                break;
-            case OURAnimationPropertyViewHeight: {
-                _startValue = @(self.view.frame.size.height);
+            case OURAnimationPropertyViewBackgroundColor: {
+                _startValue = self.view.backgroundColor;
             }
                 break;
             case OURAnimationPropertyViewTintColor: {

@@ -107,10 +107,6 @@
                 self.center = CGPointMake(self.center.x, [value floatValue]);
             }
                 break;
-            case OURAnimationPropertyViewTintColor: {
-                self.tintColor = value;
-            }
-                break;
             case OURAnimationPropertyViewOrigin: {
                 self.frame = CGRectMake([value CGPointValue].x, [value CGPointValue].y, self.frame.size.width, self.frame.size.height);
             }
@@ -131,6 +127,10 @@
             case OURAnimationPropertyViewHeight: {
                 self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, [value floatValue]);
                 self.center = originCenter;
+            }
+                break;
+            case OURAnimationPropertyViewTintColor: {
+                self.tintColor = value;
             }
                 break;
             case OURAnimationPropertyViewAlpha: {

@@ -136,10 +136,6 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
                 _startValue = @(self.view.center.y);
             }
                 break;
-            case OURAnimationPropertyViewTintColor: {
-                _startValue = self.view.tintColor;
-            }
-                break;
             case OURAnimationPropertyViewOrigin: {
                 _startValue = [NSValue valueWithCGPoint:self.view.frame.origin];
             }
@@ -158,6 +154,10 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
                 break;
             case OURAnimationPropertyViewHeight: {
                 _startValue = @(self.view.frame.size.height);
+            }
+                break;
+            case OURAnimationPropertyViewTintColor: {
+                _startValue = self.view.tintColor;
             }
                 break;
             case OURAnimationPropertyViewAlpha: {

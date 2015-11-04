@@ -22,7 +22,7 @@
     scrollView.frame = self.view.bounds;
     scrollView.backgroundColor = [UIColor whiteColor];
     scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * 3, self.view.bounds.size.height);
-//    scrollView.pagingEnabled = YES;
+    scrollView.pagingEnabled = YES;
     scrollView.ou_scrollDirection = OURScrollDirectionHorizontal;
 
     UIView *yellowView = [[UIView alloc] init];
@@ -43,17 +43,17 @@
                              scale.offset = self.view.our_width * 0.5;
                          }];
     [yellowView our_animateWithProperty:OURAnimationPropertyViewHeight configureBlock:^(Scale * _Nonnull scale) {
-        scale.toValue = @(400);
+        scale.toValue = @(200);
         scale.offset = self.view.our_width * 2;
         scale.function = OURAnimationFunctionEaseOutQuad;
     }];
     [yellowView our_animateWithProperty:OURAnimationPropertyViewWidth configureBlock:^(Scale * _Nonnull scale) {
-        scale.toValue = @(400);
+        scale.toValue = @(200);
         scale.offset = self.view.our_width * 2;
         scale.function = OURAnimationFunctionEaseOutQuad;
     }];
-//    [yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
-//    }];
+    [yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
+    }];
 //    [yellowView our_animateWithProperty:OURAnimationPropertyViewFrame
 //                         configureBlock:^(Scale *scale) {
 //                             scale.fromValue = NSValueFromCGRectParameters(50, 50, 100, 100);

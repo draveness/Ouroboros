@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 
+#import "MagicalScale.h"
 #import "NSBKeyframeAnimationFunctions.h"
 #import "Ouroboros.h"
 #import "Scale.h"

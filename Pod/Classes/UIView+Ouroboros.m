@@ -23,10 +23,71 @@
                  configureBlock:(ScaleAnimationBlock)configureBlock {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateState:) name:@"ScrollView" object:nil];
     Ouroboros *ouroboros = [self ouroborosWithProperty:property];
-    Scale *scale = [[Scale alloc] init];
-    configureBlock(scale);
-    NSMutableArray<Scale *> *scales = [ouroboros mutableArrayValueForKey:@"scales"];
-    [scales addObject:scale];
+    if ([ouroboros isChangingFrame]) {
+        MagicalScale *scale = [[MagicalScale alloc] init];
+        configureBlock(scale);
+        CGRect toRect = self.frame;
+        switch (ouroboros.property) {
+            case OURAnimationPropertyViewFrame:
+            case OURAnimationPropertyViewBounds:
+                scale.tag = OURFrameAnimationTagFrame;
+                break;
+            case OURAnimationPropertyViewSize: {
+                toRect.size = [scale.toValue CGSizeValue];
+                scale.tag = OURFrameAnimationTagSize;
+            }
+                break;
+            case OURAnimationPropertyViewCenter: {
+                toRect.size = [scale.toValue CGSizeValue];
+                scale.tag = OURFrameAnimationTagOrigin;
+            }
+                break;
+            case OURAnimationPropertyViewCenterX: {
+                scale.tag = OURFrameAnimationTagX;
+            }
+                break;
+            case OURAnimationPropertyViewCenterY: {
+                scale.tag = OURFrameAnimationTagY;
+            }
+                break;
+            case OURAnimationPropertyViewOrigin: {
+                toRect.origin = [scale.toValue CGPointValue];
+                scale.tag = OURFrameAnimationTagOrigin;
+            }
+                break;
+            case OURAnimationPropertyViewOriginX: {
+                toRect.origin.x = [scale.toValue doubleValue];
+                scale.tag = OURFrameAnimationTagX;
+            }
+                break;
+            case OURAnimationPropertyViewOriginY: {
+                toRect.origin.y = [scale.toValue doubleValue];
+                scale.tag = OURFrameAnimationTagY;
+            }
+                break;
+            case OURAnimationPropertyViewWidth: {
+                toRect.size.width = [scale.toValue doubleValue];
+                scale.tag = OURFrameAnimationTagWidth;
+            }
+                break;
+            case OURAnimationPropertyViewHeight: {
+                toRect.size.height = [scale.toValue doubleValue];
+                scale.tag = OURFrameAnimationTagHeight;
+            }
+                break;
+            default:
+                break;
+        }
+        scale.toValue = [NSValue valueWithCGRect:toRect];
+        NSMutableArray<Scale *> *scales = [ouroboros mutableArrayValueForKey:@"scales"];
+        [scales addObject:scale];
+    } else {
+        Scale *scale = [[Scale alloc] init];
+        configureBlock(scale);
+
+        NSMutableArray<Scale *> *scales = [ouroboros mutableArrayValueForKey:@"scales"];
+        [scales addObject:scale];
+    }
 }
 
 - (void)our_pinWithConfigureBlock:(ScaleAnimationBlock)configureBlock {

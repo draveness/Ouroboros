@@ -6,7 +6,7 @@
 //
 //
 
-#import <Ouroboros/Ouroboros.h>
+#import "Scale.h"
 
 typedef NS_OPTIONS(NSUInteger, OURFrameAnimationTag) {
     OURFrameAnimationTagX = 1 << 0,

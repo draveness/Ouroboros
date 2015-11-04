@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Scale.h"
+#import "MagicalScale.h"
 #import "UIView+Measure.h"
 #import "UIScrollView+Ouroboros.h"
 #import "UIView+Ouroboros.h"
@@ -27,6 +28,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height);
 - (instancetype)initWithView:(UIView *)view property:(OURAnimationProperty)property;
 
 - (id)currentValueWithPosition:(CGFloat)position;
+- (BOOL)isChangingFrame;
 
 @end
 

@@ -22,12 +22,13 @@
 - (void)our_animateWithProperty:(OURAnimationProperty)property
                  configureBlock:(ScaleAnimationBlock)configureBlock {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateState:) name:@"ScrollView" object:nil];
-    Ouroboros *ouroboros = [self ouroborosWithProperty:property];
-    if ([ouroboros isChangingFrame]) {
+    if ([self isChangingFrame:property]) {
+        Ouroboros *ouroboros = [self ouroborosWithProperty:OURAnimationPropertyViewFrame];
+
         MagicalScale *scale = [[MagicalScale alloc] init];
         configureBlock(scale);
         CGRect toRect = self.frame;
-        switch (ouroboros.property) {
+        switch (property) {
             case OURAnimationPropertyViewFrame:
             case OURAnimationPropertyViewBounds:
                 scale.tag = OURFrameAnimationTagFrame;
@@ -82,6 +83,8 @@
         NSMutableArray<Scale *> *scales = [ouroboros mutableArrayValueForKey:@"scales"];
         [scales addObject:scale];
     } else {
+        Ouroboros *ouroboros = [self ouroborosWithProperty:property];
+
         Scale *scale = [[Scale alloc] init];
         configureBlock(scale);
 
@@ -91,11 +94,11 @@
 }
 
 - (void)our_pinWithConfigureBlock:(ScaleAnimationBlock)configureBlock {
-    OURAnimationProperty property = [[self closestScrollView] ou_scrollDirection] ? OURAnimationPropertyViewCenterX : OURAnimationPropertyViewCenterY;
+    OURAnimationProperty property = [[self closestScrollView] ou_scrollDirection] ? OURAnimationPropertyViewOriginX : OURAnimationPropertyViewOriginY;
     [self our_animateWithProperty:property configureBlock:^(Scale * _Nonnull scale) {
         scale.trigger = 0;
         scale.offset = INT_MAX;
-        scale.fromValue = (property == OURAnimationPropertyViewCenterX) ? @(self.center.x) : @(self.center.y);
+        scale.fromValue = (property == OURAnimationPropertyViewOriginX) ? @(self.center.x) : @(self.center.y);
         if (configureBlock) configureBlock(scale);
         scale.toValue = @([scale.fromValue floatValue] + scale.offset);
     }];
@@ -138,56 +141,30 @@
         id value = [ouroboros currentValueWithPosition:currentPosition];
         OURAnimationProperty property = ouroboros.property;
 
-        CGPoint originCenter = self.center;
-
         switch (property) {
             case OURAnimationPropertyViewBackgroundColor: {
                 self.backgroundColor = value;
             }
                 break;
+            case OURAnimationPropertyViewOrigin:
+            case OURAnimationPropertyViewOriginX:
+            case OURAnimationPropertyViewOriginY:
+            case OURAnimationPropertyViewWidth:
+            case OURAnimationPropertyViewHeight:
             case OURAnimationPropertyViewBounds:
+            case OURAnimationPropertyViewSize:
             case OURAnimationPropertyViewFrame: {
                 self.frame = [value CGRectValue];
             }
                 break;
-            case OURAnimationPropertyViewSize: {
-                self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [value CGSizeValue].width, [value CGSizeValue].height);
-                self.center = originCenter;
-            }
-                break;
             case OURAnimationPropertyViewPosition:
-            case OURAnimationPropertyViewCenter: {
-                self.center = [value CGPointValue];
-            }
-                break;
+            case OURAnimationPropertyViewCenter:
             case OURAnimationPropertyViewCenterX: {
                 self.center = CGPointMake([value floatValue], self.center.y);
             }
                 break;
             case OURAnimationPropertyViewCenterY: {
                 self.center = CGPointMake(self.center.x, [value floatValue]);
-            }
-                break;
-            case OURAnimationPropertyViewOrigin: {
-                self.frame = CGRectMake([value CGPointValue].x, [value CGPointValue].y, self.frame.size.width, self.frame.size.height);
-            }
-                break;
-            case OURAnimationPropertyViewOriginX: {
-                self.frame = CGRectMake([value floatValue], self.frame.origin.y, self.frame.size.width, self.frame.size.height);
-            }
-                break;
-            case OURAnimationPropertyViewOriginY: {
-                self.frame = CGRectMake(self.frame.origin.x, [value floatValue], self.frame.size.width, self.frame.size.height);
-            }
-                break;
-            case OURAnimationPropertyViewWidth: {
-                self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, [value floatValue], self.frame.size.height);
-                self.center = originCenter;
-            }
-                break;
-            case OURAnimationPropertyViewHeight: {
-                self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, [value floatValue]);
-                self.center = originCenter;
             }
                 break;
             case OURAnimationPropertyViewTintColor: {
@@ -219,6 +196,25 @@
 
 - (void)setOuroboroses:(NSMutableArray *)ouroboroses {
     objc_setAssociatedObject(self, @selector(ouroboroses), ouroboroses, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)isChangingFrame:(OURAnimationProperty)property {
+    switch (property) {
+        case OURAnimationPropertyViewFrame:
+        case OURAnimationPropertyViewBounds:
+        case OURAnimationPropertyViewSize:
+        case OURAnimationPropertyViewCenter:
+        case OURAnimationPropertyViewCenterX:
+        case OURAnimationPropertyViewCenterY:
+        case OURAnimationPropertyViewOrigin:
+        case OURAnimationPropertyViewOriginX:
+        case OURAnimationPropertyViewOriginY:
+        case OURAnimationPropertyViewWidth:
+        case OURAnimationPropertyViewHeight:
+            return YES;
+        default:
+            return NO;
+    }
 }
 
 @end

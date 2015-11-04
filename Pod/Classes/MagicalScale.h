@@ -13,9 +13,9 @@ typedef NS_OPTIONS(NSUInteger, OURFrameAnimationTag) {
     OURFrameAnimationTagY = 1 << 1,
     OURFrameAnimationTagWidth = 1 << 2,
     OURFrameAnimationTagHeight = 1 << 3,
-    OURFrameAnimationTagSize = 11 << 2,
-    OURFrameAnimationTagOrigin = 11 << 0,
-    OURFrameAnimationTagFrame = 1111,
+    OURFrameAnimationTagSize = 1 << 2 | 1 << 3,
+    OURFrameAnimationTagOrigin = 1 << 0 | 1 << 1,
+    OURFrameAnimationTagFrame = 1 << 0 | 1 << 1 | 1 << 2 | 1 << 3,
 };
 
 @interface MagicalScale : Scale

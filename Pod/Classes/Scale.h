@@ -59,6 +59,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isCurrentPositionOnScale:(CGFloat)currentPostion;
 - (BOOL)isSeparateWithScale:(Scale *)scale;
 - (BOOL)isContainInScale:(Scale *)scale;
+- (BOOL)isCoverUpScale:(Scale *)scale;
+
+- (CGFloat)percentWithPositionAndFunctionOffset:(CGFloat)position;
 
 @end
 

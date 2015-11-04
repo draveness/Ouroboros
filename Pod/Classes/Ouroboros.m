@@ -62,35 +62,36 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     return [[NSObject alloc] init];
 }
 
-- (id)toValueWithMagicalScale:(MagicalScale *)scale {
-    CGRect toRect = [[self currentValueWithPosition:scale.stop] CGRectValue];
+- (id)toValueWithMagicalScale:(MagicalScale *)scale position:(CGFloat)position {
+    CGRect toRect = [[self currentValueWithPosition:position] CGRectValue];
+    CGRect magicalScaleRect = [scale.toValue CGRectValue];
     switch (scale.tag) {
         case OURFrameAnimationTagX: {
-            toRect.origin.x = [scale.toValue doubleValue];
+            toRect.origin.x = magicalScaleRect.origin.x;
         }
             break;
         case OURFrameAnimationTagY: {
-            toRect.origin.y = [scale.toValue doubleValue];
+            toRect.origin.y = magicalScaleRect.origin.y;
         }
             break;
         case OURFrameAnimationTagWidth: {
-            toRect.size.width = [scale.toValue doubleValue];
+            toRect.size.width = magicalScaleRect.size.width;
         }
             break;
         case OURFrameAnimationTagHeight: {
-            toRect.origin.y = [scale.toValue doubleValue];
+            toRect.origin.y = magicalScaleRect.size.height;
         }
             break;
         case OURFrameAnimationTagSize: {
-            toRect.size = [scale.toValue CGSizeValue];
+            toRect.size = magicalScaleRect.size;
         }
             break;
         case OURFrameAnimationTagOrigin: {
-            toRect.origin = [scale.toValue CGPointValue];
+            toRect.origin = magicalScaleRect.origin;
         }
             break;
         case OURFrameAnimationTagFrame: {
-            toRect = [scale.toValue CGRectValue];
+            toRect = magicalScaleRect;
         }
             break;
         default:
@@ -118,9 +119,11 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     Scale *afterScale = nil;
 
     if ([self isChangingFrame]) {
-        NSMutableArray *scalesToAdd = [[NSMutableArray alloc] init];
-        NSMutableArray *scalesToDelete = [[NSMutableArray alloc] init];
+        NSMutableSet *scalesToAdd = [[NSMutableSet alloc] init];
+        NSMutableSet *scalesToDelete = [[NSMutableSet alloc] init];
         MagicalScale *magicalCurrentScale = (MagicalScale *)currentScale;
+        [scalesToAdd addObject:currentScale];
+
         for (MagicalScale *scale in self.scales) {
             if ([scale isSeparateWithScale:currentScale]) {
                 if (scale.trigger >= currentScale.stop && (!afterScale || afterScale.trigger >= scale.stop)) {
@@ -146,7 +149,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
                 MagicalScale *secondScale = [[MagicalScale alloc] init];
                 secondScale.tag = scale.tag | magicalCurrentScale.tag;
                 secondScale.fromValue = firstScale.toValue;
-                secondScale.toValue = [self toValueWithMagicalScale:magicalCurrentScale];
+                secondScale.toValue = [self toValueWithMagicalScale:magicalCurrentScale position:scale.stop];
                 secondScale.trigger = magicalCurrentScale.trigger;
                 secondScale.offset = magicalCurrentScale.offset;
                 secondScale.function = magicalCurrentScale.function;
@@ -158,6 +161,41 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
                 thirdScale.trigger = magicalCurrentScale.stop;
                 thirdScale.offset = scale.stop - secondScale.stop;
                 thirdScale.function = scale.function;
+
+                if (firstScale.offset > 0) [scalesToAdd addObject:firstScale];
+                [scalesToAdd addObject:secondScale];
+                if (thirdScale.offset > 0) [scalesToAdd addObject:thirdScale];
+                [scalesToDelete addObject:scale];
+            } else if ([scale isCoverUpScale:currentScale]) {
+                /**
+                 *  In this condition, the original is covered by current scale
+                 *
+                 *  --- 1st current scale (option) ----++++ 2nd original scale + current scale ++++---- 3rd current scale ---
+                 */
+                if (scale.tag & magicalCurrentScale.tag) NSAssert(NO, @"Can not added a magical scales with overlapping tag to the same ouroboros.");
+                MagicalScale *firstScale = [[MagicalScale alloc] init];
+                firstScale.tag = magicalCurrentScale.tag;
+                firstScale.fromValue = magicalCurrentScale.fromValue;
+                firstScale.toValue = [self toValueWithMagicalScale:magicalCurrentScale position:scale.trigger];
+                firstScale.trigger = magicalCurrentScale.trigger;
+                firstScale.offset = scale.trigger - magicalCurrentScale.trigger;
+                firstScale.function = magicalCurrentScale.function;
+
+                MagicalScale *secondScale = [[MagicalScale alloc] init];
+                secondScale.tag = scale.tag | magicalCurrentScale.tag;
+                secondScale.fromValue = firstScale.toValue;
+                secondScale.toValue = [self toValueWithMagicalScale:magicalCurrentScale position:scale.stop];
+                secondScale.trigger = scale.trigger;
+                secondScale.offset = scale.offset;
+                secondScale.function = magicalCurrentScale.function;
+
+                MagicalScale *thirdScale = [[MagicalScale alloc] init];
+                thirdScale.tag = magicalCurrentScale.tag;
+                thirdScale.fromValue = secondScale.toValue;
+                thirdScale.toValue = magicalCurrentScale.toValue;
+                thirdScale.trigger = scale.stop;
+                thirdScale.offset = magicalCurrentScale.stop - secondScale.stop;
+                thirdScale.function = magicalCurrentScale.function;
 
                 if (firstScale.offset > 0) [scalesToAdd addObject:firstScale];
                 [scalesToAdd addObject:secondScale];
@@ -181,7 +219,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
                 MagicalScale *secondScale = [[MagicalScale alloc] init];
                 secondScale.tag = scale.tag | magicalCurrentScale.tag;
                 secondScale.fromValue = firstScale.toValue;
-                secondScale.toValue = [self toValueWithMagicalScale:magicalCurrentScale];
+                secondScale.toValue = [self toValueWithMagicalScale:magicalCurrentScale position:magicalCurrentScale.stop];
                 secondScale.trigger = magicalCurrentScale.trigger;
                 secondScale.offset = scale.stop - firstScale.stop;
                 secondScale.function = magicalCurrentScale.function;
@@ -196,9 +234,15 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
 
                 if (firstScale.offset > 0) [scalesToAdd addObject:firstScale];
                 [scalesToAdd addObject:secondScale];
-                [self.scales removeObject:scale];
                 [scalesToDelete addObject:scale];
             }
+        }
+
+        for (Scale *scale in scalesToAdd) {
+            [self.scales insertObject:scale atIndex:[self.scales count]];
+        }
+        for (Scale *scale in scalesToDelete) {
+            [self.scales removeObject:scale];
         }
 
         if (previousScale) {
@@ -208,14 +252,6 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
         }
         if (afterScale) {
             afterScale.fromValue = currentScale.toValue;
-        }
-        [self.scales insertObject:currentScale atIndex:index];
-
-        for (MagicalScale *scale in scalesToDelete) {
-            [self.scales removeObject:scale];
-        }
-        for (MagicalScale *scale in scalesToAdd) {
-            [self.scales insertObject:scale atIndex:[self.scales count]];
         }
     } else {
         for (Scale *scale in self.scales) {

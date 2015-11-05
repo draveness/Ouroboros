@@ -29,10 +29,9 @@ typedef double(^NSBKeyframeAnimationFunctionBlock)(double t, double b, double c,
     return self;
 }
 
-- (CGFloat)percentWithPositionAndFunctionOffset:(CGFloat)position {
+- (CGFloat)percentWithPosition:(CGFloat)position {
     CGFloat percent = (position - self.trigger) / self.offset;
-    percent = [self justifyPercent:percent];
-    return self.functionBlock(self.offset * percent * 1000, 0, 1, self.offset * 1000);
+    return percent;
 }
 
 - (id)calculateInternalValueWithPercent:(CGFloat)percent {

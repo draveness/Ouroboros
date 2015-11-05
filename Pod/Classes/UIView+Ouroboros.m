@@ -27,6 +27,7 @@
 
         MagicalScale *scale = [[MagicalScale alloc] init];
         configureBlock(scale);
+        CGRect fromRect = self.frame;
         CGRect toRect = self.frame;
         switch (property) {
             case OURAnimationPropertyViewFrame:
@@ -34,11 +35,13 @@
                 scale.tag = OURFrameAnimationTagFrame;
                 break;
             case OURAnimationPropertyViewSize: {
+                fromRect.size = [scale.fromValue CGSizeValue];
                 toRect.size = [scale.toValue CGSizeValue];
                 scale.tag = OURFrameAnimationTagSize;
             }
                 break;
             case OURAnimationPropertyViewCenter: {
+                fromRect.size = [scale.fromValue CGSizeValue];
                 toRect.size = [scale.toValue CGSizeValue];
                 scale.tag = OURFrameAnimationTagOrigin;
             }
@@ -52,26 +55,31 @@
             }
                 break;
             case OURAnimationPropertyViewOrigin: {
+                fromRect.origin = [scale.fromValue CGPointValue];
                 toRect.origin = [scale.toValue CGPointValue];
                 scale.tag = OURFrameAnimationTagOrigin;
             }
                 break;
             case OURAnimationPropertyViewOriginX: {
+                fromRect.origin.x = [scale.fromValue doubleValue];
                 toRect.origin.x = [scale.toValue doubleValue];
                 scale.tag = OURFrameAnimationTagX;
             }
                 break;
             case OURAnimationPropertyViewOriginY: {
+                fromRect.origin.y = [scale.fromValue doubleValue];
                 toRect.origin.y = [scale.toValue doubleValue];
                 scale.tag = OURFrameAnimationTagY;
             }
                 break;
             case OURAnimationPropertyViewWidth: {
+                fromRect.size.width = [scale.fromValue doubleValue];
                 toRect.size.width = [scale.toValue doubleValue];
                 scale.tag = OURFrameAnimationTagWidth;
             }
                 break;
             case OURAnimationPropertyViewHeight: {
+                fromRect.size.height = [scale.fromValue doubleValue];
                 toRect.size.height = [scale.toValue doubleValue];
                 scale.tag = OURFrameAnimationTagHeight;
             }
@@ -79,6 +87,7 @@
             default:
                 break;
         }
+        scale.fromValue = [NSValue valueWithCGRect:fromRect];
         scale.toValue = [NSValue valueWithCGRect:toRect];
         NSMutableArray<Scale *> *scales = [ouroboros mutableArrayValueForKey:@"scales"];
         [scales addObject:scale];
@@ -98,7 +107,7 @@
     [self our_animateWithProperty:property configureBlock:^(Scale * _Nonnull scale) {
         scale.trigger = 0;
         scale.offset = INT_MAX;
-        scale.fromValue = (property == OURAnimationPropertyViewOriginX) ? @(self.center.x) : @(self.center.y);
+        scale.fromValue = (property == OURAnimationPropertyViewOriginX) ? @(self.frame.origin.x) : @(self.frame.origin.y);
         if (configureBlock) configureBlock(scale);
         scale.toValue = @([scale.fromValue floatValue] + scale.offset);
     }];

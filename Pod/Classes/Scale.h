@@ -61,7 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isContainInScale:(Scale *)scale;
 - (BOOL)isCoverUpScale:(Scale *)scale;
 
-- (CGFloat)percentWithPositionAndFunctionOffset:(CGFloat)position;
+- (CGFloat)percentWithPosition:(CGFloat)position;
 
 @end
 

@@ -64,7 +64,9 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
 
 - (id)toValueWithMagicalScale:(MagicalScale *)scale position:(CGFloat)position {
     CGRect toRect = [[self currentValueWithPosition:position] CGRectValue];
-    CGRect magicalScaleRect = [scale.toValue CGRectValue];
+    CGFloat percent = [scale percentWithPosition:position];
+    id value = [scale calculateInternalValueWithPercent:percent];
+    CGRect magicalScaleRect = [value CGRectValue];
     switch (scale.tag) {
         case OURFrameAnimationTagX: {
             toRect.origin.x = magicalScaleRect.origin.x;
@@ -100,18 +102,6 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     return [NSValue valueWithCGRect:toRect];
 }
 
-- (UIScrollView *)closestScrollView {
-    UIView *superview = self.view.superview;
-    while (superview) {
-        if ([superview isKindOfClass:[UIScrollView class]]) {
-            return (UIScrollView *)superview;
-        }
-        superview = superview.superview;
-    }
-    NSAssert(NO, @"Can not find a UIScrollView on current view inheritance hierarchy");
-    return nil;
-}
-
 #pragma mark - Getter/Setter
 
 - (void)insertObject:(Scale *)currentScale inScalesAtIndex:(NSUInteger)index {
@@ -131,7 +121,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
                 } else if (scale.stop <= currentScale.trigger && (!previousScale || previousScale.stop <= scale.trigger)) {
                     previousScale = scale;
                 }
-            } else if ([scale isContainInScale:currentScale]) {
+            } else if ([scale isCoverUpScale:currentScale]) {
                 /**
                  *  In this condition, the original scale will devided into three / two / one part
                  *
@@ -166,11 +156,12 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
                 [scalesToAdd addObject:secondScale];
                 if (thirdScale.offset > 0) [scalesToAdd addObject:thirdScale];
                 [scalesToDelete addObject:scale];
-            } else if ([scale isCoverUpScale:currentScale]) {
+                [scalesToAdd removeObject:currentScale];
+            } else if ([scale isContainInScale:currentScale]) {
                 /**
                  *  In this condition, the original is covered by current scale
                  *
-                 *  --- 1st current scale (option) ----++++ 2nd original scale + current scale ++++---- 3rd current scale ---
+                 *  --- 1st current scale (option) ----++++ 2nd original scale + current scale ++++---- 3rd current scale(option) ---
                  */
                 if (scale.tag & magicalCurrentScale.tag) NSAssert(NO, @"Can not added a magical scales with overlapping tag to the same ouroboros.");
                 MagicalScale *firstScale = [[MagicalScale alloc] init];
@@ -201,6 +192,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
                 [scalesToAdd addObject:secondScale];
                 if (thirdScale.offset > 0) [scalesToAdd addObject:thirdScale];
                 [scalesToDelete addObject:scale];
+                [scalesToAdd removeObject:currentScale];
             } else  {
                 /**
                  *  In this condition, the original scale will devided into three / two part
@@ -235,6 +227,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
                 if (firstScale.offset > 0) [scalesToAdd addObject:firstScale];
                 [scalesToAdd addObject:secondScale];
                 [scalesToDelete addObject:scale];
+                [scalesToAdd removeObject:currentScale];
             }
         }
 
@@ -341,6 +334,18 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
         default:
             return NO;
     }
+}
+
+- (UIScrollView *)closestScrollView {
+    UIView *superview = self.view.superview;
+    while (superview) {
+        if ([superview isKindOfClass:[UIScrollView class]]) {
+            return (UIScrollView *)superview;
+        }
+        superview = superview.superview;
+    }
+    NSAssert(NO, @"Can not find a UIScrollView on current view inheritance hierarchy");
+    return nil;
 }
 
 @end

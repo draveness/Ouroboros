@@ -35,13 +35,13 @@
                 scale.tag = OURFrameAnimationTagFrame;
                 break;
             case OURAnimationPropertyViewSize: {
-                fromRect.size = [scale.fromValue CGSizeValue];
+                if (scale.fromValue) fromRect.size = [scale.fromValue CGSizeValue];
                 toRect.size = [scale.toValue CGSizeValue];
                 scale.tag = OURFrameAnimationTagSize;
             }
                 break;
             case OURAnimationPropertyViewCenter: {
-                fromRect.size = [scale.fromValue CGSizeValue];
+                if (scale.fromValue) fromRect.size = [scale.fromValue CGSizeValue];
                 toRect.size = [scale.toValue CGSizeValue];
                 scale.tag = OURFrameAnimationTagOrigin;
             }
@@ -55,32 +55,32 @@
             }
                 break;
             case OURAnimationPropertyViewOrigin: {
-                fromRect.origin = [scale.fromValue CGPointValue];
+                if (scale.fromValue) fromRect.origin = [scale.fromValue CGPointValue];
                 toRect.origin = [scale.toValue CGPointValue];
                 scale.tag = OURFrameAnimationTagOrigin;
             }
                 break;
             case OURAnimationPropertyViewOriginX: {
-                fromRect.origin.x = [scale.fromValue doubleValue];
-                toRect.origin.x = [scale.toValue doubleValue];
+                if (scale.fromValue) fromRect.origin.x = [scale.fromValue floatValue];
+                toRect.origin.x = [scale.toValue floatValue];
                 scale.tag = OURFrameAnimationTagX;
             }
                 break;
             case OURAnimationPropertyViewOriginY: {
-                fromRect.origin.y = [scale.fromValue doubleValue];
-                toRect.origin.y = [scale.toValue doubleValue];
+                if (scale.fromValue) fromRect.origin.y = [scale.fromValue floatValue];
+                toRect.origin.y = [scale.toValue floatValue];
                 scale.tag = OURFrameAnimationTagY;
             }
                 break;
             case OURAnimationPropertyViewWidth: {
-                fromRect.size.width = [scale.fromValue doubleValue];
-                toRect.size.width = [scale.toValue doubleValue];
+                if (scale.fromValue) fromRect.size.width = [scale.fromValue floatValue];
+                toRect.size.width = [scale.toValue floatValue];
                 scale.tag = OURFrameAnimationTagWidth;
             }
                 break;
             case OURAnimationPropertyViewHeight: {
-                fromRect.size.height = [scale.fromValue doubleValue];
-                toRect.size.height = [scale.toValue doubleValue];
+                if (scale.fromValue) fromRect.size.height = [scale.fromValue floatValue];
+                toRect.size.height = [scale.toValue floatValue];
                 scale.tag = OURFrameAnimationTagHeight;
             }
                 break;
@@ -146,8 +146,8 @@
         } else {
             currentPosition = contentOffset.y;
         }
-
         id value = [ouroboros currentValueWithPosition:currentPosition];
+        NSLog(@"%@", value);
         OURAnimationProperty property = ouroboros.property;
 
         switch (property) {

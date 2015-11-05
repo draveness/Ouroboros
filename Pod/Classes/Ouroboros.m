@@ -280,10 +280,11 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
             case OURAnimationPropertyViewFrame:
             case OURAnimationPropertyViewBounds:
             case OURAnimationPropertyViewSize:
-            case OURAnimationPropertyViewCenter: 
-            case OURAnimationPropertyViewCenterX: 
-            case OURAnimationPropertyViewCenterY: 
-            case OURAnimationPropertyViewOrigin: 
+//            case OURAnimationPropertyViewPosition:
+//            case OURAnimationPropertyViewCenter:
+//            case OURAnimationPropertyViewCenterX:
+//            case OURAnimationPropertyViewCenterY:
+            case OURAnimationPropertyViewOrigin:
             case OURAnimationPropertyViewOriginX: 
             case OURAnimationPropertyViewOriginY: 
             case OURAnimationPropertyViewWidth: 
@@ -322,9 +323,10 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
         case OURAnimationPropertyViewFrame:
         case OURAnimationPropertyViewBounds:
         case OURAnimationPropertyViewSize:
-        case OURAnimationPropertyViewCenter:
-        case OURAnimationPropertyViewCenterX:
-        case OURAnimationPropertyViewCenterY:
+//        case OURAnimationPropertyViewPosition:
+//        case OURAnimationPropertyViewCenter:
+//        case OURAnimationPropertyViewCenterX:
+//        case OURAnimationPropertyViewCenterY:
         case OURAnimationPropertyViewOrigin:
         case OURAnimationPropertyViewOriginX:
         case OURAnimationPropertyViewOriginY:

@@ -44,7 +44,7 @@
 //                         }];
     [yellowView our_animateWithProperty:OURAnimationPropertyViewHeight configureBlock:^(Scale * _Nonnull scale) {
         scale.toValue = @(200);
-        scale.offset = self.view.our_width * 0.5;
+        scale.offset = self.view.our_width * 25;
     }];
     [yellowView our_animateWithProperty:OURAnimationPropertyViewWidth configureBlock:^(Scale * _Nonnull scale) {
         scale.toValue = @(200);

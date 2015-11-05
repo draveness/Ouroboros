@@ -45,9 +45,9 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     Scale *afterScale = nil;
     for (Scale *scale in self.scales) {
         if ([scale isCurrentPositionOnScale:position]) {
-            CGFloat percent = (position - scale.trggier) / scale.offset;
+            CGFloat percent = (position - scale.trigger) / scale.offset;
             return [scale calculateInternalValueWithPercent:percent];
-        } else if (scale.trggier > position && (!afterScale || afterScale.trggier > scale.trggier)) {
+        } else if (scale.trigger > position && (!afterScale || afterScale.trigger > scale.trigger)) {
             afterScale = scale;
         } else if (scale.stop < position && (!previousScale || previousScale.stop < scale.stop)) {
             previousScale = scale;
@@ -80,9 +80,9 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     Scale *afterScale = nil;
     for (Scale *scale in self.scales) {
         if ([scale isSeparateWithScale:currentScale]) {
-            if (scale.trggier >= currentScale.stop && (!afterScale || afterScale.trggier >= scale.stop)) {
+            if (scale.trigger >= currentScale.stop && (!afterScale || afterScale.trigger >= scale.stop)) {
                 afterScale = scale;
-            } else if (scale.stop <= currentScale.trggier && (!previousScale || previousScale.stop <= scale.trggier)) {
+            } else if (scale.stop <= currentScale.trigger && (!previousScale || previousScale.stop <= scale.trigger)) {
                 previousScale = scale;
             }
         } else {

@@ -38,7 +38,7 @@
                          }];
     [yellowView our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
                          configureBlock:^(Scale *scale) {
-                             scale.trggier = self.view.our_width * 1.5;
+                             scale.trigger = self.view.our_width * 1.5;
                              scale.toValue = [UIColor purpleColor];
                              scale.offset = self.view.our_width * 0.5;
                          }];

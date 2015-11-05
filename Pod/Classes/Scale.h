@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) id fromValue;
 @property (nonatomic, strong) id toValue;
-@property (nonatomic, assign) CGFloat trggier;
+@property (nonatomic, assign) CGFloat trigger;
 @property (nonatomic, assign) CGFloat offset;
 @property (nonatomic, assign, readonly) CGFloat stop;
 @property (nonatomic, assign) OURAnimationFunction function;

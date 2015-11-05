@@ -35,7 +35,7 @@ Add animation to a `view` is extremely easy. Call `ouroboros` first, and then in
 [view.ouroboros animateWithProperty:OURAnimationPropertyViewBackgroundColor
                      configureBlock:^(Ouroboros *ouroboros) {
                          ouroboros.toValue = [UIColor blueColor];
-                         ouroboros.trggier = 0;
+                         ouroboros.trigger = 0;
                          ouroboros.duration = 100;
                      }];
 ```

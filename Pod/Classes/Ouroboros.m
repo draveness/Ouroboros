@@ -31,6 +31,14 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     return [NSValue valueWithCGSize:CGSizeMake(width, height)];
 }
 
+CGRect CGRectFromCenterAndSize(CGPoint center, CGSize size) {
+    return CGRectMake(center.x - size.width / 2.0, center.y - size.height / 2.0, size.width, size.height);
+}
+
+CGCenter CGCenterFromCGRect(CGRect rect) {
+    return CGPointMake(rect.origin.x + rect.size.width / 2.0, rect.origin.y + rect.size.height / 2.0);
+}
+
 - (instancetype)initWithView:(UIView *)view property:(OURAnimationProperty)property {
     if (self = [super init]) {
         _view = view;
@@ -280,10 +288,10 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
             case OURAnimationPropertyViewFrame:
             case OURAnimationPropertyViewBounds:
             case OURAnimationPropertyViewSize:
-//            case OURAnimationPropertyViewPosition:
-//            case OURAnimationPropertyViewCenter:
-//            case OURAnimationPropertyViewCenterX:
-//            case OURAnimationPropertyViewCenterY:
+            case OURAnimationPropertyViewPosition:
+            case OURAnimationPropertyViewCenter:
+            case OURAnimationPropertyViewCenterX:
+            case OURAnimationPropertyViewCenterY:
             case OURAnimationPropertyViewOrigin:
             case OURAnimationPropertyViewOriginX: 
             case OURAnimationPropertyViewOriginY: 
@@ -323,10 +331,10 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
         case OURAnimationPropertyViewFrame:
         case OURAnimationPropertyViewBounds:
         case OURAnimationPropertyViewSize:
-//        case OURAnimationPropertyViewPosition:
-//        case OURAnimationPropertyViewCenter:
-//        case OURAnimationPropertyViewCenterX:
-//        case OURAnimationPropertyViewCenterY:
+        case OURAnimationPropertyViewPosition:
+        case OURAnimationPropertyViewCenter:
+        case OURAnimationPropertyViewCenterX:
+        case OURAnimationPropertyViewCenterY:
         case OURAnimationPropertyViewOrigin:
         case OURAnimationPropertyViewOriginX:
         case OURAnimationPropertyViewOriginY:

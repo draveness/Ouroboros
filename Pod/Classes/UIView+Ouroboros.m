@@ -41,18 +41,25 @@
                 scale.tag = OURFrameAnimationTagSize;
             }
                 break;
-//            case OURAnimationPropertyViewCenter: {
-//                scale.tag = OURFrameAnimationTagOrigin;
-//            }
-//                break;
-//            case OURAnimationPropertyViewCenterX: {
-//                scale.tag = OURFrameAnimationTagX;
-//            }
-//                break;
-//            case OURAnimationPropertyViewCenterY: {
-//                scale.tag = OURFrameAnimationTagY;
-//            }
-//                break;
+
+            case OURAnimationPropertyViewCenter: {
+                if (scale.fromValue) fromRect = CGRectFromCenterAndSize([scale.fromValue CGPointValue], fromRect.size);
+                toRect = CGRectFromCenterAndSize([scale.toValue CGPointValue], fromRect.size);
+                scale.tag = OURFrameAnimationTagCenter;
+            }
+                break;
+            case OURAnimationPropertyViewCenterX: {
+                if (scale.fromValue) fromRect = CGRectFromCenterAndSize(CGPointMake([scale.fromValue floatValue], CGCenterFromCGRect(fromRect).y), fromRect.size);
+                toRect =  CGRectFromCenterAndSize(CGPointMake([scale.toValue floatValue], CGCenterFromCGRect(toRect).y), toRect.size);
+                scale.tag = OURFrameAnimationTagCenterX;
+            }
+                break;
+            case OURAnimationPropertyViewCenterY: {
+                if (scale.fromValue) fromRect = CGRectFromCenterAndSize(CGPointMake(CGCenterFromCGRect(fromRect).x, [scale.fromValue floatValue]), fromRect.size);
+                toRect =  CGRectFromCenterAndSize(CGPointMake(CGCenterFromCGRect(toRect).x, [scale.toValue floatValue]), toRect.size);
+                scale.tag = OURFrameAnimationTagCenterY;
+            }
+                break;
             case OURAnimationPropertyViewOrigin: {
                 if (scale.fromValue) fromRect.origin = [scale.fromValue CGPointValue];
                 toRect.origin = [scale.toValue CGPointValue];
@@ -102,11 +109,11 @@
 }
 
 - (void)our_pinWithConfigureBlock:(ScaleAnimationBlock)configureBlock {
-    OURAnimationProperty property = [[self closestScrollView] ou_scrollDirection] ? OURAnimationPropertyViewOriginX : OURAnimationPropertyViewOriginY;
+    OURAnimationProperty property = [[self closestScrollView] ou_scrollDirection] ? OURAnimationPropertyViewCenterX : OURAnimationPropertyViewCenterY;
     [self our_animateWithProperty:property configureBlock:^(Scale * _Nonnull scale) {
         scale.trigger = 0;
         scale.offset = INT_MAX;
-        scale.fromValue = (property == OURAnimationPropertyViewOriginX) ? @(self.frame.origin.x) : @(self.frame.origin.y);
+        scale.fromValue = (property == OURAnimationPropertyViewCenterX) ? @(self.center.x) : @(self.center.y);
         if (configureBlock) configureBlock(scale);
         scale.toValue = @([scale.fromValue floatValue] + scale.offset);
     }];
@@ -161,20 +168,14 @@
             case OURAnimationPropertyViewHeight:
             case OURAnimationPropertyViewBounds:
             case OURAnimationPropertyViewSize:
+            case OURAnimationPropertyViewPosition:
+            case OURAnimationPropertyViewCenter:
+            case OURAnimationPropertyViewCenterX:
+            case OURAnimationPropertyViewCenterY:
             case OURAnimationPropertyViewFrame: {
                 self.frame = [value CGRectValue];
             }
                 break;
-//            case OURAnimationPropertyViewPosition:
-//            case OURAnimationPropertyViewCenter:
-//            case OURAnimationPropertyViewCenterX: {
-//                self.center = CGPointMake([value floatValue], self.center.y);
-//            }
-//                break;
-//            case OURAnimationPropertyViewCenterY: {
-//                self.center = CGPointMake(self.center.x, [value floatValue]);
-//            }
-//                break;
             case OURAnimationPropertyViewTintColor: {
                 self.tintColor = value;
             }
@@ -211,10 +212,10 @@
         case OURAnimationPropertyViewFrame:
         case OURAnimationPropertyViewBounds:
         case OURAnimationPropertyViewSize:
-//        case OURAnimationPropertyViewPosition:
-//        case OURAnimationPropertyViewCenter:
-//        case OURAnimationPropertyViewCenterX:
-//        case OURAnimationPropertyViewCenterY:
+        case OURAnimationPropertyViewPosition:
+        case OURAnimationPropertyViewCenter:
+        case OURAnimationPropertyViewCenterX:
+        case OURAnimationPropertyViewCenterY:
         case OURAnimationPropertyViewOrigin:
         case OURAnimationPropertyViewOriginX:
         case OURAnimationPropertyViewOriginY:

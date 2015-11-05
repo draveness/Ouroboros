@@ -15,9 +15,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef CGPoint CGCenter;
+
 NSValue *NSValueFromCGRectParameters(CGFloat x, CGFloat y, CGFloat width, CGFloat height);
 NSValue *NSValueFromCGPointParameters(CGFloat x, CGFloat y);
 NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height);
+CGRect CGRectFromCenterAndSize(CGPoint center, CGSize size);
+CGCenter CGCenterFromCGRect(CGRect rect);
 
 @interface Ouroboros : NSObject
 

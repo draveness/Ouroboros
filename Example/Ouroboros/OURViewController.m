@@ -42,25 +42,25 @@
 //                             scale.toValue = [UIColor purpleColor];
 //                             scale.offset = self.view.our_width * 0.5;
 //                         }];
-    [yellowView our_animateWithProperty:OURAnimationPropertyViewHeight configureBlock:^(Scale * _Nonnull scale) {
-        scale.toValue = @(200);
-        scale.offset = self.view.our_width * 25;
-    }];
-    [yellowView our_animateWithProperty:OURAnimationPropertyViewWidth configureBlock:^(Scale * _Nonnull scale) {
-        scale.toValue = @(200);
-        scale.offset = self.view.our_width * 2;
-    }];
+//    [yellowView our_animateWithProperty:OURAnimationPropertyViewHeight configureBlock:^(Scale * _Nonnull scale) {
+//        scale.toValue = @(200);
+//        scale.offset = self.view.our_width * 25;
+//    }];
+//    [yellowView our_animateWithProperty:OURAnimationPropertyViewWidth configureBlock:^(Scale * _Nonnull scale) {
+//        scale.toValue = @(200);
+//        scale.offset = self.view.our_width * 2;
+//    }];
 //    [yellowView our_animateWithProperty:OURAnimationPropertyViewSize configureBlock:^(Scale * _Nonnull scale) {
 //        scale.toValue = NSValueFromCGSizeParameters(200, 200);
 //        scale.offset = self.view.our_width * 2;
 //    }];
-//    [yellowView our_animateWithProperty:OURAnimationPropertyViewOriginX configureBlock:^(Scale * _Nonnull scale) {
-//        scale.toValue = @(self.view.our_width * 2);
-//        scale.offset = self.view.our_width * 2;
-//    }];
-    [yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
-        scale.offset =  self.view.our_width * 2;
+    [yellowView our_animateWithProperty:OURAnimationPropertyViewCenterX configureBlock:^(Scale * _Nonnull scale) {
+        scale.toValue = @(self.view.our_width * 2 + yellowView.center.x);
+        scale.offset = self.view.our_width * 2;
     }];
+//    [yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
+//        scale.offset =  self.view.our_width * 2;
+//    }];
 //    [yellowView our_animateWithProperty:OURAnimationPropertyViewFrame
 //                         configureBlock:^(Scale *scale) {
 //                             scale.fromValue = NSValueFromCGRectParameters(50, 50, 100, 100);

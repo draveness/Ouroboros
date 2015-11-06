@@ -29,25 +29,36 @@ pod "Ouroboros"
 
 ### Animate
 
-Add animation to a `view` is extremely easy. Call `ouroboros` first, and then invoke `animateWithProperty:configureBlock:` method.
+Add animation to a `view` is extremely easy. Invoke `our_animateWithProperty:configureBlock:` method.
 
 ```objectivec
-[view.ouroboros animateWithProperty:OURAnimationPropertyViewBackgroundColor
-                     configureBlock:^(Ouroboros *ouroboros) {
-                         ouroboros.toValue = [UIColor blueColor];
-                         ouroboros.trigger = 0;
-                         ouroboros.duration = 100;
-                     }];
+[view our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
+               configureBlock:^(Ouroboros *ouroboros) {
+                   ouroboros.toValue = [UIColor blueColor];
+                   ouroboros.trigger = 0;
+                   ouroboros.duration = 100;
+               }];
 ```
 
 You should pass a type of `OURAnimationProperty` to this method, and set up the `ouroboros` instance in the block. And that's it.
 
 `trigger` is the point when the animation start and `offset` is the distance the animation occurs.
 
+### Pin
+
+If you would like to pin a view to some position, call `our_pinWithConfigureBlock:` method directly. The default `trigger` for this pin animation is `0` and `offset` is `INT_MAX`. This method just animate view's center according to `OURScrollDirection` and 
+
+```objectivec
+[yellowView our_pinWithConfigureBlock:^(Scale * _Nonnull scale) {
+    scale.trigger = 100;
+    scale.offset = 200;
+}];
+```
+
 ### AnimationType
 
 ```objectivec
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSUInteger, OURAnimationProperty) {
     OURAnimationPropertyViewFrame,
     OURAnimationPropertyViewBounds,
     OURAnimationPropertyViewSize,
@@ -64,7 +75,7 @@ typedef enum : NSUInteger {
     OURAnimationPropertyViewTintColor,
     OURAnimationPropertyViewAlpha,
     OURAnimationPropertyViewTransform,
-} OURAnimationProperty;
+};
 ```
 
 
@@ -73,11 +84,11 @@ typedef enum : NSUInteger {
 There are two animation directions for `scrollView`, if you want to animate according to `contentOffset.x`. You should change the `scrollView` property `ou_scrollDirection` to `OURScrollDirectionHorizontal`.
 
 ```objectivec
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSUInteger, OURScrollDirection) {
     OURScrollDirectionVertical,
     OURScrollDirectionHorizontal,
-} OURScrollDirection;
-```
+};
+ ```
 
 `OURScrollDirectionVertical` is the default behavior for each `scrollView` which will animate when `contentOffset.y` of `scrollView` changes.
 

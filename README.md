@@ -57,6 +57,7 @@ If you would like to pin a view to some position, call `our_pinWithConfigureBloc
 
 ### AnimationType
 
+
 ```objectivec
 typedef NS_ENUM(NSUInteger, OURAnimationProperty) {
     OURAnimationPropertyViewFrame,
@@ -92,6 +93,9 @@ typedef NS_ENUM(NSUInteger, OURScrollDirection) {
 
 `OURScrollDirectionVertical` is the default behavior for each `scrollView` which will animate when `contentOffset.y` of `scrollView` changes.
 
+## To Do
+
+* Layer Animation
 
 ## Author
 

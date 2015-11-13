@@ -114,6 +114,27 @@
             resultValue.m44 = m44;
 
             result = [NSValue valueWithCATransform3D:resultValue];
+        } else if ([valueType containsString:@"CGAffineTransform"]) {
+            CGAffineTransform fromTransform = [self.fromValue CGAffineTransformValue];
+            CGAffineTransform toTransform = [self.toValue CGAffineTransformValue];
+
+            CGFloat a = fromTransform.a + (toTransform.a - fromTransform.a) * percent;
+            CGFloat b = fromTransform.b + (toTransform.b - fromTransform.b) * percent;
+            CGFloat c = fromTransform.c + (toTransform.c - fromTransform.c) * percent;
+            CGFloat d = fromTransform.d + (toTransform.d - fromTransform.d) * percent;
+            CGFloat tx = fromTransform.tx + (toTransform.tx - fromTransform.tx) * percent;
+            CGFloat ty = fromTransform.ty + (toTransform.ty - fromTransform.ty) * percent;
+
+            CGAffineTransform resultValue = CGAffineTransformIdentity;
+            
+            resultValue.a = a;
+            resultValue.b = b;
+            resultValue.c = c;
+            resultValue.d = d;
+            resultValue.tx = tx;
+            resultValue.ty = ty;
+
+            result = [NSValue valueWithCGAffineTransform:resultValue];
         }
     }
 

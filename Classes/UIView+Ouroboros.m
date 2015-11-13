@@ -91,6 +91,34 @@
                 self.transform = [value CGAffineTransformValue];
             }
                 break;
+            case OURAnimationPropertyLayerFrame: {
+                self.layer.frame = [value CGRectValue];
+            }
+                break;
+            case OURAnimationPropertyLayerBounds: {
+                self.layer.bounds = [value CGRectValue];
+            }
+                break;
+            case OURAnimationPropertyLayerPosition: {
+                self.layer.position = [value CGPointValue];
+            }
+                break;
+            case OURAnimationPropertyLayerZPosition: {
+                self.layer.zPosition = [value floatValue];
+            }
+                break;
+            case OURAnimationPropertyLayerAnchorPoint: {
+                self.layer.anchorPoint = [value CGPointValue];
+            }
+                break;
+            case OURAnimationPropertyLayerAnchorPointZ: {
+                self.layer.anchorPointZ = [value floatValue];
+            }
+                break;
+            case OURAnimationPropertyLayerTransform: {
+                self.layer.transform = [value CATransform3DValue];
+            }
+                break;
             default:
                 break;
         }
@@ -120,6 +148,7 @@
             ouroboros.fromValue = [NSValue valueWithCGSize:self.frame.size];
         }
             break;
+        case OURAnimationPropertyViewPosition:
         case OURAnimationPropertyViewCenter: {
             ouroboros.fromValue = [NSValue valueWithCGPoint:self.center];
         }
@@ -162,6 +191,34 @@
             break;
         case OURAnimationPropertyViewTransform: {
             ouroboros.fromValue = [NSValue valueWithCGAffineTransform:self.transform];
+        }
+            break;
+        case OURAnimationPropertyLayerFrame: {
+            ouroboros.fromValue = [NSValue valueWithCGRect:self.layer.frame];
+        }
+            break;
+        case OURAnimationPropertyLayerBounds: {
+            ouroboros.fromValue = [NSValue valueWithCGRect:self.layer.bounds];
+        }
+            break;
+        case OURAnimationPropertyLayerPosition: {
+            ouroboros.fromValue = [NSValue valueWithCGPoint:self.layer.position];
+        }
+            break;
+        case OURAnimationPropertyLayerZPosition: {
+            ouroboros.fromValue = @(self.layer.zPosition);
+        }
+            break;
+        case OURAnimationPropertyLayerAnchorPoint: {
+            ouroboros.fromValue = [NSValue valueWithCGPoint:self.layer.anchorPoint];
+        }
+            break;
+        case OURAnimationPropertyLayerAnchorPointZ: {
+            ouroboros.fromValue = @(self.layer.anchorPointZ);
+        }
+            break;
+        case OURAnimationPropertyLayerTransform: {
+            ouroboros.fromValue = [NSValue valueWithCATransform3D:self.layer.transform];
         }
             break;
         default:

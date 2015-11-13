@@ -141,6 +141,54 @@
                 self.transform = [value CGAffineTransformValue];
             }
                 break;
+            case OURAnimationPropertyLayerFrame: {
+                self.layer.frame = [value CGRectValue];
+            }
+                break;
+            case OURAnimationPropertyLayerBounds: {
+                self.layer.bounds = [value CGRectValue];
+            }
+                break;
+            case OURAnimationPropertyLayerPosition: {
+                self.layer.position = [value CGPointValue];
+            }
+                break;
+            case OURAnimationPropertyLayerZPosition: {
+                self.layer.zPosition = [value floatValue];
+            }
+                break;
+            case OURAnimationPropertyLayerAnchorPoint: {
+                self.layer.anchorPoint = [value CGPointValue];
+            }
+                break;
+            case OURAnimationPropertyLayerAnchorPointZ: {
+                self.layer.anchorPointZ = [value floatValue];
+            }
+                break;
+            case OURAnimationPropertyLayerTransform: {
+                self.layer.transform = [value CATransform3DValue];
+            }
+                break;
+            case OURAnimationPropertyLayerBackgroundColor: {
+                self.layer.backgroundColor = [value CGColor];
+            }
+                break;
+            case OURAnimationPropertyLayerBorderColor: {
+                self.layer.borderColor = [value CGColor];
+            }
+                break;
+            case OURAnimationPropertyLayerBorderWidth: {
+                self.layer.borderWidth = [value floatValue];
+            }
+                break;
+            case OURAnimationPropertyLayerCornerRadius: {
+                self.layer.cornerRadius = [value floatValue];
+            }
+                break;
+            case OURAnimationPropertyLayerOpacity: {
+                self.layer.opacity = [value floatValue];
+            }
+                break;
             default:
                 break;
         }

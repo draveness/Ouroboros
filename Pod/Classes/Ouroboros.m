@@ -168,6 +168,55 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
                 _startValue = [NSValue valueWithCGAffineTransform:self.view.transform];
             }
                 break;
+            case OURAnimationPropertyLayerFrame: {
+                _startValue = [NSValue valueWithCGRect:self.view.layer.frame];
+            }
+                break;
+            case OURAnimationPropertyLayerBounds: {
+                _startValue = [NSValue valueWithCGRect:self.view.layer.bounds];
+            }
+                break;
+            case OURAnimationPropertyLayerPosition: {
+                _startValue = [NSValue valueWithCGPoint:self.view.layer.position];
+            }
+                break;
+            case OURAnimationPropertyLayerZPosition: {
+                _startValue = @(self.view.layer.zPosition);
+            }
+                break;
+            case OURAnimationPropertyLayerAnchorPoint: {
+                _startValue = [NSValue valueWithCGPoint:self.view.layer.anchorPoint];
+            }
+                break;
+            case OURAnimationPropertyLayerAnchorPointZ: {
+                _startValue = @(self.view.layer.anchorPointZ);
+            }
+                break;
+            case OURAnimationPropertyLayerTransform: {
+                _startValue = [NSValue valueWithCATransform3D:self.view.layer.transform];
+            }
+                break;
+            case OURAnimationPropertyLayerBackgroundColor: {
+                _startValue = [UIColor colorWithCGColor:self.view.layer.backgroundColor];
+            }
+                break;
+            case OURAnimationPropertyLayerBorderColor: {
+                _startValue = [UIColor colorWithCGColor:self.view.layer.borderColor];
+            }
+                break;
+            case OURAnimationPropertyLayerBorderWidth: {
+                _startValue = @(self.view.layer.borderWidth);
+            }
+                break;
+            case OURAnimationPropertyLayerCornerRadius: {
+                _startValue = @(self.view.layer.cornerRadius);
+            }
+                break;
+            case OURAnimationPropertyLayerOpacity: {
+                _startValue = @(self.view.layer.opacity);
+            }
+                break;
+
             default: {
                 NSAssert(NO, @"Invalid OURAnimationProperty type.");
                 _startValue = [[NSObject alloc] init];

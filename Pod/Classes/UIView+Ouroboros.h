@@ -28,6 +28,18 @@ typedef NS_ENUM(NSUInteger, OURAnimationProperty) {
     OURAnimationPropertyViewTintColor,
     OURAnimationPropertyViewAlpha,
     OURAnimationPropertyViewTransform,
+    OURAnimationPropertyLayerFrame,
+    OURAnimationPropertyLayerBounds,
+    OURAnimationPropertyLayerPosition,
+    OURAnimationPropertyLayerZPosition,
+    OURAnimationPropertyLayerAnchorPoint,
+    OURAnimationPropertyLayerAnchorPointZ,
+    OURAnimationPropertyLayerTransform,
+    OURAnimationPropertyLayerBackgroundColor,
+    OURAnimationPropertyLayerCornerRadius,
+    OURAnimationPropertyLayerBorderWidth,
+    OURAnimationPropertyLayerBorderColor,
+    OURAnimationPropertyLayerOpacity,
 };
 
 NS_ASSUME_NONNULL_BEGIN

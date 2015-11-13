@@ -119,6 +119,26 @@
                 self.layer.transform = [value CATransform3DValue];
             }
                 break;
+            case OURAnimationPropertyLayerBackgroundColor: {
+                self.layer.backgroundColor = [value CGColor];
+            }
+                break;
+            case OURAnimationPropertyLayerBorderColor: {
+                self.layer.borderColor = [value CGColor];
+            }
+                break;
+            case OURAnimationPropertyLayerBorderWidth: {
+                self.layer.borderWidth = [value floatValue];
+            }
+                break;
+            case OURAnimationPropertyLayerCornerRadius: {
+                self.layer.cornerRadius = [value floatValue];
+            }
+                break;
+            case OURAnimationPropertyLayerOpacity: {
+                self.layer.opacity = [value floatValue];
+            }
+                break;
             default:
                 break;
         }
@@ -219,6 +239,26 @@
             break;
         case OURAnimationPropertyLayerTransform: {
             ouroboros.fromValue = [NSValue valueWithCATransform3D:self.layer.transform];
+        }
+            break;
+        case OURAnimationPropertyLayerBackgroundColor: {
+            ouroboros.fromValue = [UIColor colorWithCGColor:self.layer.backgroundColor];
+        }
+            break;
+        case OURAnimationPropertyLayerBorderColor: {
+            ouroboros.fromValue = [UIColor colorWithCGColor:self.layer.borderColor];
+        }
+            break;
+        case OURAnimationPropertyLayerBorderWidth: {
+            ouroboros.fromValue = @(self.layer.borderWidth);
+        }
+            break;
+        case OURAnimationPropertyLayerCornerRadius: {
+            ouroboros.fromValue = @(self.layer.cornerRadius);
+        }
+            break;
+        case OURAnimationPropertyLayerOpacity: {
+            ouroboros.fromValue = @(self.layer.opacity);
         }
             break;
         default:

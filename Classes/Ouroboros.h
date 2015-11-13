@@ -32,6 +32,11 @@ typedef enum : NSUInteger {
     OURAnimationPropertyLayerAnchorPoint,
     OURAnimationPropertyLayerAnchorPointZ,
     OURAnimationPropertyLayerTransform,
+    OURAnimationPropertyLayerBackgroundColor,
+    OURAnimationPropertyLayerCornerRadius,
+    OURAnimationPropertyLayerBorderWidth,
+    OURAnimationPropertyLayerBorderColor,
+    OURAnimationPropertyLayerOpacity,
 } OURAnimationProperty;
 
 NS_ASSUME_NONNULL_BEGIN

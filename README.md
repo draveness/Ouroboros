@@ -8,6 +8,14 @@
 
 This is an Objective-C library for magical scroll interactions. Ouroboros is inspired by javascript third-party framework `scrollmagic`. You can create magical scroll interactions with `Ouroboros` in iOS App.
 
+## Features
+
+- [x] Different scroll direction support
+- [x] UIView / Layer animation
+- [x] Overlapping animation detect
+- [] Mac OS X support
+
+
 ## Demo
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -95,10 +103,6 @@ typedef NS_ENUM(NSUInteger, OURScrollDirection) {
  ```
 
 `OURScrollDirectionVertical` is the default behavior for each `scrollView` which will animate when `contentOffset.y` of `scrollView` changes.
-
-## To Do
-
-* Layer Animation
 
 ## Author
 

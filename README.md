@@ -6,13 +6,13 @@
 [![Platform](https://img.shields.io/cocoapods/p/Ouroboros.svg?style=flat)](http://cocoapods.org/pods/Ouroboros)
 
 
-The Objective-C library for magical scroll interactions. This library is inspired by javascript lib scroll magic. You can create magical scroll interactions with `Ouroboros`.
+This is an Objective-C library for magical scroll interactions. Ouroboros is inspired by javascript third-party framework `scrollmagic`. You can create magical scroll interactions with `Ouroboros` in iOS App.
 
-## Usage
+## Demo
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Installation
+## Installation with CocoaPods
 
 Ouroboros is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -29,20 +29,23 @@ pod "Ouroboros"
 
 ### Animate
 
-Add animation to a `view` is extremely easy. Invoke `our_animateWithProperty:configureBlock:` method.
+Add animation to a `view` is extremely easy. `Ouroboros` provides a bunch of convience APIs on `UIView` through category. Directly invoke `our_animateWithProperty:configureBlock:` method of `UIView` instance.
 
 ```objectivec
+view.backgroundColor = [UIColor redColor];
 [view our_animateWithProperty:OURAnimationPropertyViewBackgroundColor
                configureBlock:^(Ouroboros *ouroboros) {
                    ouroboros.toValue = [UIColor blueColor];
                    ouroboros.trigger = 0;
-                   ouroboros.duration = 100;
+                   ouroboros.offset = 100;
                }];
 ```
 
 You should pass a type of `OURAnimationProperty` to this method, and set up the `ouroboros` instance in the block. And that's it.
 
 `trigger` is the point when the animation start and `offset` is the distance the animation occurs.
+
+Different kinds of animation needs different kinds of `toValue`. The `fromValue` for each view is the start value of it. i.e. the above `Ouroboros` animation's `fromValue` is `[UIColor redColor]`. So you do not need to pass a `fromValue` parameter to `ouroboros` object.
 
 ### Pin
 

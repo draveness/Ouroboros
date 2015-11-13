@@ -13,6 +13,8 @@ This is an Objective-C library for magical scroll interactions. Ouroboros is ins
 - [x] Different scroll direction support
 - [x] UIView / Layer animation
 - [x] Overlapping animation detect
+- [x] Measure guide for UIView
+- [x] Animation curve support
 - [] Mac OS X support
 
 
@@ -87,6 +89,18 @@ typedef NS_ENUM(NSUInteger, OURAnimationProperty) {
     OURAnimationPropertyViewTintColor,
     OURAnimationPropertyViewAlpha,
     OURAnimationPropertyViewTransform,
+    OURAnimationPropertyLayerFrame,
+    OURAnimationPropertyLayerBounds,
+    OURAnimationPropertyLayerPosition,
+    OURAnimationPropertyLayerZPosition,
+    OURAnimationPropertyLayerAnchorPoint,
+    OURAnimationPropertyLayerAnchorPointZ,
+    OURAnimationPropertyLayerTransform,
+    OURAnimationPropertyLayerBackgroundColor,
+    OURAnimationPropertyLayerCornerRadius,
+    OURAnimationPropertyLayerBorderWidth,
+    OURAnimationPropertyLayerBorderColor,
+    OURAnimationPropertyLayerOpacity,
 };
 ```
 

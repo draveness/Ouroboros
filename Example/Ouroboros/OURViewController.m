@@ -56,7 +56,6 @@
     }];
 //    [yellowView our_animateWithProperty:OURAnimationPropertyViewFrame
 //                         configureBlock:^(Scale *scale) {
-//                             scale.fromValue = NSValueFromCGRectParameters(50, 50, 100, 100);
 //                             scale.toValue = NSValueFromCGRectParameters(50, 250, 100, 100);
 //                             scale.offset = self.view.our_width;
 //                         }];

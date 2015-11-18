@@ -21,7 +21,7 @@
 
 - (void)our_animateWithProperty:(OURAnimationProperty)property
                  configureBlock:(ScaleAnimationBlock)configureBlock {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateState:) name:@"ScrollView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateState:) name:OURScrollViewUpdateContentOffset object:nil];
     Ouroboros *ouroboros = [self ouroborosWithProperty:property];
     Scale *scale = [[Scale alloc] init];
     configureBlock(scale);

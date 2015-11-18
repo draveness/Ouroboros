@@ -9,6 +9,8 @@
 #import "UIScrollView+Ouroboros.h"
 #import <objc/runtime.h>
 
+NSString *const OURScrollViewUpdateContentOffset = @"OURScrollViewUpdateContentOffset";
+
 @implementation UIScrollView (Ouroboros)
 
 + (void)load {
@@ -31,7 +33,7 @@
 
 - (void)ou_setContentOffset:(CGPoint)contentOffset {
     [self ou_setContentOffset:contentOffset];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ScrollView"
+    [[NSNotificationCenter defaultCenter] postNotificationName:OURScrollViewUpdateContentOffset
                                                         object:nil
                                                       userInfo:@{@"contentOffset": [NSValue valueWithCGPoint:contentOffset],
                                                                  @"direction":@(self.ou_scrollDirection)}];

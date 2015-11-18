@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+
 typedef NS_ENUM(NSUInteger, OURScrollDirection) {
     OURScrollDirectionVertical,
     OURScrollDirectionHorizontal,
 };
 
 NS_ASSUME_NONNULL_BEGIN
+
+extern NSString *const OURScrollViewUpdateContentOffset;
 
 @interface UIScrollView (Ouroboros)
 

@@ -87,7 +87,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
                 previousScale = scale;
             }
         } else {
-            NSAssert(NO, @"Can not added an overlapping scales to the same ouroboros.");
+            NSAssert(NO, @"Can not added an overlapping scales to the same ouroboros. currentScale: [%@, %@], existScale: [%@, %@]", @(currentScale.trigger), @(currentScale.stop), @(scale.trigger), @(scale.stop));
         }
     }
 

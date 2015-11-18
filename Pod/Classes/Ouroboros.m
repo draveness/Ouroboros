@@ -58,6 +58,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
     } else if (afterScale) {
         return afterScale.fromValue;
     }
+    NSAssert(NO, @"FATAL ERROR, Unknown current value for property %@", @(self.property));
     return [[NSObject alloc] init];
 }
 
@@ -218,7 +219,7 @@ NSValue *NSValueFromCGSizeParameters(CGFloat width, CGFloat height) {
                 break;
 
             default: {
-                NSAssert(NO, @"Invalid OURAnimationProperty type.");
+                NSAssert(NO, @"Invalid OURAnimationProperty type. %@", @(self.property));
                 _startValue = [[NSObject alloc] init];
             }
                 break;

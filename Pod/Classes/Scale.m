@@ -47,11 +47,21 @@ typedef double(^NSBKeyframeAnimationFunctionBlock)(double t, double b, double c,
 
         const CGFloat *fromComponents = CGColorGetComponents(fromValue.CGColor);
         const CGFloat *toComponents = CGColorGetComponents(toValue.CGColor);
+        if (CGColorGetNumberOfComponents(fromValue.CGColor) == 2) {
+            fromValue = [UIColor colorWithRed:fromComponents[0] green:fromComponents[0] blue:fromComponents[0] alpha:fromComponents[1]];
+            fromComponents = CGColorGetComponents(fromValue.CGColor);
+        }
+        if (CGColorGetNumberOfComponents(toValue.CGColor) == 2) {
+            toValue = [UIColor colorWithRed:toComponents[0] green:toComponents[0] blue:toComponents[0] alpha:toComponents[1]];
+            toComponents = CGColorGetComponents(toValue.CGColor);
+        }
 
         CGFloat redComponent = fromComponents[0] + (toComponents[0] - fromComponents[0]) * value;
         CGFloat greenComponent = fromComponents[1] + (toComponents[1] - fromComponents[1]) * value;
         CGFloat blueComponent = fromComponents[2] + (toComponents[2] - fromComponents[2]) * value;
         CGFloat alphaComponent = fromComponents[3] + (toComponents[3] - fromComponents[3]) * value;
+
+        NSLog(@"%@", @(redComponent == greenComponent &&  greenComponent == blueComponent));
 
         result = [UIColor colorWithRed:redComponent green:greenComponent blue:blueComponent alpha:alphaComponent];
     } else if ([self.fromValue isKindOfClass:[NSValue class]]) {

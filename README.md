@@ -15,7 +15,7 @@ This is an Objective-C library for magical scroll interactions. Ouroboros is ins
 - [x] Overlapping animation detect
 - [x] Measure guide for UIView
 - [x] Animation curve support
-- [] Mac OS X support
+- [ ] Mac OS X support
 
 
 ## Demo

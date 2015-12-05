@@ -61,8 +61,6 @@ typedef double(^NSBKeyframeAnimationFunctionBlock)(double t, double b, double c,
         CGFloat blueComponent = fromComponents[2] + (toComponents[2] - fromComponents[2]) * value;
         CGFloat alphaComponent = fromComponents[3] + (toComponents[3] - fromComponents[3]) * value;
 
-        NSLog(@"%@", @(redComponent == greenComponent &&  greenComponent == blueComponent));
-
         result = [UIColor colorWithRed:redComponent green:greenComponent blue:blueComponent alpha:alphaComponent];
     } else if ([self.fromValue isKindOfClass:[NSValue class]]) {
         NSString *valueType = [NSString stringWithCString:[self.fromValue objCType] encoding:NSStringEncodingConversionAllowLossy];

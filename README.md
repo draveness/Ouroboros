@@ -22,6 +22,8 @@ This is an Objective-C library for magical scroll interactions. Ouroboros is ins
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+![Demo](./demo.gif)
+
 ## Installation with CocoaPods
 
 Ouroboros is available through [CocoaPods](http://cocoapods.org). To install
